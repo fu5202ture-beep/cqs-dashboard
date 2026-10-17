@@ -1,10 +1,10 @@
 {
  "schema": "cqs-signals-v2",
- "generated_at_utc": "2026-10-17T20:00:09Z",
- "source_run": "-c",
+ "generated_at_utc": "2026-10-17T20:07:18Z",
+ "source_run": "sentinel.py mf",
  "stale_after_minutes": 90,
  "rule_versions": {
-  "repo_tag": "cqs-v3.6.0",
+  "repo_tag": "cqs-v3.6.0-1-gf75d5a6",
   "core": "CQS-3.0.1",
   "core_rule_hash": "380dedd49b18",
   "mf": "CQS-MF-0.2",
@@ -31,14 +31,14 @@
  "size_cap_rule": "size_cap_pct = max(base cap, min_order_usdt / ref_equity_usdt x 100), 1 decimal (base: ESTABLISHED 20 / NEW_MEME 10 / EARLY_WATCH 5); ref_equity_usdt = HM paper equity (out/hm/latest_hm.json, deposit-aware)",
  "market": {
   "status": "OK",
-  "as_of_utc": "2026-10-17T19:04:31Z",
-  "age_minutes": 55.6,
+  "as_of_utc": "2026-10-17T20:06:17Z",
+  "age_minutes": 1.0,
   "btc_tier": "ROTATION_SELECTIVE",
   "btc_tier_source": "mf_ledger.mf_runs (latest hourly MF run; vcpd-2.0 mtf.tier on closed BTC 1D+4H)",
   "btc_tier_vcpd": "ROTATION_SELECTIVE",
   "btc_tier_vcpd_bar_close_sast": "2026-10-17 18:00",
-  "last_closed_4h_candle_close_utc": "2026-10-17T16:00:00Z",
-  "btc_close_4h": 81349.6,
+  "last_closed_4h_candle_close_utc": "2026-10-17T20:00:00Z",
+  "btc_close_4h": 81605.0,
   "btc_ema20_1d": 82817.27,
   "btc_ema50_1d": 80423.51,
   "tier_cap": 0.5,
@@ -60,7 +60,7 @@
  "top7": {
   "status": "OK",
   "as_of_utc": "2026-10-17T16:44:48Z",
-  "age_minutes": 195.3,
+  "age_minutes": 202.5,
   "bar_close_sast": "2026-10-17 18:00",
   "scope": "FULL_UNIVERSE",
   "source": "out/shadow/latest_shadow.json top7_universe (rank/score/conviction) + ledger.sqlite (core state) + out/snapshot.json (RS)",
@@ -667,7 +667,7 @@
  "top7_legacy": {
   "status": "OK",
   "as_of_utc": "2026-10-17T16:44:29Z",
-  "age_minutes": 195.7,
+  "age_minutes": 202.8,
   "bar_close_sast": "2026-10-17 18:00",
   "source": "out/vcpd/latest2.json (rank/order) + out/shadow/latest_shadow.json (conviction/families/N_eff) + ledger.sqlite (core state) + out/snapshot.json (RS)",
   "items": [
@@ -1061,8 +1061,8 @@
  },
  "mf": {
   "status": "OK",
-  "as_of_utc": "2026-10-17T19:04:31Z",
-  "age_minutes": 55.6,
+  "as_of_utc": "2026-10-17T20:06:17Z",
+  "age_minutes": 1.0,
   "rule_version": "CQS-MF-0.2",
   "tier": "ROTATION_SELECTIVE",
   "old_gate_shadow": "ON(SOFT, MF +5)",
@@ -1092,47 +1092,21 @@
    }
   ],
   "open_positions": [],
-  "candidates_above_threshold": [
-   {
-    "symbol": "A-USDT",
-    "score": 61.9,
-    "accepted": true,
-    "risk_mult": 0.5,
-    "reasons": [
-     "MF_ROTATION_LEADER_HALF",
-     "MF_FULL_RISK"
-    ],
-    "trigger": 0.11169,
-    "invalidation": 0.09503,
-    "rs_btc": 0.04221,
-    "universe_tier": "ESTABLISHED",
-    "security_status": "OK",
-    "listing_age_days": 506.3,
-    "vol24h_usdt": 15488805.0,
-    "early_reason": null,
-    "size_cap_pct": 20,
-    "threshold": 50,
-    "meme_confirm": null
-   }
-  ],
-  "accepted_this_run": [
-   "A-USDT"
-  ],
+  "candidates_above_threshold": [],
+  "accepted_this_run": [],
   "near_threshold": [],
   "new_events": [],
   "entry_threshold_new_meme": 65,
   "entry_threshold_early_watch": 75,
   "early_watch": {
    "by_mode": {
-    "FULL": 7,
-    "PRECHECK_4H": 60
+    "PRECHECK_4H": 67
    },
    "by_status": {
-    "FULL_FROM_SNAPSHOT": 7,
-    "NO_CONFIRM": 60
+    "NO_CONFIRM": 67
    },
    "candidates": [],
-   "evaluated": 7,
+   "evaluated": 0,
    "insufficient_bars": [],
    "members": 67,
    "scanned": 67
@@ -1147,35 +1121,33 @@
    },
    "early_watch": {
     "by_mode": {
-     "FULL": 7,
-     "PRECHECK_4H": 60
+     "PRECHECK_4H": 67
     },
     "by_status": {
-     "FULL_FROM_SNAPSHOT": 7,
-     "NO_CONFIRM": 60
+     "NO_CONFIRM": 67
     },
     "candidates": [],
-    "evaluated": 7,
+    "evaluated": 0,
     "insufficient_bars": [],
     "members": 67,
     "scanned": 67
    },
-   "evaluated": 96,
-   "fetched_extra": 6,
+   "evaluated": 89,
+   "fetched_extra": 90,
    "n": 90,
    "note": "cached 2026-10-17T17:19:30Z"
   },
   "timing": {
-   "early_s": 10.3,
-   "fetch_s": 0.6,
-   "total_s": 13.8,
+   "early_s": 10.6,
+   "fetch_s": 47.2,
+   "total_s": 60.2,
    "universe_s": 0.0
   }
  },
  "hm": {
   "status": "OK",
   "as_of_utc": "2026-10-17T16:45:45Z",
-  "age_minutes": 194.4,
+  "age_minutes": 201.6,
   "rule_version": "CQS-HM-0.1",
   "bar_close_sast": "10-17 18:00",
   "tier": "ROTATION_SELECTIVE",
@@ -1369,7 +1341,7 @@
  "vetoes": {
   "status": "OK",
   "as_of_utc": "2026-10-17T18:40:43Z",
-  "age_minutes": 79.4,
+  "age_minutes": 86.6,
   "items": [
    {
     "symbol": "onchain:bsc:0x25042161f871a34e77a7af1aff74aa1a0dc9b4c661fd53c7504948ad97f8d13f:0x277add739c6e0477616948357af9e79fe1ec9b80",
@@ -1473,7 +1445,7 @@
  "universe": {
   "status": "OK",
   "as_of_utc": "2026-10-17T17:19:30Z",
-  "age_minutes": 160.7,
+  "age_minutes": 167.8,
   "schema": "cqs-universe-v1",
   "rule_version": "CQS-UNI-1.1",
   "config_hash": "dd9b36285f3c",
