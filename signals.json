@@ -1,10 +1,10 @@
 {
  "schema": "cqs-signals-v2",
- "generated_at_utc": "2026-10-17T17:20:42Z",
- "source_run": "sentinel.py mf",
+ "generated_at_utc": "2026-10-17T18:01:19Z",
+ "source_run": "-c",
  "stale_after_minutes": 90,
  "rule_versions": {
-  "repo_tag": "cqs-v3.5.0",
+  "repo_tag": "cqs-v3.5.1",
   "core": "CQS-3.0.1",
   "core_rule_hash": "2e27627d2850",
   "mf": "CQS-MF-0.2",
@@ -16,10 +16,23 @@
  "disclaimer": "research signal only, not investment advice; paper only",
  "exchange_access": "NONE",
  "mode": "PAPER",
+ "min_order_usdt": 15,
+ "ref_equity_usdt": 200.0,
+ "size_cap_pct_base": {
+  "ESTABLISHED": 20,
+  "NEW_MEME": 10,
+  "EARLY_WATCH": 5
+ },
+ "size_cap_pct_effective": {
+  "ESTABLISHED": 20,
+  "NEW_MEME": 10,
+  "EARLY_WATCH": 7.5
+ },
+ "size_cap_rule": "size_cap_pct = max(base cap, min_order_usdt / ref_equity_usdt x 100), 1 decimal (base: ESTABLISHED 20 / NEW_MEME 10 / EARLY_WATCH 5); ref_equity_usdt = HM paper equity (out/hm/latest_hm.json, deposit-aware)",
  "market": {
   "status": "OK",
   "as_of_utc": "2026-10-17T17:19:30Z",
-  "age_minutes": 1.2,
+  "age_minutes": 41.8,
   "btc_tier": "ROTATION_SELECTIVE",
   "btc_tier_source": "mf_ledger.mf_runs (latest hourly MF run; vcpd-2.0 mtf.tier on closed BTC 1D+4H)",
   "btc_tier_vcpd": "ROTATION_SELECTIVE",
@@ -46,7 +59,7 @@
  "top7": {
   "status": "OK",
   "as_of_utc": "2026-10-17T16:44:48Z",
-  "age_minutes": 35.9,
+  "age_minutes": 76.5,
   "bar_close_sast": "2026-10-17 18:00",
   "scope": "FULL_UNIVERSE",
   "source": "out/shadow/latest_shadow.json top7_universe (rank/score/conviction) + ledger.sqlite (core state) + out/snapshot.json (RS)",
@@ -534,7 +547,7 @@
  "top7_legacy": {
   "status": "OK",
   "as_of_utc": "2026-10-17T16:44:29Z",
-  "age_minutes": 36.2,
+  "age_minutes": 76.8,
   "bar_close_sast": "2026-10-17 18:00",
   "source": "out/vcpd/latest2.json (rank/order) + out/shadow/latest_shadow.json (conviction/families/N_eff) + ledger.sqlite (core state) + out/snapshot.json (RS)",
   "items": [
@@ -929,7 +942,7 @@
  "mf": {
   "status": "OK",
   "as_of_utc": "2026-10-17T17:19:30Z",
-  "age_minutes": 1.2,
+  "age_minutes": 41.8,
   "rule_version": "CQS-MF-0.2",
   "tier": "ROTATION_SELECTIVE",
   "old_gate_shadow": "ON(SOFT, MF +5)",
@@ -1058,7 +1071,7 @@
  "hm": {
   "status": "OK",
   "as_of_utc": "2026-10-17T16:45:45Z",
-  "age_minutes": 35.0,
+  "age_minutes": 75.6,
   "rule_version": "CQS-HM-0.1",
   "bar_close_sast": "10-17 18:00",
   "tier": "ROTATION_SELECTIVE",
@@ -1067,8 +1080,8 @@
    "max_pos": 2
   },
   "start_equity_usdt": 150.0,
-  "paper_equity_usdt": 150.0,
-  "cash_usdt": 150.0,
+  "paper_equity_usdt": 200.0,
+  "cash_usdt": 200.0,
   "exposure_frac": 0.0,
   "n_positions": 0,
   "runner_count": 0,
@@ -1218,12 +1231,26 @@
   "universe": {
    "n_symbols": 89,
    "built_at_utc": "2026-10-17T16:05:18Z"
-  }
+  },
+  "net_deposits_usdt": 50.0,
+  "deposits": [
+   {
+    "T_ms": 1792260072596,
+    "at_sast": "10-17 20:01",
+    "amount": 50.0,
+    "kind": "CASH_DEPOSIT"
+   }
+  ],
+  "capital_base_usdt": 200.0,
+  "pnl_ex_deposits_usdt": 0.0,
+  "twr_pct": 0.0,
+  "early_rules": null,
+  "min_order_usdt": 15.0
  },
  "vetoes": {
   "status": "OK",
   "as_of_utc": "2026-10-17T16:45:49Z",
-  "age_minutes": 34.9,
+  "age_minutes": 75.5,
   "items": [
    {
     "symbol": "onchain:bsc:0x25042161f871a34e77a7af1aff74aa1a0dc9b4c661fd53c7504948ad97f8d13f:0x277add739c6e0477616948357af9e79fe1ec9b80",
@@ -1278,7 +1305,7 @@
     "listing_age_days": 2054.5,
     "vol24h_usdt": 1657602.0,
     "early_reason": "LOW_VOLUME",
-    "size_cap_pct": 5
+    "size_cap_pct": 7.5
    },
    {
     "symbol": "FLOKI",
@@ -1291,7 +1318,7 @@
     "listing_age_days": 1401.5,
     "vol24h_usdt": 544915.0,
     "early_reason": "LOW_VOLUME",
-    "size_cap_pct": 5
+    "size_cap_pct": 7.5
    }
   ],
   "scope": "latest core run (CEX structure/whale vetoes + on-chain security vetoes) + latest MF run"
@@ -1299,7 +1326,7 @@
  "universe": {
   "status": "OK",
   "as_of_utc": "2026-10-17T17:19:30Z",
-  "age_minutes": 1.2,
+  "age_minutes": 41.8,
   "schema": "cqs-universe-v1",
   "rule_version": "CQS-UNI-1.1",
   "config_hash": "dd9b36285f3c",
@@ -1377,7 +1404,7 @@
   "size_cap_pct": {
    "ESTABLISHED": 20,
    "NEW_MEME": 10,
-   "EARLY_WATCH": 5
+   "EARLY_WATCH": 7.5
   },
   "early_rule_text": "EARLY_WATCH (cqs-v3.5.0) = not in a main tier AND (LOW_VOLUME: 24h vol in [0.5M, tier floor) - 2M (3M entry gap included) for coins ESTABLISHED by age, 5M for new/meme; NEW_LISTING: age 3-14d with vol >= 0.5M; VOLUME_SURGE: spot 24h vol >= 5x the 7-day average daily spot volume and vol >= 100k). Same exclusions; spread <= 50 bps; capped at top 120 by volume + all surge coins, hard cap 200. Promoted to ESTABLISHED / NEW_MEME at the next daily rebuild once a main floor is cleared.",
   "security_veto_established_not_enforced": [
@@ -1571,7 +1598,8 @@
    "threshold": null,
    "expires_utc": "2026-10-17T20:45:49Z",
    "status": "ACTIVE",
-   "note": "core verdict PAPER_CANDIDATE (strong_cex); valid 4h after the core run"
+   "note": "core verdict PAPER_CANDIDATE (strong_cex); valid 4h after the core run",
+   "min_order_usdt": 15
   },
   {
    "source": "MF_PENDING",
@@ -1594,7 +1622,8 @@
    "threshold": 50,
    "expires_utc": "2026-10-17T21:09:25Z",
    "status": "PENDING",
-   "note": "paper fill when a closed 1H candle closes above trigger before expiry; cancelled if price closes below stop_initial"
+   "note": "paper fill when a closed 1H candle closes above trigger before expiry; cancelled if price closes below stop_initial",
+   "min_order_usdt": 15
   }
  ]
 }
