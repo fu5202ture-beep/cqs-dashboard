@@ -1,7 +1,7 @@
 {
  "schema": "cqs-signals-v1",
- "generated_at_utc": "2026-10-17T15:47:52Z",
- "source_run": "signals_export.py build",
+ "generated_at_utc": "2026-10-17T16:12:38Z",
+ "source_run": "sentinel.py mf",
  "stale_after_minutes": 90,
  "rule_versions": {
   "repo_tag": "cqs-v3.3.1-1-g7527bf0",
@@ -17,14 +17,14 @@
  "mode": "PAPER",
  "market": {
   "status": "OK",
-  "as_of_utc": "2026-10-17T15:11:16Z",
-  "age_minutes": 36.6,
+  "as_of_utc": "2026-10-17T16:11:47Z",
+  "age_minutes": 0.9,
   "btc_tier": "ROTATION_SELECTIVE",
   "btc_tier_source": "mf_ledger.mf_runs (latest hourly MF run; vcpd-2.0 mtf.tier on closed BTC 1D+4H)",
   "btc_tier_vcpd": "ROTATION_SELECTIVE",
   "btc_tier_vcpd_bar_close_sast": "2026-10-17 14:00",
-  "last_closed_4h_candle_close_utc": "2026-10-17T12:00:00Z",
-  "btc_close_4h": 81576.2,
+  "last_closed_4h_candle_close_utc": "2026-10-17T16:00:00Z",
+  "btc_close_4h": 81349.6,
   "btc_ema20_1d": 82817.27,
   "btc_ema50_1d": 80423.51,
   "tier_cap": 0.5,
@@ -45,7 +45,7 @@
  "top7": {
   "status": "OK",
   "as_of_utc": "2026-10-17T12:39:37Z",
-  "age_minutes": 188.2,
+  "age_minutes": 213.0,
   "bar_close_sast": "2026-10-17 14:00",
   "source": "out/vcpd/latest2.json (rank/order) + out/shadow/latest_shadow.json (conviction/families/N_eff) + ledger.sqlite (core state) + out/snapshot.json (RS)",
   "items": [
@@ -398,8 +398,8 @@
  },
  "mf": {
   "status": "OK",
-  "as_of_utc": "2026-10-17T15:11:16Z",
-  "age_minutes": 36.6,
+  "as_of_utc": "2026-10-17T16:11:47Z",
+  "age_minutes": 0.9,
   "rule_version": "CQS-MF-0.2",
   "tier": "ROTATION_SELECTIVE",
   "old_gate_shadow": "ON(SOFT, MF +5)",
@@ -437,30 +437,31 @@
    }
   ],
   "open_positions": [],
-  "candidates_above_threshold": [],
-  "accepted_this_run": [],
-  "near_threshold": [
+  "candidates_above_threshold": [
    {
-    "symbol": "KMNO-USDT",
-    "score": 49.6,
+    "symbol": "A-USDT",
+    "score": 51.8,
+    "accepted": true,
+    "risk_mult": 0.5,
     "reasons": [
-     "SCORE<50"
-    ]
-   },
-   {
-    "symbol": "TIA-USDT",
-    "score": 45.2,
-    "reasons": [
-     "SCORE<50"
-    ]
+     "MF_ROTATION_LEADER_HALF",
+     "MF_FULL_RISK"
+    ],
+    "trigger": 0.11169,
+    "invalidation": 0.09503,
+    "rs_btc": 0.04221
    }
   ],
+  "accepted_this_run": [
+   "A-USDT"
+  ],
+  "near_threshold": [],
   "new_events": []
  },
  "hm": {
   "status": "OK",
   "as_of_utc": "2026-10-17T14:42:33Z",
-  "age_minutes": 65.3,
+  "age_minutes": 90.1,
   "rule_version": "CQS-HM-0.1",
   "bar_close_sast": "10-17 14:00",
   "tier": "ROTATION_SELECTIVE",
@@ -569,7 +570,7 @@
  "vetoes": {
   "status": "OK",
   "as_of_utc": "2026-10-17T14:41:56Z",
-  "age_minutes": 65.9,
+  "age_minutes": 90.7,
   "items": [
    {
     "symbol": "onchain:base:0x01784ef301d79e4b2df3a21ad9a536d4cf09a5ce:0xacfe6019ed1a7dc6f7b508c02d1b04ec88cc21bf",
