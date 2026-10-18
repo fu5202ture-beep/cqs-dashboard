@@ -1,7 +1,7 @@
 {
  "schema": "cqs-signals-v2",
- "generated_at_utc": "2026-10-18T06:08:56Z",
- "source_run": "sentinel.py mf",
+ "generated_at_utc": "2026-10-18T06:20:17Z",
+ "source_run": "sentinel_jobs.py run --no-track",
  "stale_after_minutes": 90,
  "rule_versions": {
   "repo_tag": "smw-0.2",
@@ -32,7 +32,7 @@
  "market": {
   "status": "OK",
   "as_of_utc": "2026-10-18T06:07:52Z",
-  "age_minutes": 1.1,
+  "age_minutes": 12.4,
   "btc_tier": "ROTATION_SELECTIVE",
   "btc_tier_source": "mf_ledger.mf_runs (latest hourly MF run; vcpd-2.0 mtf.tier on closed BTC 1D+4H)",
   "btc_tier_vcpd": "ROTATION_SELECTIVE",
@@ -43,15 +43,13 @@
   "btc_ema50_1d": 80465.31,
   "tier_cap": 0.5,
   "core_gate": {
-   "status": "ON(SOFT +10)",
+   "status": "OFF",
    "hard": false,
-   "soft": true,
-   "conditions": [
-    "HYSTERESIS_PENDING_OFF_1/2"
-   ],
+   "soft": false,
+   "conditions": [],
    "btc_4h_quadrant": "NEUTRAL",
    "btc_1d_quadrant": "NEUTRAL",
-   "as_of_utc": "2026-10-18T04:42:24Z",
+   "as_of_utc": "2026-10-18T06:16:22Z",
    "source": "out/snapshot.json (core run)",
    "error": null
   },
@@ -59,7 +57,7 @@
    "status": "OK",
    "rule_version": "CQS-MACRO-0.1",
    "as_of_utc": "2026-10-18T06:08:55Z",
-   "age_min": 0.0,
+   "age_min": 11.4,
    "source": "DefiLlama public API",
    "display_only": true,
    "gates": "none (display only)",
@@ -102,7 +100,7 @@
  "top7": {
   "status": "OK",
   "as_of_utc": "2026-10-18T04:40:45Z",
-  "age_minutes": 88.2,
+  "age_minutes": 99.5,
   "bar_close_sast": "2026-10-18 06:00",
   "scope": "FULL_UNIVERSE",
   "source": "out/shadow/latest_shadow.json top7_universe (rank/score/conviction) + ledger.sqlite (core state) + out/snapshot.json (RS)",
@@ -875,7 +873,7 @@
  "top7_legacy": {
   "status": "OK",
   "as_of_utc": "2026-10-18T04:40:26Z",
-  "age_minutes": 88.5,
+  "age_minutes": 99.9,
   "bar_close_sast": "2026-10-18 06:00",
   "source": "out/vcpd/latest2.json (rank/order) + out/shadow/latest_shadow.json (conviction/families/N_eff) + ledger.sqlite (core state) + out/snapshot.json (RS)",
   "items": [
@@ -1243,7 +1241,7 @@
  "mf": {
   "status": "OK",
   "as_of_utc": "2026-10-18T06:07:52Z",
-  "age_minutes": 1.1,
+  "age_minutes": 12.4,
   "rule_version": "CQS-MF-0.2",
   "tier": "ROTATION_SELECTIVE",
   "old_gate_shadow": "OFF",
@@ -1307,7 +1305,7 @@
  "hm": {
   "status": "OK",
   "as_of_utc": "2026-10-18T04:42:16Z",
-  "age_minutes": 86.7,
+  "age_minutes": 98.0,
   "rule_version": "CQS-HM-0.1",
   "bar_close_sast": "10-18 06:00",
   "tier": "ROTATION_SELECTIVE",
@@ -1541,8 +1539,8 @@
  },
  "vetoes": {
   "status": "OK",
-  "as_of_utc": "2026-10-18T04:42:24Z",
-  "age_minutes": 86.5,
+  "as_of_utc": "2026-10-18T06:16:22Z",
+  "age_minutes": 3.9,
   "items": [
    {
     "symbol": "onchain:base:0x01784ef301d79e4b2df3a21ad9a536d4cf09a5ce:0xacfe6019ed1a7dc6f7b508c02d1b04ec88cc21bf",
@@ -1559,9 +1557,9 @@
     "size_cap_pct": null
    },
    {
-    "symbol": "onchain:eth:0xd57467b3114eb68dd57ee541875d157ec71ecd0fdb3fc5d3e87a91f0b7f9991a:0x4a220e6096b25eadb88358cb44068a3248254675",
-    "inst": "eth:0x4a220e6096b25eadb88358cb44068a3248254675",
-    "name": "QNT / USDC 0.3%",
+    "symbol": "onchain:bsc:0xcaaf3c41a40103a23eeaa4bba468af3cf5b0e0d8:0xcae117ca6bc8a341d2e7207f30e180f0e5618b9d",
+    "inst": "bsc:0xcae117ca6bc8a341d2e7207f30e180f0e5618b9d",
+    "name": "ARK / USDT",
     "kind": "SECURITY_VETO",
     "reason": "MINTABLE",
     "source": "snapshot.onchain_vetoes",
@@ -1573,23 +1571,9 @@
     "size_cap_pct": null
    },
    {
-    "symbol": "onchain:bsc:0x9cfea9ef82f26857c3426487774c088330555da6113c61ac7fb8b30d0ae434b3:0x0c69199c1562233640e0db5ce2c399a88eb507c7",
-    "inst": "bsc:0x0c69199c1562233640e0db5ce2c399a88eb507c7",
-    "name": "CYS / USDC 0.007%",
-    "kind": "SECURITY_VETO",
-    "reason": "MINTABLE,OWNER_CHANGE_BALANCE,BLACKLIST",
-    "source": "snapshot.onchain_vetoes",
-    "universe_tier": null,
-    "security_status": null,
-    "listing_age_days": null,
-    "vol24h_usdt": null,
-    "early_reason": null,
-    "size_cap_pct": null
-   },
-   {
-    "symbol": "onchain:bsc:0xcaaf3c41a40103a23eeaa4bba468af3cf5b0e0d8:0xcae117ca6bc8a341d2e7207f30e180f0e5618b9d",
-    "inst": "bsc:0xcae117ca6bc8a341d2e7207f30e180f0e5618b9d",
-    "name": "ARK / USDT",
+    "symbol": "onchain:eth:0xd57467b3114eb68dd57ee541875d157ec71ecd0fdb3fc5d3e87a91f0b7f9991a:0x4a220e6096b25eadb88358cb44068a3248254675",
+    "inst": "eth:0x4a220e6096b25eadb88358cb44068a3248254675",
+    "name": "QNT / USDC 0.3%",
     "kind": "SECURITY_VETO",
     "reason": "MINTABLE",
     "source": "snapshot.onchain_vetoes",
@@ -1632,7 +1616,7 @@
  "universe": {
   "status": "OK",
   "as_of_utc": "2026-10-18T04:42:24Z",
-  "age_minutes": 86.5,
+  "age_minutes": 97.9,
   "schema": "cqs-universe-v1",
   "rule_version": "CQS-UNI-1.1",
   "config_hash": "dd9b36285f3c",
@@ -2142,8 +2126,8 @@
  ],
  "smw": {
   "status": "OK",
-  "as_of_utc": "2026-10-18T05:50:04Z",
-  "age_minutes": 18.9,
+  "as_of_utc": "2026-10-18T06:10:37Z",
+  "age_minutes": 9.7,
   "n": 0,
   "weight_state": "SHADOW",
   "rule_version": "SMW-0.2"
