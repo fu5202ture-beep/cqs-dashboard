@@ -1,7 +1,7 @@
 {
  "schema": "cqs-signals-v2",
- "generated_at_utc": "2026-10-19T12:50:11Z",
- "source_run": "sentinel_jobs.py fast",
+ "generated_at_utc": "2026-10-19T12:58:05Z",
+ "source_run": "sentinel_jobs.py track",
  "stale_after_minutes": 90,
  "rule_versions": {
   "repo_tag": "cqs-v3.7.1",
@@ -32,7 +32,7 @@
  "market": {
   "status": "OK",
   "as_of_utc": "2026-10-19T12:49:45Z",
-  "age_minutes": 0.4,
+  "age_minutes": 8.3,
   "btc_tier": "ROTATION_SELECTIVE",
   "btc_tier_source": "mf_ledger.mf_runs (latest hourly MF run; vcpd-2.0 mtf.tier on closed BTC 1D+4H)",
   "btc_tier_vcpd": "ROTATION_SELECTIVE",
@@ -57,7 +57,7 @@
    "status": "OK",
    "rule_version": "CQS-MACRO-0.1",
    "as_of_utc": "2026-10-19T12:35:05Z",
-   "age_min": 15.1,
+   "age_min": 23.0,
    "source": "DefiLlama public API",
    "display_only": true,
    "gates": "none (display only)",
@@ -100,7 +100,7 @@
  "top7": {
   "status": "OK",
   "as_of_utc": "2026-10-19T12:16:33Z",
-  "age_minutes": 33.6,
+  "age_minutes": 41.5,
   "bar_close_sast": "2026-10-19 14:00",
   "scope": "FULL_UNIVERSE",
   "source": "out/shadow/latest_shadow.json top7_universe (rank/score/conviction) + ledger.sqlite (core state) + out/snapshot.json (RS)",
@@ -858,7 +858,7 @@
  "top7_legacy": {
   "status": "OK",
   "as_of_utc": "2026-10-19T12:16:15Z",
-  "age_minutes": 33.9,
+  "age_minutes": 41.8,
   "bar_close_sast": "2026-10-19 14:00",
   "source": "out/vcpd/latest2.json (rank/order) + out/shadow/latest_shadow.json (conviction/families/N_eff) + ledger.sqlite (core state) + out/snapshot.json (RS)",
   "items": [
@@ -1273,7 +1273,7 @@
  "mf": {
   "status": "OK",
   "as_of_utc": "2026-10-19T12:49:45Z",
-  "age_minutes": 0.4,
+  "age_minutes": 8.3,
   "rule_version": "CQS-MF-0.2",
   "tier": "ROTATION_SELECTIVE",
   "old_gate_shadow": "OFF",
@@ -1414,7 +1414,7 @@
  "hm": {
   "status": "OK",
   "as_of_utc": "2026-10-19T12:18:02Z",
-  "age_minutes": 32.1,
+  "age_minutes": 40.0,
   "rule_version": "CQS-HM-0.1",
   "bar_close_sast": "10-19 14:00",
   "tier": "ROTATION_SELECTIVE",
@@ -1716,7 +1716,7 @@
  "vetoes": {
   "status": "OK",
   "as_of_utc": "2026-10-19T12:45:40Z",
-  "age_minutes": 4.5,
+  "age_minutes": 12.4,
   "items": [
    {
     "symbol": "onchain:eth:0xa43fe16908251ee70ef74718545e4fe6c5ccec9f:0x6982508145454ce325ddbe47a25d4ec3d2311933",
@@ -1806,7 +1806,7 @@
  "universe": {
   "status": "OK",
   "as_of_utc": "2026-10-19T00:03:12Z",
-  "age_minutes": 767.0,
+  "age_minutes": 774.9,
   "schema": "cqs-universe-v1",
   "rule_version": "CQS-UNI-1.1",
   "config_hash": "dd9b36285f3c",
@@ -2057,12 +2057,81 @@
   "rule": "ESTABLISHED = (listing age >= 180d AND 24h vol >= 3M USDT; retained while >= 2M) OR old 12-coin whitelist. NEW_MEME = age < 180d OR meme list/name heuristic OR (mcap unknown AND age < 365d), checked after ESTABLISHED (so DOGE/PEPE are ESTABLISHED). Floors: ESTABLISHED >= 2M; NEW_MEME >= 5M, age >= 14d, spread <= 30 bps.",
   "source": "out/universe/universe.json (universe.py, daily cache)"
  },
- "buy_signals": [],
+ "buy_signals": [
+  {
+   "source": "SMW_COPY",
+   "symbol": null,
+   "base": "solana:FGkCj28xhabWTYg9QyzACvs4NsN6LUyesP6EwiHepump",
+   "universe_tier": null,
+   "security_status": "OK",
+   "listing_age_days": null,
+   "vol24h_usdt": null,
+   "early_reason": null,
+   "size_cap_pct": 7.9,
+   "chain": "solana",
+   "token_address": "FGkCj28xhabWTYg9QyzACvs4NsN6LUyesP6EwiHepump",
+   "token_symbol": "UHI",
+   "okx_instId": null,
+   "okx_tradable": false,
+   "okx_match": "NOT_ADDRESS_VERIFIED",
+   "wallet_count": 1,
+   "wallet_quality": 1.089,
+   "smw_weight_state": "SHADOW",
+   "signal_time_utc": "2026-10-19T12:46:07Z",
+   "candle_close_utc": null,
+   "candle_tf": null,
+   "entry_ref_price": 0.001098396936,
+   "trigger": null,
+   "stop_initial": 0.000549198468,
+   "risk_pct": 0.25,
+   "score": 1.089,
+   "threshold": null,
+   "expires_utc": "2026-10-19T16:46:07Z",
+   "status": "SHADOW",
+   "smw_cap_tier": "EARLY_WATCH",
+   "note": "SMW-0.1 paper copy of 1 qualified wallet(s); entry_ref = worst 1m price 30-120s after the wallet buy (+costs in ledger); weight SHADOW (logged only, no score influence); on-chain only (no address-verified OKX spot USDT instrument)",
+   "min_order_usdt": 15,
+   "micro": {
+    "basis_pct": null,
+    "funding_rate_pct": null,
+    "oi_change_pct": null,
+    "close_ratio": null,
+    "vol_ratio": null,
+    "label": "NEUTRAL",
+    "label_zh": "📊微观中性",
+    "bonus": 0.0,
+    "micro_trim": false,
+    "status": "NO_READING",
+    "as_of": null,
+    "why": []
+   },
+   "dex": {
+    "buy_ratio_h6": null,
+    "buy_ratio_h24": null,
+    "liquidity_usd": null,
+    "chain": null,
+    "pair_url": null,
+    "match_quality": "NO_READING",
+    "status": "NO_READING",
+    "trigger": false,
+    "wash_suspect": false,
+    "txns_h6": null,
+    "txns_h24": null,
+    "volume_h24_usd": null,
+    "avg_trade_usd_h24": null,
+    "dex": null,
+    "base_address": null,
+    "as_of": null,
+    "factor_id": "S_DEX_BUY_PRESSURE",
+    "factor_state": "SHADOW"
+   }
+  }
+ ],
  "smw": {
   "status": "OK",
-  "as_of_utc": "2026-10-19T12:40:05Z",
-  "age_minutes": 10.1,
-  "n": 0,
+  "as_of_utc": "2026-10-19T12:57:29Z",
+  "age_minutes": 0.6,
+  "n": 1,
   "weight_state": "SHADOW",
   "rule_version": "SMW-0.2"
  },
