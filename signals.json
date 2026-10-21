@@ -1,7 +1,7 @@
 {
  "schema": "cqs-signals-v2",
- "generated_at_utc": "2026-10-21T11:21:12Z",
- "source_run": "sentinel_jobs.py track",
+ "generated_at_utc": "2026-10-21T11:27:28Z",
+ "source_run": "sentinel_jobs.py fast",
  "stale_after_minutes": 90,
  "rule_versions": {
   "repo_tag": "cqs-v3.7.1",
@@ -31,8 +31,8 @@
  "size_cap_rule": "size_cap_pct = max(base cap, min_order_usdt / ref_equity_usdt x 100), 1 decimal (base: ESTABLISHED 20 / NEW_MEME 10 / EARLY_WATCH 5); ref_equity_usdt = HM paper equity (out/hm/latest_hm.json, deposit-aware)",
  "market": {
   "status": "OK",
-  "as_of_utc": "2026-10-21T11:13:42Z",
-  "age_minutes": 7.5,
+  "as_of_utc": "2026-10-21T11:26:51Z",
+  "age_minutes": 0.6,
   "btc_tier": "ROTATION_SELECTIVE",
   "btc_tier_source": "mf_ledger.mf_runs (latest hourly MF run; vcpd-2.0 mtf.tier on closed BTC 1D+4H)",
   "btc_tier_vcpd": "ROTATION_SELECTIVE",
@@ -49,7 +49,7 @@
    "conditions": [],
    "btc_4h_quadrant": "IGNITION",
    "btc_1d_quadrant": "NEUTRAL",
-   "as_of_utc": "2026-10-21T11:09:09Z",
+   "as_of_utc": "2026-10-21T11:22:21Z",
    "source": "out/snapshot.json (core run)",
    "error": null
   },
@@ -57,7 +57,7 @@
    "status": "OK",
    "rule_version": "CQS-MACRO-0.1",
    "as_of_utc": "2026-10-21T10:45:31Z",
-   "age_min": 35.7,
+   "age_min": 41.9,
    "source": "DefiLlama public API",
    "display_only": true,
    "gates": "none (display only)",
@@ -100,7 +100,7 @@
  "top7": {
   "status": "OK",
   "as_of_utc": "2026-10-21T08:08:33Z",
-  "age_minutes": 192.6,
+  "age_minutes": 198.9,
   "bar_close_sast": "2026-10-21 10:00",
   "scope": "FULL_UNIVERSE",
   "source": "out/shadow/latest_shadow.json top7_universe (rank/score/conviction) + ledger.sqlite (core state) + out/snapshot.json (RS)",
@@ -867,7 +867,7 @@
  "top7_legacy": {
   "status": "OK",
   "as_of_utc": "2026-10-21T08:08:15Z",
-  "age_minutes": 193.0,
+  "age_minutes": 199.2,
   "bar_close_sast": "2026-10-21 10:00",
   "source": "out/vcpd/latest2.json (rank/order) + out/shadow/latest_shadow.json (conviction/families/N_eff) + ledger.sqlite (core state) + out/snapshot.json (RS)",
   "items": [
@@ -1276,13 +1276,13 @@
  },
  "mf": {
   "status": "OK",
-  "as_of_utc": "2026-10-21T11:13:42Z",
-  "age_minutes": 7.5,
+  "as_of_utc": "2026-10-21T11:26:51Z",
+  "age_minutes": 0.6,
   "rule_version": "CQS-MF-0.2",
   "tier": "ROTATION_SELECTIVE",
   "old_gate_shadow": "OFF",
   "entry_threshold": 45,
-  "paper_equity_usdt": 9995.11,
+  "paper_equity_usdt": 9995.37,
   "start_equity_usdt": 10000,
   "pending_orders": [
    {
@@ -1516,6 +1516,19 @@
   ],
   "near_threshold": [
    {
+    "symbol": "PEOPLE-USDT",
+    "score": 44.2,
+    "reasons": [
+     "SCORE<45"
+    ],
+    "universe_tier": "EARLY_WATCH",
+    "security_status": "UNVERIFIED",
+    "listing_age_days": 1789.7,
+    "vol24h_usdt": 2415721.0,
+    "early_reason": "LOW_VOLUME",
+    "size_cap_pct": 8.0
+   },
+   {
     "symbol": "INJ-USDT",
     "score": 40.3,
     "reasons": [
@@ -1651,16 +1664,16 @@
   "entry_threshold_early_watch": 70,
   "early_watch": {
    "by_mode": {
-    "FULL": 9,
-    "PRECHECK_4H": 64
+    "FULL": 10,
+    "PRECHECK_4H": 63
    },
    "by_status": {
-    "FULL_FROM_SNAPSHOT": 6,
-    "NO_CONFIRM": 64,
+    "FULL_FROM_SNAPSHOT": 7,
+    "NO_CONFIRM": 63,
     "PASS": 3
    },
    "candidates": [],
-   "evaluated": 9,
+   "evaluated": 10,
    "insufficient_bars": [],
    "members": 73,
    "scanned": 73
@@ -1675,36 +1688,36 @@
    },
    "early_watch": {
     "by_mode": {
-     "FULL": 9,
-     "PRECHECK_4H": 64
+     "FULL": 10,
+     "PRECHECK_4H": 63
     },
     "by_status": {
-     "FULL_FROM_SNAPSHOT": 6,
-     "NO_CONFIRM": 64,
+     "FULL_FROM_SNAPSHOT": 7,
+     "NO_CONFIRM": 63,
      "PASS": 3
     },
     "candidates": [],
-    "evaluated": 9,
+    "evaluated": 10,
     "insufficient_bars": [],
     "members": 73,
     "scanned": 73
    },
-   "evaluated": 118,
-   "fetched_extra": 31,
+   "evaluated": 119,
+   "fetched_extra": 33,
    "n": 110,
    "note": "cached 2026-10-21T00:02:09Z"
   },
   "timing": {
-   "early_s": 13.5,
-   "fetch_s": 10.9,
-   "total_s": 34.4,
+   "early_s": 12.4,
+   "fetch_s": 12.3,
+   "total_s": 35.3,
    "universe_s": 0.0
   }
  },
  "hm": {
   "status": "OK",
   "as_of_utc": "2026-10-21T08:10:06Z",
-  "age_minutes": 191.1,
+  "age_minutes": 197.4,
   "rule_version": "CQS-HM-0.1",
   "bar_close_sast": "10-21 10:00",
   "tier": "ROTATION_SELECTIVE",
@@ -1997,8 +2010,8 @@
  },
  "vetoes": {
   "status": "OK",
-  "as_of_utc": "2026-10-21T11:09:09Z",
-  "age_minutes": 12.1,
+  "as_of_utc": "2026-10-21T11:22:21Z",
+  "age_minutes": 5.1,
   "items": [
    {
     "symbol": "PEPE",
@@ -2054,6 +2067,20 @@
     "size_cap_pct": null
    },
    {
+    "symbol": "onchain:eth:0xd57467b3114eb68dd57ee541875d157ec71ecd0fdb3fc5d3e87a91f0b7f9991a:0x4a220e6096b25eadb88358cb44068a3248254675",
+    "inst": "eth:0x4a220e6096b25eadb88358cb44068a3248254675",
+    "name": "QNT / USDC 0.3%",
+    "kind": "SECURITY_VETO",
+    "reason": "MINTABLE",
+    "source": "snapshot.onchain_vetoes",
+    "universe_tier": null,
+    "security_status": null,
+    "listing_age_days": null,
+    "vol24h_usdt": null,
+    "early_reason": null,
+    "size_cap_pct": null
+   },
+   {
     "symbol": "CHZ",
     "inst": "CHZ-USDT",
     "kind": "UNIVERSE_SECURITY_VETO",
@@ -2098,7 +2125,7 @@
  "universe": {
   "status": "OK",
   "as_of_utc": "2026-10-21T00:02:09Z",
-  "age_minutes": 679.1,
+  "age_minutes": 685.3,
   "schema": "cqs-universe-v1",
   "rule_version": "CQS-UNI-1.1",
   "config_hash": "dd9b36285f3c",
@@ -2361,16 +2388,16 @@
    "vol24h_usdt": 21900751.0,
    "early_reason": null,
    "size_cap_pct": 20,
-   "signal_time_utc": "2026-10-21T11:09:09Z",
+   "signal_time_utc": "2026-10-21T11:22:21Z",
    "candle_close_utc": "2026-10-21T11:00:00Z",
    "candle_tf": "1H",
    "entry_ref_price": 0.3848,
    "trigger": null,
    "stop_initial": 0.3589285714285714,
    "risk_pct": 0.0,
-   "score": 62.9,
+   "score": 67.9,
    "threshold": null,
-   "expires_utc": "2026-10-21T15:09:09Z",
+   "expires_utc": "2026-10-21T15:22:21Z",
    "status": "ACTIVE",
    "note": "core verdict PAPER_CANDIDATE (strong_cex); valid 4h after the core run",
    "min_order_usdt": 15,
@@ -2417,72 +2444,6 @@
   },
   {
    "source": "CORE_PAPER_CANDIDATE",
-   "symbol": "ENA-USDT",
-   "base": "ENA",
-   "universe_tier": "ESTABLISHED",
-   "security_status": "OK",
-   "listing_age_days": 398.8,
-   "vol24h_usdt": 60632004.0,
-   "early_reason": null,
-   "size_cap_pct": 20,
-   "signal_time_utc": "2026-10-21T11:09:09Z",
-   "candle_close_utc": "2026-10-21T11:00:00Z",
-   "candle_tf": "1H",
-   "entry_ref_price": 0.20637,
-   "trigger": null,
-   "stop_initial": 0.19195428571428572,
-   "risk_pct": 0.0,
-   "score": 59.2,
-   "threshold": null,
-   "expires_utc": "2026-10-21T15:09:09Z",
-   "status": "ACTIVE",
-   "note": "core verdict PAPER_CANDIDATE (strong_cex); valid 4h after the core run",
-   "min_order_usdt": 15,
-   "micro": {
-    "basis_pct": 0.0675,
-    "funding_rate_pct": -0.00206,
-    "oi_change_pct": 1.341,
-    "close_ratio": 0.729,
-    "vol_ratio": 1.507,
-    "label": "SHORT_SQUEEZE_SUPER_BUY",
-    "label_zh": "🚀现货逼空轧空",
-    "bonus": 4.0,
-    "micro_trim": false,
-    "status": "OK",
-    "as_of": "2026-10-21T11:21:10Z",
-    "why": [
-     "SQUEEZE_STATE",
-     "FUNDING_LOW",
-     "BASIS_OK",
-     "CLOSE_RATIO_HIGH"
-    ],
-    "src": [
-     "CORE_PAPER_CANDIDATE"
-    ]
-   },
-   "dex": {
-    "buy_ratio_h6": 0.363,
-    "buy_ratio_h24": 0.484,
-    "liquidity_usd": 3002232.0,
-    "chain": "ethereum",
-    "pair_url": "https://dexscreener.com/ethereum/0xc3db44adc1fcdfd5671f555236eae49f4a8eea18",
-    "match_quality": "ADDRESS",
-    "status": "OK",
-    "trigger": false,
-    "wash_suspect": false,
-    "txns_h6": 333,
-    "txns_h24": 845,
-    "volume_h24_usd": 3255825.0,
-    "avg_trade_usd_h24": 3853.05,
-    "dex": "uniswap",
-    "base_address": "0x57e114B691Db790C35207b2e685D4A43181e6061",
-    "as_of": "2026-10-21T11:21:12Z",
-    "factor_id": "S_DEX_BUY_PRESSURE",
-    "factor_state": "SHADOW"
-   }
-  },
-  {
-   "source": "CORE_PAPER_CANDIDATE",
    "symbol": "ASTER-USDT",
    "base": "ASTER",
    "universe_tier": "ESTABLISHED",
@@ -2491,7 +2452,7 @@
    "vol24h_usdt": 9692586.0,
    "early_reason": null,
    "size_cap_pct": 20,
-   "signal_time_utc": "2026-10-21T11:09:09Z",
+   "signal_time_utc": "2026-10-21T11:22:21Z",
    "candle_close_utc": "2026-10-21T11:00:00Z",
    "candle_tf": "1H",
    "entry_ref_price": 0.7248,
@@ -2500,7 +2461,7 @@
    "risk_pct": 0.0,
    "score": 57.5,
    "threshold": null,
-   "expires_utc": "2026-10-21T15:09:09Z",
+   "expires_utc": "2026-10-21T15:22:21Z",
    "status": "ACTIVE",
    "note": "core verdict PAPER_CANDIDATE (strong_cex); valid 4h after the core run",
    "min_order_usdt": 15,
@@ -2549,6 +2510,72 @@
   },
   {
    "source": "CORE_PAPER_CANDIDATE",
+   "symbol": "ENA-USDT",
+   "base": "ENA",
+   "universe_tier": "ESTABLISHED",
+   "security_status": "OK",
+   "listing_age_days": 398.8,
+   "vol24h_usdt": 60632004.0,
+   "early_reason": null,
+   "size_cap_pct": 20,
+   "signal_time_utc": "2026-10-21T11:22:21Z",
+   "candle_close_utc": "2026-10-21T11:00:00Z",
+   "candle_tf": "1H",
+   "entry_ref_price": 0.20637,
+   "trigger": null,
+   "stop_initial": 0.19195428571428572,
+   "risk_pct": 0.0,
+   "score": 56.2,
+   "threshold": null,
+   "expires_utc": "2026-10-21T15:22:21Z",
+   "status": "ACTIVE",
+   "note": "core verdict PAPER_CANDIDATE (strong_cex); valid 4h after the core run",
+   "min_order_usdt": 15,
+   "micro": {
+    "basis_pct": 0.0675,
+    "funding_rate_pct": -0.00206,
+    "oi_change_pct": 1.341,
+    "close_ratio": 0.729,
+    "vol_ratio": 1.507,
+    "label": "SHORT_SQUEEZE_SUPER_BUY",
+    "label_zh": "🚀现货逼空轧空",
+    "bonus": 4.0,
+    "micro_trim": false,
+    "status": "OK",
+    "as_of": "2026-10-21T11:21:10Z",
+    "why": [
+     "SQUEEZE_STATE",
+     "FUNDING_LOW",
+     "BASIS_OK",
+     "CLOSE_RATIO_HIGH"
+    ],
+    "src": [
+     "CORE_PAPER_CANDIDATE"
+    ]
+   },
+   "dex": {
+    "buy_ratio_h6": 0.363,
+    "buy_ratio_h24": 0.484,
+    "liquidity_usd": 3002232.0,
+    "chain": "ethereum",
+    "pair_url": "https://dexscreener.com/ethereum/0xc3db44adc1fcdfd5671f555236eae49f4a8eea18",
+    "match_quality": "ADDRESS",
+    "status": "OK",
+    "trigger": false,
+    "wash_suspect": false,
+    "txns_h6": 333,
+    "txns_h24": 845,
+    "volume_h24_usd": 3255825.0,
+    "avg_trade_usd_h24": 3853.05,
+    "dex": "uniswap",
+    "base_address": "0x57e114B691Db790C35207b2e685D4A43181e6061",
+    "as_of": "2026-10-21T11:21:12Z",
+    "factor_id": "S_DEX_BUY_PRESSURE",
+    "factor_state": "SHADOW"
+   }
+  },
+  {
+   "source": "CORE_PAPER_CANDIDATE",
    "symbol": "BTC-USDT",
    "base": "BTC",
    "universe_tier": "ESTABLISHED",
@@ -2557,7 +2584,7 @@
    "vol24h_usdt": 6781697794.0,
    "early_reason": null,
    "size_cap_pct": 20,
-   "signal_time_utc": "2026-10-21T11:09:09Z",
+   "signal_time_utc": "2026-10-21T11:22:21Z",
    "candle_close_utc": "2026-10-21T11:00:00Z",
    "candle_tf": "1H",
    "entry_ref_price": 83394.4,
@@ -2566,7 +2593,7 @@
    "risk_pct": 0.0,
    "score": 55.5,
    "threshold": null,
-   "expires_utc": "2026-10-21T15:09:09Z",
+   "expires_utc": "2026-10-21T15:22:21Z",
    "status": "ACTIVE",
    "note": "core verdict PAPER_CANDIDATE (strong_cex); valid 4h after the core run",
    "min_order_usdt": 15,
@@ -2738,7 +2765,7 @@
  "smw": {
   "status": "OK",
   "as_of_utc": "2026-10-21T11:06:03Z",
-  "age_minutes": 15.2,
+  "age_minutes": 21.4,
   "n": 0,
   "weight_state": "SHADOW",
   "rule_version": "SMW-0.2"
