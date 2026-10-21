@@ -1,7 +1,7 @@
 {
  "schema": "cqs-signals-v2",
- "generated_at_utc": "2026-10-21T05:01:09Z",
- "source_run": "sentinel_jobs.py fast",
+ "generated_at_utc": "2026-10-21T05:08:06Z",
+ "source_run": "sentinel_jobs.py track",
  "stale_after_minutes": 90,
  "rule_versions": {
   "repo_tag": "cqs-v3.7.1",
@@ -32,7 +32,7 @@
  "market": {
   "status": "OK",
   "as_of_utc": "2026-10-21T05:00:35Z",
-  "age_minutes": 0.6,
+  "age_minutes": 7.5,
   "btc_tier": "ROTATION_SELECTIVE",
   "btc_tier_source": "mf_ledger.mf_runs (latest hourly MF run; vcpd-2.0 mtf.tier on closed BTC 1D+4H)",
   "btc_tier_vcpd": "ROTATION_SELECTIVE",
@@ -56,51 +56,51 @@
   "macro_liquidity": {
    "status": "OK",
    "rule_version": "CQS-MACRO-0.1",
-   "as_of_utc": "2026-10-21T04:01:15Z",
-   "age_min": 59.9,
+   "as_of_utc": "2026-10-21T05:08:04Z",
+   "age_min": 0.0,
    "source": "DefiLlama public API",
    "display_only": true,
    "gates": "none (display only)",
    "stablecoins": {
-    "mcap_usd": 305127886202,
-    "chg_7d_pct": -0.747,
-    "chg_30d_pct": 0.077,
+    "mcap_usd": 304990324561,
+    "chg_7d_pct": -0.767,
+    "chg_30d_pct": 0.056,
     "n_assets": 388,
     "method": "Σ circulating[pegType] × price (peggedUSD w/o price = 1.0); 7d/30d from circulatingPrevWeek/PrevMonth at today's prices (missing = 0, i.e. new supply)"
    },
    "chains": {
     "Ethereum": {
-     "tvl_usd": 50313501895,
-     "chg_7d_pct": -0.964
+     "tvl_usd": 50296083790,
+     "chg_7d_pct": -0.999
     },
     "Solana": {
-     "tvl_usd": 5992528854,
-     "chg_7d_pct": -0.374
+     "tvl_usd": 5987044249,
+     "chg_7d_pct": -0.465
     },
     "BSC": {
-     "tvl_usd": 5841033736,
-     "chg_7d_pct": 8.379
+     "tvl_usd": 5836276345,
+     "chg_7d_pct": 8.291
     },
     "Base": {
-     "tvl_usd": 6254002400,
+     "tvl_usd": 6254017412,
      "chg_7d_pct": 0.692
     },
     "Arbitrum": {
-     "tvl_usd": 1448422357,
-     "chg_7d_pct": 3.731
+     "tvl_usd": 1448398043,
+     "chg_7d_pct": 3.729
     },
     "Sui": {
-     "tvl_usd": 498731951,
-     "chg_7d_pct": -2.389
+     "tvl_usd": 497402354,
+     "chg_7d_pct": -2.649
     }
    },
-   "runtime_s": 0.14
+   "runtime_s": 0.91
   }
  },
  "top7": {
   "status": "OK",
   "as_of_utc": "2026-10-21T04:16:39Z",
-  "age_minutes": 44.5,
+  "age_minutes": 51.4,
   "bar_close_sast": "2026-10-21 06:00",
   "scope": "FULL_UNIVERSE",
   "source": "out/shadow/latest_shadow.json top7_universe (rank/score/conviction) + ledger.sqlite (core state) + out/snapshot.json (RS)",
@@ -900,7 +900,7 @@
  "top7_legacy": {
   "status": "OK",
   "as_of_utc": "2026-10-21T04:16:20Z",
-  "age_minutes": 44.8,
+  "age_minutes": 51.8,
   "bar_close_sast": "2026-10-21 06:00",
   "source": "out/vcpd/latest2.json (rank/order) + out/shadow/latest_shadow.json (conviction/families/N_eff) + ledger.sqlite (core state) + out/snapshot.json (RS)",
   "items": [
@@ -1329,7 +1329,7 @@
  "mf": {
   "status": "OK",
   "as_of_utc": "2026-10-21T05:00:35Z",
-  "age_minutes": 0.6,
+  "age_minutes": 7.5,
   "rule_version": "CQS-MF-0.2",
   "tier": "ROTATION_SELECTIVE",
   "old_gate_shadow": "OFF",
@@ -1698,7 +1698,7 @@
  "hm": {
   "status": "OK",
   "as_of_utc": "2026-10-21T04:18:10Z",
-  "age_minutes": 43.0,
+  "age_minutes": 49.9,
   "rule_version": "CQS-HM-0.1",
   "bar_close_sast": "10-21 06:00",
   "tier": "ROTATION_SELECTIVE",
@@ -2022,7 +2022,7 @@
  "vetoes": {
   "status": "OK",
   "as_of_utc": "2026-10-21T04:56:08Z",
-  "age_minutes": 5.0,
+  "age_minutes": 12.0,
   "items": [
    {
     "symbol": "onchain:base:0x01784ef301d79e4b2df3a21ad9a536d4cf09a5ce:0xacfe6019ed1a7dc6f7b508c02d1b04ec88cc21bf",
@@ -2097,7 +2097,7 @@
  "universe": {
   "status": "OK",
   "as_of_utc": "2026-10-21T00:02:09Z",
-  "age_minutes": 299.0,
+  "age_minutes": 306.0,
   "schema": "cqs-universe-v1",
   "rule_version": "CQS-UNI-1.1",
   "config_hash": "dd9b36285f3c",
@@ -2858,8 +2858,8 @@
  ],
  "smw": {
   "status": "OK",
-  "as_of_utc": "2026-10-21T04:52:15Z",
-  "age_minutes": 8.9,
+  "as_of_utc": "2026-10-21T05:03:57Z",
+  "age_minutes": 4.1,
   "n": 0,
   "weight_state": "SHADOW",
   "rule_version": "SMW-0.2"
