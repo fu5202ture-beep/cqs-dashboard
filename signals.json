@@ -1,6 +1,6 @@
 {
  "schema": "cqs-signals-v2",
- "generated_at_utc": "2026-10-23T03:06:53Z",
+ "generated_at_utc": "2026-10-23T03:14:42Z",
  "source_run": "sentinel_jobs.py fast",
  "stale_after_minutes": 90,
  "rule_versions": {
@@ -31,7 +31,7 @@
  "size_cap_rule": "size_cap_pct = max(base cap, min_order_usdt / ref_equity_usdt x 100), 1 decimal (base: ESTABLISHED 20 / NEW_MEME 10 / EARLY_WATCH 5); ref_equity_usdt = HM paper equity (out/hm/latest_hm.json, deposit-aware)",
  "market": {
   "status": "OK",
-  "as_of_utc": "2026-10-23T03:06:25Z",
+  "as_of_utc": "2026-10-23T03:14:14Z",
   "age_minutes": 0.5,
   "btc_tier": "ROTATION_SELECTIVE",
   "btc_tier_source": "mf_ledger.mf_runs (latest hourly MF run; vcpd-2.0 mtf.tier on closed BTC 1D+4H)",
@@ -51,7 +51,7 @@
    ],
    "btc_4h_quadrant": "NEUTRAL",
    "btc_1d_quadrant": "NEUTRAL",
-   "as_of_utc": "2026-10-23T03:01:01Z",
+   "as_of_utc": "2026-10-23T03:08:56Z",
    "source": "out/snapshot.json (core run)",
    "error": null
   },
@@ -59,7 +59,7 @@
    "status": "OK",
    "rule_version": "CQS-MACRO-0.1",
    "as_of_utc": "2026-10-23T02:21:24Z",
-   "age_min": 45.4,
+   "age_min": 53.3,
    "source": "DefiLlama public API",
    "display_only": true,
    "gates": "none (display only)",
@@ -102,7 +102,7 @@
  "top7": {
   "status": "OK",
   "as_of_utc": "2026-10-23T00:13:35Z",
-  "age_minutes": 173.3,
+  "age_minutes": 181.1,
   "bar_close_sast": "2026-10-23 02:00",
   "scope": "FULL_UNIVERSE",
   "source": "out/shadow/latest_shadow.json top7_universe (rank/score/conviction) + ledger.sqlite (core state) + out/snapshot.json (RS)",
@@ -896,7 +896,7 @@
  "top7_legacy": {
   "status": "OK",
   "as_of_utc": "2026-10-23T00:13:14Z",
-  "age_minutes": 173.7,
+  "age_minutes": 181.5,
   "bar_close_sast": "2026-10-23 02:00",
   "source": "out/vcpd/latest2.json (rank/order) + out/shadow/latest_shadow.json (conviction/families/N_eff) + ledger.sqlite (core state) + out/snapshot.json (RS)",
   "items": [
@@ -1279,13 +1279,13 @@
  },
  "mf": {
   "status": "OK",
-  "as_of_utc": "2026-10-23T03:06:25Z",
+  "as_of_utc": "2026-10-23T03:14:14Z",
   "age_minutes": 0.5,
   "rule_version": "CQS-MF-0.2",
   "tier": "ROTATION_SELECTIVE",
   "old_gate_shadow": "ON(HARD)",
   "entry_threshold": 45,
-  "paper_equity_usdt": 9968.4,
+  "paper_equity_usdt": 9968.85,
   "start_equity_usdt": 10000,
   "pending_orders": [],
   "open_positions": [
@@ -1408,9 +1408,7 @@
     "size_cap_pct": 10
    }
   ],
-  "new_events": [
-   "ENTRY DASH @54.7747 stop=51.5976 notional=215U risk=12.46U (MF_ROTATION_LEADER_HALF)"
-  ],
+  "new_events": [],
   "entry_threshold_new_meme": 60,
   "entry_threshold_early_watch": 70,
   "early_watch": {
@@ -1459,14 +1457,14 @@
   "timing": {
    "early_s": 12.1,
    "fetch_s": 10.3,
-   "total_s": 27.1,
+   "total_s": 27.3,
    "universe_s": 0.0
   }
  },
  "hm": {
   "status": "OK",
   "as_of_utc": "2026-10-23T00:15:08Z",
-  "age_minutes": 171.8,
+  "age_minutes": 179.6,
   "rule_version": "CQS-HM-0.1",
   "bar_close_sast": "10-23 02:00",
   "tier": "ROTATION_SELECTIVE",
@@ -1782,8 +1780,8 @@
  },
  "vetoes": {
   "status": "OK",
-  "as_of_utc": "2026-10-23T03:01:01Z",
-  "age_minutes": 5.9,
+  "as_of_utc": "2026-10-23T03:08:56Z",
+  "age_minutes": 5.8,
   "items": [
    {
     "symbol": "onchain:eth:0xa43fe16908251ee70ef74718545e4fe6c5ccec9f:0x6982508145454ce325ddbe47a25d4ec3d2311933",
@@ -1791,6 +1789,20 @@
     "name": "PEPE / WETH",
     "kind": "SECURITY_VETO",
     "reason": "PAUSABLE,BLACKLIST",
+    "source": "snapshot.onchain_vetoes",
+    "universe_tier": null,
+    "security_status": null,
+    "listing_age_days": null,
+    "vol24h_usdt": null,
+    "early_reason": null,
+    "size_cap_pct": null
+   },
+   {
+    "symbol": "onchain:eth:0xd57467b3114eb68dd57ee541875d157ec71ecd0fdb3fc5d3e87a91f0b7f9991a:0x4a220e6096b25eadb88358cb44068a3248254675",
+    "inst": "eth:0x4a220e6096b25eadb88358cb44068a3248254675",
+    "name": "QNT / USDC 0.3%",
+    "kind": "SECURITY_VETO",
+    "reason": "MINTABLE",
     "source": "snapshot.onchain_vetoes",
     "universe_tier": null,
     "security_status": null,
@@ -1883,7 +1895,7 @@
  "universe": {
   "status": "OK",
   "as_of_utc": "2026-10-23T00:15:16Z",
-  "age_minutes": 171.6,
+  "age_minutes": 179.4,
   "schema": "cqs-universe-v1",
   "rule_version": "CQS-UNI-1.1",
   "config_hash": "dd9b36285f3c",
@@ -2342,8 +2354,8 @@
  ],
  "smw": {
   "status": "OK",
-  "as_of_utc": "2026-10-23T02:49:39Z",
-  "age_minutes": 17.2,
+  "as_of_utc": "2026-10-23T03:07:08Z",
+  "age_minutes": 7.6,
   "n": 0,
   "weight_state": "SHADOW",
   "rule_version": "SMW-0.2"
