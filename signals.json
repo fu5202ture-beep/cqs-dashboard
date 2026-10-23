@@ -1,6 +1,6 @@
 {
  "schema": "cqs-signals-v2",
- "generated_at_utc": "2026-10-23T01:36:55Z",
+ "generated_at_utc": "2026-10-23T01:45:57Z",
  "source_run": "sentinel_jobs.py fast",
  "stale_after_minutes": 90,
  "rule_versions": {
@@ -31,7 +31,7 @@
  "size_cap_rule": "size_cap_pct = max(base cap, min_order_usdt / ref_equity_usdt x 100), 1 decimal (base: ESTABLISHED 20 / NEW_MEME 10 / EARLY_WATCH 5); ref_equity_usdt = HM paper equity (out/hm/latest_hm.json, deposit-aware)",
  "market": {
   "status": "OK",
-  "as_of_utc": "2026-10-23T01:36:26Z",
+  "as_of_utc": "2026-10-23T01:45:28Z",
   "age_minutes": 0.5,
   "btc_tier": "ROTATION_SELECTIVE",
   "btc_tier_source": "mf_ledger.mf_runs (latest hourly MF run; vcpd-2.0 mtf.tier on closed BTC 1D+4H)",
@@ -51,7 +51,7 @@
    ],
    "btc_4h_quadrant": "NEUTRAL",
    "btc_1d_quadrant": "NEUTRAL",
-   "as_of_utc": "2026-10-23T01:31:16Z",
+   "as_of_utc": "2026-10-23T01:40:20Z",
    "source": "out/snapshot.json (core run)",
    "error": null
   },
@@ -59,7 +59,7 @@
    "status": "OK",
    "rule_version": "CQS-MACRO-0.1",
    "as_of_utc": "2026-10-23T01:17:56Z",
-   "age_min": 19.0,
+   "age_min": 28.0,
    "source": "DefiLlama public API",
    "display_only": true,
    "gates": "none (display only)",
@@ -102,7 +102,7 @@
  "top7": {
   "status": "OK",
   "as_of_utc": "2026-10-23T00:13:35Z",
-  "age_minutes": 83.3,
+  "age_minutes": 92.4,
   "bar_close_sast": "2026-10-23 02:00",
   "scope": "FULL_UNIVERSE",
   "source": "out/shadow/latest_shadow.json top7_universe (rank/score/conviction) + ledger.sqlite (core state) + out/snapshot.json (RS)",
@@ -896,7 +896,7 @@
  "top7_legacy": {
   "status": "OK",
   "as_of_utc": "2026-10-23T00:13:14Z",
-  "age_minutes": 83.7,
+  "age_minutes": 92.7,
   "bar_close_sast": "2026-10-23 02:00",
   "source": "out/vcpd/latest2.json (rank/order) + out/shadow/latest_shadow.json (conviction/families/N_eff) + ledger.sqlite (core state) + out/snapshot.json (RS)",
   "items": [
@@ -1279,13 +1279,13 @@
  },
  "mf": {
   "status": "OK",
-  "as_of_utc": "2026-10-23T01:36:26Z",
+  "as_of_utc": "2026-10-23T01:45:28Z",
   "age_minutes": 0.5,
   "rule_version": "CQS-MF-0.2",
   "tier": "ROTATION_SELECTIVE",
   "old_gate_shadow": "ON(HARD)",
   "entry_threshold": 45,
-  "paper_equity_usdt": 9962.08,
+  "paper_equity_usdt": 9962.37,
   "start_equity_usdt": 10000,
   "pending_orders": [
    {
@@ -1433,21 +1433,21 @@
     "scanned": 74
    },
    "evaluated": 119,
-   "fetched_extra": 28,
+   "fetched_extra": 27,
    "n": 114,
    "note": "cached 2026-10-23T00:15:16Z"
   },
   "timing": {
-   "early_s": 11.9,
-   "fetch_s": 10.7,
-   "total_s": 27.2,
+   "early_s": 12.0,
+   "fetch_s": 10.4,
+   "total_s": 26.8,
    "universe_s": 0.0
   }
  },
  "hm": {
   "status": "OK",
   "as_of_utc": "2026-10-23T00:15:08Z",
-  "age_minutes": 81.8,
+  "age_minutes": 90.8,
   "rule_version": "CQS-HM-0.1",
   "bar_close_sast": "10-23 02:00",
   "tier": "ROTATION_SELECTIVE",
@@ -1763,23 +1763,9 @@
  },
  "vetoes": {
   "status": "OK",
-  "as_of_utc": "2026-10-23T01:31:16Z",
-  "age_minutes": 5.7,
+  "as_of_utc": "2026-10-23T01:40:20Z",
+  "age_minutes": 5.6,
   "items": [
-   {
-    "symbol": "onchain:eth:0x0a91e5808dde9cfe7fb8f72e065e22041532f429:0xfde7c90c5da4b761dfb20db69f43b3171fa76f9f",
-    "inst": "eth:0xfde7c90c5da4b761dfb20db69f43b3171fa76f9f",
-    "name": "PANGEA / WETH",
-    "kind": "SECURITY_VETO",
-    "reason": "OWNER_CHANGE_BALANCE",
-    "source": "snapshot.onchain_vetoes",
-    "universe_tier": null,
-    "security_status": null,
-    "listing_age_days": null,
-    "vol24h_usdt": null,
-    "early_reason": null,
-    "size_cap_pct": null
-   },
    {
     "symbol": "CHZ",
     "inst": "CHZ-USDT",
@@ -1864,7 +1850,7 @@
  "universe": {
   "status": "OK",
   "as_of_utc": "2026-10-23T00:15:16Z",
-  "age_minutes": 81.7,
+  "age_minutes": 90.7,
   "schema": "cqs-universe-v1",
   "rule_version": "CQS-UNI-1.1",
   "config_hash": "dd9b36285f3c",
@@ -2323,8 +2309,8 @@
  ],
  "smw": {
   "status": "OK",
-  "as_of_utc": "2026-10-23T01:26:51Z",
-  "age_minutes": 10.1,
+  "as_of_utc": "2026-10-23T01:37:48Z",
+  "age_minutes": 8.1,
   "n": 0,
   "weight_state": "SHADOW",
   "rule_version": "SMW-0.2"
