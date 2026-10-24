@@ -1,6 +1,6 @@
 {
  "schema": "cqs-signals-v2",
- "generated_at_utc": "2026-10-23T23:51:36Z",
+ "generated_at_utc": "2026-10-24T00:00:10Z",
  "source_run": "sentinel_jobs.py fast",
  "stale_after_minutes": 90,
  "rule_versions": {
@@ -31,7 +31,7 @@
  "size_cap_rule": "size_cap_pct = max(base cap, min_order_usdt / ref_equity_usdt x 100), 1 decimal (base: ESTABLISHED 20 / NEW_MEME 10 / EARLY_WATCH 5); ref_equity_usdt = HM paper equity (out/hm/latest_hm.json, deposit-aware)",
  "market": {
   "status": "OK",
-  "as_of_utc": "2026-10-23T23:51:07Z",
+  "as_of_utc": "2026-10-23T23:59:43Z",
   "age_minutes": 0.5,
   "btc_tier": "ROTATION_SELECTIVE",
   "btc_tier_source": "mf_ledger.mf_runs (latest hourly MF run; vcpd-2.0 mtf.tier on closed BTC 1D+4H)",
@@ -49,7 +49,7 @@
    "conditions": [],
    "btc_4h_quadrant": "NEUTRAL",
    "btc_1d_quadrant": "NEUTRAL",
-   "as_of_utc": "2026-10-23T23:45:28Z",
+   "as_of_utc": "2026-10-23T23:54:29Z",
    "source": "out/snapshot.json (core run)",
    "error": null
   },
@@ -57,7 +57,7 @@
    "status": "OK",
    "rule_version": "CQS-MACRO-0.1",
    "as_of_utc": "2026-10-23T23:51:06Z",
-   "age_min": 0.5,
+   "age_min": 9.1,
    "source": "DefiLlama public API",
    "display_only": true,
    "gates": "none (display only)",
@@ -100,7 +100,7 @@
  "top7": {
   "status": "OK",
   "as_of_utc": "2026-10-23T20:12:28Z",
-  "age_minutes": 219.1,
+  "age_minutes": 227.7,
   "bar_close_sast": "2026-10-23 22:00",
   "scope": "FULL_UNIVERSE",
   "source": "out/shadow/latest_shadow.json top7_universe (rank/score/conviction) + ledger.sqlite (core state) + out/snapshot.json (RS)",
@@ -893,7 +893,7 @@
  "top7_legacy": {
   "status": "OK",
   "as_of_utc": "2026-10-23T20:12:07Z",
-  "age_minutes": 219.5,
+  "age_minutes": 228.1,
   "bar_close_sast": "2026-10-23 22:00",
   "source": "out/vcpd/latest2.json (rank/order) + out/shadow/latest_shadow.json (conviction/families/N_eff) + ledger.sqlite (core state) + out/snapshot.json (RS)",
   "items": [
@@ -1257,13 +1257,13 @@
  },
  "mf": {
   "status": "OK",
-  "as_of_utc": "2026-10-23T23:51:07Z",
+  "as_of_utc": "2026-10-23T23:59:43Z",
   "age_minutes": 0.5,
   "rule_version": "CQS-MF-0.2",
   "tier": "ROTATION_SELECTIVE",
   "old_gate_shadow": "OFF",
   "entry_threshold": 45,
-  "paper_equity_usdt": 10035.91,
+  "paper_equity_usdt": 10035.83,
   "start_equity_usdt": 10000,
   "pending_orders": [
    {
@@ -1372,16 +1372,16 @@
    "note": "cached 2026-10-23T00:15:16Z"
   },
   "timing": {
-   "early_s": 11.8,
-   "fetch_s": 10.6,
-   "total_s": 26.0,
+   "early_s": 11.7,
+   "fetch_s": 10.7,
+   "total_s": 25.8,
    "universe_s": 0.0
   }
  },
  "hm": {
   "status": "OK",
   "as_of_utc": "2026-10-23T20:14:00Z",
-  "age_minutes": 217.6,
+  "age_minutes": 226.2,
   "rule_version": "CQS-HM-0.1",
   "bar_close_sast": "10-23 22:00",
   "tier": "ROTATION_SELECTIVE",
@@ -1622,8 +1622,8 @@
  },
  "vetoes": {
   "status": "OK",
-  "as_of_utc": "2026-10-23T23:45:28Z",
-  "age_minutes": 6.1,
+  "as_of_utc": "2026-10-23T23:54:29Z",
+  "age_minutes": 5.7,
   "items": [
    {
     "symbol": "onchain:solana:FnzKY6x7entQ1eR3D225dQyT7ybfka4PskBMQhb8L3CC:9cRCn9rGT8V2imeM2BaKs13yhMEais3ruM3rPvTGpump",
@@ -1631,6 +1631,20 @@
     "name": "ANSEM / SOL",
     "kind": "SECURITY_VETO",
     "reason": "RUGCHECK_DANGER",
+    "source": "snapshot.onchain_vetoes",
+    "universe_tier": null,
+    "security_status": null,
+    "listing_age_days": null,
+    "vol24h_usdt": null,
+    "early_reason": null,
+    "size_cap_pct": null
+   },
+   {
+    "symbol": "onchain:eth:0xc3db44adc1fcdfd5671f555236eae49f4a8eea18:0x57e114b691db790c35207b2e685d4a43181e6061",
+    "inst": "eth:0x57e114b691db790c35207b2e685d4a43181e6061",
+    "name": "ENA / WETH 0.3%",
+    "kind": "SECURITY_VETO",
+    "reason": "MINTABLE",
     "source": "snapshot.onchain_vetoes",
     "universe_tier": null,
     "security_status": null,
@@ -1737,7 +1751,7 @@
  "universe": {
   "status": "OK",
   "as_of_utc": "2026-10-23T00:15:16Z",
-  "age_minutes": 1416.3,
+  "age_minutes": 1424.9,
   "schema": "cqs-universe-v1",
   "rule_version": "CQS-UNI-1.1",
   "config_hash": "dd9b36285f3c",
@@ -2058,7 +2072,7 @@
  "smw": {
   "status": "OK",
   "as_of_utc": "2026-10-23T23:50:10Z",
-  "age_minutes": 1.4,
+  "age_minutes": 10.0,
   "n": 0,
   "weight_state": "SHADOW",
   "rule_version": "SMW-0.2"
