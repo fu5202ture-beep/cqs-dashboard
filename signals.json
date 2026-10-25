@@ -1,6 +1,6 @@
 {
  "schema": "cqs-signals-v2",
- "generated_at_utc": "2026-10-25T01:22:26Z",
+ "generated_at_utc": "2026-10-25T01:33:45Z",
  "source_run": "sentinel_jobs.py fast",
  "stale_after_minutes": 90,
  "rule_versions": {
@@ -31,7 +31,7 @@
  "size_cap_rule": "size_cap_pct = max(base cap, min_order_usdt / ref_equity_usdt x 100), 1 decimal (base: ESTABLISHED 20 / NEW_MEME 10 / EARLY_WATCH 5); ref_equity_usdt = HM paper equity (out/hm/latest_hm.json, deposit-aware)",
  "market": {
   "status": "OK",
-  "as_of_utc": "2026-10-25T01:21:55Z",
+  "as_of_utc": "2026-10-25T01:33:13Z",
   "age_minutes": 0.5,
   "btc_tier": "ROTATION_SELECTIVE",
   "btc_tier_source": "mf_ledger.mf_runs (latest hourly MF run; vcpd-2.0 mtf.tier on closed BTC 1D+4H)",
@@ -43,16 +43,15 @@
   "btc_ema50_1d": 80854.1,
   "tier_cap": 0.5,
   "core_gate": {
-   "status": "ON(HARD)",
-   "hard": true,
-   "soft": false,
+   "status": "ON(SOFT +10)",
+   "hard": false,
+   "soft": true,
    "conditions": [
-    "BTC_1D_STRUCTURAL_BLEED_SOFT",
-    "HYSTERESIS_PENDING_SOFT_1/2"
+    "BTC_1D_STRUCTURAL_BLEED_SOFT"
    ],
    "btc_4h_quadrant": "NEUTRAL",
    "btc_1d_quadrant": "STRUCTURAL_BLEED",
-   "as_of_utc": "2026-10-25T01:15:20Z",
+   "as_of_utc": "2026-10-25T01:26:43Z",
    "source": "out/snapshot.json (core run)",
    "error": null
   },
@@ -60,7 +59,7 @@
    "status": "OK",
    "rule_version": "CQS-MACRO-0.1",
    "as_of_utc": "2026-10-25T00:44:37Z",
-   "age_min": 37.8,
+   "age_min": 49.1,
    "source": "DefiLlama public API",
    "display_only": true,
    "gates": "none (display only)",
@@ -103,7 +102,7 @@
  "top7": {
   "status": "OK",
   "as_of_utc": "2026-10-24T20:02:28Z",
-  "age_minutes": 320.0,
+  "age_minutes": 331.3,
   "bar_close_sast": "2026-10-24 22:00",
   "scope": "FULL_UNIVERSE",
   "source": "out/shadow/latest_shadow.json top7_universe (rank/score/conviction) + ledger.sqlite (core state) + out/snapshot.json (RS)",
@@ -186,9 +185,9 @@
     "n_obs_live": 4,
     "cold_start_coin": true,
     "micro": {
-     "basis_pct": 0.0417,
-     "funding_rate_pct": 0.00096,
-     "oi_change_pct": 0.911,
+     "basis_pct": 0.1469,
+     "funding_rate_pct": 0.00094,
+     "oi_change_pct": 1.228,
      "close_ratio": 0.77,
      "vol_ratio": 0.856,
      "label": "NEUTRAL",
@@ -196,7 +195,7 @@
      "bonus": 0.0,
      "micro_trim": false,
      "status": "OK",
-     "as_of": "2026-10-25T01:21:53Z",
+     "as_of": "2026-10-25T01:33:43Z",
      "why": [],
      "src": [
       "TOP7"
@@ -287,7 +286,7 @@
     "micro": {
      "basis_pct": -0.0583,
      "funding_rate_pct": 0.005,
-     "oi_change_pct": 0.207,
+     "oi_change_pct": 0.214,
      "close_ratio": 0.59,
      "vol_ratio": 0.192,
      "label": "NEUTRAL",
@@ -295,7 +294,7 @@
      "bonus": 0.0,
      "micro_trim": false,
      "status": "OK",
-     "as_of": "2026-10-25T01:21:53Z",
+     "as_of": "2026-10-25T01:33:43Z",
      "why": [],
      "src": [
       "TOP7"
@@ -383,9 +382,9 @@
     "n_obs_live": 8,
     "cold_start_coin": true,
     "micro": {
-     "basis_pct": 0.1133,
-     "funding_rate_pct": 0.00617,
-     "oi_change_pct": 0.031,
+     "basis_pct": 0.1132,
+     "funding_rate_pct": 0.00694,
+     "oi_change_pct": 0.01,
      "close_ratio": 0.736,
      "vol_ratio": 0.381,
      "label": "NEUTRAL",
@@ -393,7 +392,7 @@
      "bonus": 0.0,
      "micro_trim": false,
      "status": "OK",
-     "as_of": "2026-10-25T01:21:53Z",
+     "as_of": "2026-10-25T01:33:43Z",
      "why": [],
      "src": [
       "HM_POSITION",
@@ -484,9 +483,9 @@
     "n_obs_live": 9,
     "cold_start_coin": true,
     "micro": {
-     "basis_pct": 0.0926,
-     "funding_rate_pct": -0.01126,
-     "oi_change_pct": 1.632,
+     "basis_pct": 0.0743,
+     "funding_rate_pct": -0.01175,
+     "oi_change_pct": 1.816,
      "close_ratio": 0.638,
      "vol_ratio": 0.174,
      "label": "NEUTRAL",
@@ -494,7 +493,7 @@
      "bonus": 0.0,
      "micro_trim": false,
      "status": "OK",
-     "as_of": "2026-10-25T01:21:53Z",
+     "as_of": "2026-10-25T01:33:43Z",
      "why": [],
      "src": [
       "TOP7"
@@ -579,9 +578,9 @@
     "n_obs_live": 8,
     "cold_start_coin": true,
     "micro": {
-     "basis_pct": 0.142,
-     "funding_rate_pct": -0.00972,
-     "oi_change_pct": 1.697,
+     "basis_pct": 0.0777,
+     "funding_rate_pct": -0.01041,
+     "oi_change_pct": 2.026,
      "close_ratio": 0.891,
      "vol_ratio": 0.343,
      "label": "NEUTRAL",
@@ -589,7 +588,7 @@
      "bonus": 0.0,
      "micro_trim": false,
      "status": "OK",
-     "as_of": "2026-10-25T01:21:53Z",
+     "as_of": "2026-10-25T01:33:43Z",
      "why": [],
      "src": [
       "TOP7"
@@ -683,9 +682,9 @@
     "n_obs_live": 8,
     "cold_start_coin": true,
     "micro": {
-     "basis_pct": 0.0666,
-     "funding_rate_pct": -0.01168,
-     "oi_change_pct": 0.119,
+     "basis_pct": 0.0444,
+     "funding_rate_pct": -0.01015,
+     "oi_change_pct": 0.065,
      "close_ratio": 0.472,
      "vol_ratio": 0.506,
      "label": "NEUTRAL",
@@ -693,7 +692,7 @@
      "bonus": 0.0,
      "micro_trim": false,
      "status": "OK",
-     "as_of": "2026-10-25T01:21:53Z",
+     "as_of": "2026-10-25T01:33:43Z",
      "why": [],
      "src": [
       "TOP7"
@@ -786,9 +785,9 @@
     "n_obs_live": 5,
     "cold_start_coin": true,
     "micro": {
-     "basis_pct": 0.0423,
+     "basis_pct": -0.0422,
      "funding_rate_pct": 0.01,
-     "oi_change_pct": -0.218,
+     "oi_change_pct": -0.228,
      "close_ratio": 0.972,
      "vol_ratio": 0.124,
      "label": "NEUTRAL",
@@ -796,7 +795,7 @@
      "bonus": 0.0,
      "micro_trim": false,
      "status": "OK",
-     "as_of": "2026-10-25T01:21:53Z",
+     "as_of": "2026-10-25T01:33:43Z",
      "why": [],
      "src": [
       "TOP7"
@@ -842,7 +841,7 @@
  "top7_legacy": {
   "status": "OK",
   "as_of_utc": "2026-10-25T00:09:50Z",
-  "age_minutes": 72.6,
+  "age_minutes": 83.9,
   "bar_close_sast": "2026-10-25 02:00",
   "source": "out/vcpd/latest2.json (rank/order) + out/shadow/latest_shadow.json (conviction/families/N_eff) + ledger.sqlite (core state) + out/snapshot.json (RS)",
   "items": [
@@ -1192,36 +1191,22 @@
  },
  "mf": {
   "status": "OK",
-  "as_of_utc": "2026-10-25T01:21:55Z",
+  "as_of_utc": "2026-10-25T01:33:13Z",
   "age_minutes": 0.5,
   "rule_version": "CQS-MF-0.2",
   "tier": "ROTATION_SELECTIVE",
-  "old_gate_shadow": "ON(HARD)",
-  "entry_threshold": 45,
+  "old_gate_shadow": "ON(SOFT, MF +5)",
+  "entry_threshold": 50,
   "paper_equity_usdt": 10019.72,
   "start_equity_usdt": 10000,
   "pending_orders": [],
   "open_positions": [],
   "candidates_above_threshold": [],
   "accepted_this_run": [],
-  "near_threshold": [
-   {
-    "symbol": "GRASS-USDT",
-    "score": 38.8,
-    "reasons": [
-     "SCORE<45"
-    ],
-    "universe_tier": "ESTABLISHED",
-    "security_status": "OK",
-    "listing_age_days": 183.5,
-    "vol24h_usdt": 9314861.0,
-    "early_reason": null,
-    "size_cap_pct": 20
-   }
-  ],
+  "near_threshold": [],
   "new_events": [],
-  "entry_threshold_new_meme": 60,
-  "entry_threshold_early_watch": 70,
+  "entry_threshold_new_meme": 65,
+  "entry_threshold_early_watch": 75,
   "early_watch": {
    "by_mode": {
     "FULL": 7,
@@ -1268,14 +1253,14 @@
   "timing": {
    "early_s": 11.7,
    "fetch_s": 12.8,
-   "total_s": 29.5,
+   "total_s": 29.1,
    "universe_s": 0.0
   }
  },
  "hm": {
   "status": "OK",
   "as_of_utc": "2026-10-24T00:17:25Z",
-  "age_minutes": 1505.0,
+  "age_minutes": 1516.3,
   "rule_version": "CQS-HM-0.1",
   "bar_close_sast": "10-24 02:00",
   "tier": "ROTATION_SELECTIVE",
@@ -1518,8 +1503,8 @@
  },
  "vetoes": {
   "status": "OK",
-  "as_of_utc": "2026-10-25T01:15:20Z",
-  "age_minutes": 7.1,
+  "as_of_utc": "2026-10-25T01:26:43Z",
+  "age_minutes": 7.0,
   "items": [
    {
     "symbol": "onchain:base:0x01784ef301d79e4b2df3a21ad9a536d4cf09a5ce:0xacfe6019ed1a7dc6f7b508c02d1b04ec88cc21bf",
@@ -1593,7 +1578,7 @@
  "universe": {
   "status": "OK",
   "as_of_utc": "2026-10-25T00:12:20Z",
-  "age_minutes": 70.1,
+  "age_minutes": 81.4,
   "schema": "cqs-universe-v1",
   "rule_version": "CQS-UNI-1.1",
   "config_hash": "dd9b36285f3c",
@@ -1857,16 +1842,16 @@
  "buy_signals": [],
  "smw": {
   "status": "OK",
-  "as_of_utc": "2026-10-25T01:08:19Z",
-  "age_minutes": 14.1,
+  "as_of_utc": "2026-10-25T01:22:20Z",
+  "age_minutes": 11.4,
   "n": 0,
   "weight_state": "SHADOW",
   "rule_version": "SMW-0.2"
  },
  "micro_meta": {
   "rule_version": "CQS-MICRO-0.1",
-  "generated_utc": "2026-10-25T01:21:55Z",
-  "runtime_s": 1.76,
+  "generated_utc": "2026-10-25T01:33:45Z",
+  "runtime_s": 1.8,
   "n": 7,
   "status": "OK",
   "units": "percent (funding 0.005 == raw 0.00005)"
