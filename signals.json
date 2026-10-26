@@ -1,6 +1,6 @@
 {
  "schema": "cqs-signals-v2",
- "generated_at_utc": "2026-10-26T18:24:27Z",
+ "generated_at_utc": "2026-10-26T18:32:45Z",
  "source_run": "sentinel_jobs.py fast",
  "stale_after_minutes": 90,
  "rule_versions": {
@@ -31,7 +31,7 @@
  "size_cap_rule": "size_cap_pct = max(base cap, min_order_usdt / ref_equity_usdt x 100), 1 decimal (base: ESTABLISHED 20 / NEW_MEME 10 / EARLY_WATCH 5); ref_equity_usdt = HM paper equity (out/hm/latest_hm.json, deposit-aware)",
  "market": {
   "status": "OK",
-  "as_of_utc": "2026-10-26T18:23:58Z",
+  "as_of_utc": "2026-10-26T18:32:17Z",
   "age_minutes": 0.5,
   "btc_tier": "ROTATION_SELECTIVE",
   "btc_tier_source": "mf_ledger.mf_runs (latest hourly MF run; vcpd-2.0 mtf.tier on closed BTC 1D+4H)",
@@ -51,7 +51,7 @@
    ],
    "btc_4h_quadrant": "NEUTRAL",
    "btc_1d_quadrant": "STRUCTURAL_BLEED",
-   "as_of_utc": "2026-10-26T18:17:09Z",
+   "as_of_utc": "2026-10-26T18:25:36Z",
    "source": "out/snapshot.json (core run)",
    "error": null
   },
@@ -59,7 +59,7 @@
    "status": "OK",
    "rule_version": "CQS-MACRO-0.1",
    "as_of_utc": "2026-10-26T17:34:28Z",
-   "age_min": 50.0,
+   "age_min": 58.3,
    "source": "DefiLlama public API",
    "display_only": true,
    "gates": "none (display only)",
@@ -102,7 +102,7 @@
  "top7": {
   "status": "OK",
   "as_of_utc": "2026-10-26T08:11:40Z",
-  "age_minutes": 612.8,
+  "age_minutes": 621.1,
   "bar_close_sast": "2026-10-26 10:00",
   "scope": "FULL_UNIVERSE",
   "source": "out/shadow/latest_shadow.json top7_universe (rank/score/conviction) + ledger.sqlite (core state) + out/snapshot.json (RS)",
@@ -862,7 +862,7 @@
  "top7_legacy": {
   "status": "OK",
   "as_of_utc": "2026-10-26T16:21:02Z",
-  "age_minutes": 123.4,
+  "age_minutes": 131.7,
   "bar_close_sast": "2026-10-26 18:00",
   "source": "out/vcpd/latest2.json (rank/order) + out/shadow/latest_shadow.json (conviction/families/N_eff) + ledger.sqlite (core state) + out/snapshot.json (RS)",
   "items": [
@@ -1220,13 +1220,13 @@
  },
  "mf": {
   "status": "OK",
-  "as_of_utc": "2026-10-26T18:23:58Z",
+  "as_of_utc": "2026-10-26T18:32:17Z",
   "age_minutes": 0.5,
   "rule_version": "CQS-MF-0.2",
   "tier": "ROTATION_SELECTIVE",
   "old_gate_shadow": "ON(SOFT, MF +5)",
   "entry_threshold": 50,
-  "paper_equity_usdt": 10017.1,
+  "paper_equity_usdt": 10017.43,
   "start_equity_usdt": 10000,
   "pending_orders": [
    {
@@ -1412,10 +1412,7 @@
     "size_cap_pct": 20
    }
   ],
-  "new_events": [
-   "EXPIRED BCH (12h 未触发)",
-   "NEW ORDER BABY 触发>0.015104 (12h 内 1H 收盘突破; 风险 0.125%; MF_ROTATION_LEADER_HALF; attack=54.1)"
-  ],
+  "new_events": [],
   "entry_threshold_new_meme": 65,
   "entry_threshold_early_watch": 75,
   "early_watch": {
@@ -1464,16 +1461,16 @@
    "note": "cached 2026-10-26T00:02:53Z"
   },
   "timing": {
-   "early_s": 10.9,
-   "fetch_s": 6.5,
-   "total_s": 27.0,
+   "early_s": 10.8,
+   "fetch_s": 6.4,
+   "total_s": 26.2,
    "universe_s": 0.0
   }
  },
  "hm": {
   "status": "OK",
   "as_of_utc": "2026-10-24T00:17:25Z",
-  "age_minutes": 3967.0,
+  "age_minutes": 3975.3,
   "rule_version": "CQS-HM-0.1",
   "bar_close_sast": "10-24 02:00",
   "tier": "ROTATION_SELECTIVE",
@@ -1716,9 +1713,23 @@
  },
  "vetoes": {
   "status": "OK",
-  "as_of_utc": "2026-10-26T18:17:09Z",
-  "age_minutes": 7.3,
+  "as_of_utc": "2026-10-26T18:25:36Z",
+  "age_minutes": 7.2,
   "items": [
+   {
+    "symbol": "onchain:base:0x01784ef301d79e4b2df3a21ad9a536d4cf09a5ce:0xacfe6019ed1a7dc6f7b508c02d1b04ec88cc21bf",
+    "inst": "base:0xacfe6019ed1a7dc6f7b508c02d1b04ec88cc21bf",
+    "name": "VVV / WETH",
+    "kind": "SECURITY_VETO",
+    "reason": "MINTABLE",
+    "source": "snapshot.onchain_vetoes",
+    "universe_tier": null,
+    "security_status": null,
+    "listing_age_days": null,
+    "vol24h_usdt": null,
+    "early_reason": null,
+    "size_cap_pct": null
+   },
    {
     "symbol": "onchain:bsc:0x8bafe0bdd3eb9ae0539f5b32e771c1a72a189b7f:0xc07e1300dc138601fa6b0b59f8d0fa477e690589",
     "inst": "bsc:0xc07e1300dc138601fa6b0b59f8d0fa477e690589",
@@ -1734,11 +1745,11 @@
     "size_cap_pct": null
    },
    {
-    "symbol": "onchain:base:0x01784ef301d79e4b2df3a21ad9a536d4cf09a5ce:0xacfe6019ed1a7dc6f7b508c02d1b04ec88cc21bf",
-    "inst": "base:0xacfe6019ed1a7dc6f7b508c02d1b04ec88cc21bf",
-    "name": "VVV / WETH",
+    "symbol": "onchain:base:0x7c84276e317f128b55bd270dbfba3ef94c84b984c124a1de7c4f72da90bfba45:0xed664536023d8e4b1640c394777d34abaff1df8f",
+    "inst": "base:0xed664536023d8e4b1640c394777d34abaff1df8f",
+    "name": "POD / ETH 1%",
     "kind": "SECURITY_VETO",
-    "reason": "MINTABLE",
+    "reason": "MINTABLE,OWNER_CHANGE_BALANCE,HIDDEN_OWNER",
     "source": "snapshot.onchain_vetoes",
     "universe_tier": null,
     "security_status": null,
@@ -1806,7 +1817,7 @@
  "universe": {
   "status": "OK",
   "as_of_utc": "2026-10-26T00:02:53Z",
-  "age_minutes": 1101.6,
+  "age_minutes": 1109.9,
   "schema": "cqs-universe-v1",
   "rule_version": "CQS-UNI-1.1",
   "config_hash": "dd9b36285f3c",
@@ -2133,8 +2144,8 @@
  ],
  "smw": {
   "status": "OK",
-  "as_of_utc": "2026-10-26T18:13:46Z",
-  "age_minutes": 10.7,
+  "as_of_utc": "2026-10-26T18:25:45Z",
+  "age_minutes": 7.0,
   "n": 0,
   "weight_state": "SHADOW",
   "rule_version": "SMW-0.2"
