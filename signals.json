@@ -1,7 +1,7 @@
 {
  "schema": "cqs-signals-v2",
- "generated_at_utc": "2026-10-28T06:26:44Z",
- "source_run": "sentinel_jobs.py run --no-track",
+ "generated_at_utc": "2026-10-28T06:33:41Z",
+ "source_run": "sentinel_jobs.py track",
  "stale_after_minutes": 90,
  "rule_versions": {
   "repo_tag": "cqs-v3.7.1",
@@ -31,14 +31,14 @@
  "size_cap_rule": "size_cap_pct = max(base cap, min_order_usdt / ref_equity_usdt x 100), 1 decimal (base: ESTABLISHED 20 / NEW_MEME 10 / EARLY_WATCH 5); ref_equity_usdt = HM paper equity (out/hm/latest_hm.json, deposit-aware)",
  "market": {
   "status": "OK",
-  "as_of_utc": "2026-10-28T06:16:15Z",
-  "age_minutes": 10.5,
+  "as_of_utc": "2026-10-28T06:26:18Z",
+  "age_minutes": 7.4,
   "btc_tier": "ROTATION_SELECTIVE",
   "btc_tier_source": "mf_ledger.mf_runs (latest hourly MF run; vcpd-2.0 mtf.tier on closed BTC 1D+4H)",
   "btc_tier_vcpd": "ROTATION_SELECTIVE",
   "btc_tier_vcpd_bar_close_sast": "2026-10-28 06:00",
   "last_closed_4h_candle_close_utc": "2026-10-28T04:00:00Z",
-  "btc_close_4h": 81145.2,
+  "btc_close_4h": 81145.11,
   "btc_ema20_1d": 81843.36,
   "btc_ema50_1d": 80804.44,
   "tier_cap": 0.5,
@@ -57,7 +57,7 @@
    "status": "OK",
    "rule_version": "CQS-MACRO-0.1",
    "as_of_utc": "2026-10-28T06:09:30Z",
-   "age_min": 17.2,
+   "age_min": 24.2,
    "source": "DefiLlama public API",
    "display_only": true,
    "gates": "none (display only)",
@@ -100,7 +100,7 @@
  "top7": {
   "status": "OK",
   "as_of_utc": "2026-10-27T04:10:36Z",
-  "age_minutes": 1576.1,
+  "age_minutes": 1583.1,
   "bar_close_sast": "2026-10-27 06:00",
   "scope": "FULL_UNIVERSE",
   "source": "out/shadow/latest_shadow.json top7_universe (rank/score/conviction) + ledger.sqlite (core state) + out/snapshot.json (RS)",
@@ -898,7 +898,7 @@
  "top7_legacy": {
   "status": "OK",
   "as_of_utc": "2026-10-28T04:31:14Z",
-  "age_minutes": 115.5,
+  "age_minutes": 122.4,
   "bar_close_sast": "2026-10-28 06:00",
   "source": "out/vcpd/latest2.json (rank/order) + out/shadow/latest_shadow.json (conviction/families/N_eff) + ledger.sqlite (core state) + out/snapshot.json (RS)",
   "items": [
@@ -1246,13 +1246,13 @@
  },
  "mf": {
   "status": "OK",
-  "as_of_utc": "2026-10-28T06:16:15Z",
-  "age_minutes": 10.5,
+  "as_of_utc": "2026-10-28T06:26:18Z",
+  "age_minutes": 7.4,
   "rule_version": "CQS-MF-0.2",
   "tier": "ROTATION_SELECTIVE",
   "old_gate_shadow": "OFF",
   "entry_threshold": 45,
-  "paper_equity_usdt": 10006.18,
+  "paper_equity_usdt": 10006.88,
   "start_equity_usdt": 10000,
   "pending_orders": [],
   "open_positions": [
@@ -1460,10 +1460,7 @@
     "size_cap_pct": 8.6
    }
   ],
-  "new_events": [
-   "ENTRY GRASS @0.770069 stop=0.704298 notional=147U risk=12.51U (MF_ROTATION_LEADER_HALF)",
-   "ENTRY BCH @298.458 stop=285.107 notional=280U risk=12.51U (MF_ROTATION_LEADER_HALF)"
-  ],
+  "new_events": [],
   "entry_threshold_new_meme": 60,
   "entry_threshold_early_watch": 70,
   "early_watch": {
@@ -1511,15 +1508,15 @@
   },
   "timing": {
    "early_s": 14.5,
-   "fetch_s": 52.3,
-   "total_s": 92.2,
+   "fetch_s": 52.2,
+   "total_s": 82.5,
    "universe_s": 0.0
   }
  },
  "hm": {
   "status": "OK",
   "as_of_utc": "2026-10-24T00:17:25Z",
-  "age_minutes": 6129.3,
+  "age_minutes": 6136.3,
   "rule_version": "CQS-HM-0.1",
   "bar_close_sast": "10-24 02:00",
   "tier": "ROTATION_SELECTIVE",
@@ -1763,7 +1760,7 @@
  "vetoes": {
   "status": "OK",
   "as_of_utc": "2026-10-28T06:18:15Z",
-  "age_minutes": 8.5,
+  "age_minutes": 15.4,
   "items": [
    {
     "symbol": "DOGE",
@@ -1933,7 +1930,7 @@
  "universe": {
   "status": "OK",
   "as_of_utc": "2026-10-28T00:01:30Z",
-  "age_minutes": 385.2,
+  "age_minutes": 392.2,
   "schema": "cqs-universe-v1",
   "rule_version": "CQS-UNI-1.1",
   "config_hash": "dd9b36285f3c",
@@ -2450,8 +2447,8 @@
  ],
  "smw": {
   "status": "OK",
-  "as_of_utc": "2026-10-28T06:04:14Z",
-  "age_minutes": 22.5,
+  "as_of_utc": "2026-10-28T06:27:11Z",
+  "age_minutes": 6.5,
   "n": 0,
   "weight_state": "SHADOW",
   "rule_version": "SMW-0.2"
