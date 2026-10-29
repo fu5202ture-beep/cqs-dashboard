@@ -1,6 +1,6 @@
 {
  "schema": "cqs-signals-v2",
- "generated_at_utc": "2026-10-29T08:47:47Z",
+ "generated_at_utc": "2026-10-29T09:00:50Z",
  "source_run": "sentinel_jobs.py fast",
  "stale_after_minutes": 90,
  "rule_versions": {
@@ -31,7 +31,7 @@
  "size_cap_rule": "size_cap_pct = max(base cap, min_order_usdt / ref_equity_usdt x 100), 1 decimal (base: ESTABLISHED 20 / NEW_MEME 10 / EARLY_WATCH 5); ref_equity_usdt = HM paper equity (out/hm/latest_hm.json, deposit-aware)",
  "market": {
   "status": "OK",
-  "as_of_utc": "2026-10-29T08:47:21Z",
+  "as_of_utc": "2026-10-29T09:00:24Z",
   "age_minutes": 0.4,
   "btc_tier": "ROTATION_SELECTIVE",
   "btc_tier_source": "mf_ledger.mf_runs (latest hourly MF run; vcpd-2.0 mtf.tier on closed BTC 1D+4H)",
@@ -52,7 +52,7 @@
    ],
    "btc_4h_quadrant": "STRUCTURAL_BLEED",
    "btc_1d_quadrant": "NEUTRAL",
-   "as_of_utc": "2026-10-29T08:39:58Z",
+   "as_of_utc": "2026-10-29T08:53:01Z",
    "source": "out/snapshot.json (core run)",
    "error": null
   },
@@ -60,7 +60,7 @@
    "status": "OK",
    "rule_version": "CQS-MACRO-0.1",
    "as_of_utc": "2026-10-29T07:54:57Z",
-   "age_min": 52.8,
+   "age_min": 7.9,
    "source": "DefiLlama public API",
    "display_only": true,
    "gates": "none (display only)",
@@ -103,7 +103,7 @@
  "top7": {
   "status": "OK",
   "as_of_utc": "2026-10-27T04:10:36Z",
-  "age_minutes": 3157.2,
+  "age_minutes": 3170.2,
   "bar_close_sast": "2026-10-27 06:00",
   "scope": "FULL_UNIVERSE",
   "source": "out/shadow/latest_shadow.json top7_universe (rank/score/conviction) + ledger.sqlite (core state) + out/snapshot.json (RS)",
@@ -896,7 +896,7 @@
  "top7_legacy": {
   "status": "OK",
   "as_of_utc": "2026-10-29T08:11:55Z",
-  "age_minutes": 35.9,
+  "age_minutes": 48.9,
   "bar_close_sast": "2026-10-29 10:00",
   "source": "out/vcpd/latest2.json (rank/order) + out/shadow/latest_shadow.json (conviction/families/N_eff) + ledger.sqlite (core state) + out/snapshot.json (RS)",
   "items": [
@@ -1277,13 +1277,13 @@
  },
  "mf": {
   "status": "OK",
-  "as_of_utc": "2026-10-29T08:47:21Z",
+  "as_of_utc": "2026-10-29T09:00:24Z",
   "age_minutes": 0.4,
   "rule_version": "CQS-MF-0.2",
   "tier": "ROTATION_SELECTIVE",
   "old_gate_shadow": "ON(HARD)",
   "entry_threshold": 45,
-  "paper_equity_usdt": 9987.28,
+  "paper_equity_usdt": 9984.96,
   "start_equity_usdt": 10000,
   "pending_orders": [
    {
@@ -1325,19 +1325,20 @@
     "vol24h_usdt": 9335391.0,
     "early_reason": null,
     "size_cap_pct": 20
-   },
+   }
+  ],
+  "open_positions": [
    {
     "symbol": "KAT-USDT",
-    "created_utc": "2026-10-29T05:21:04Z",
-    "signal_bar_utc": "2026-10-29T04:00:00Z",
-    "trigger_1h_close_above": 0.004657,
-    "invalidation_below": 0.004129,
-    "atr_4h": 0.000218,
+    "entry_utc": "2026-10-29T08:00:00Z",
+    "entry_price": 0.004671667,
+    "stop_initial": 0.004235238428571429,
+    "current_stop": null,
+    "current_stop_status": "NOT_PERSISTED (2xATR trail is recomputed each run from bars; stop_initial is the floor)",
+    "notional_usdt": 133.63,
+    "risk_usdt": 12.48,
     "risk_pct": 0.125,
-    "risk_mult": 0.5,
-    "expires_utc": "2026-10-29T17:21:04Z",
     "reason": "MF_ROTATION_LEADER_HALF",
-    "attack_score": 62.8,
     "sector": "Unclassified:KAT",
     "universe_tier": "ESTABLISHED",
     "security_status": "UNVERIFIED",
@@ -1347,7 +1348,6 @@
     "size_cap_pct": 20
    }
   ],
-  "open_positions": [],
   "candidates_above_threshold": [],
   "accepted_this_run": [],
   "near_threshold": [
@@ -1378,7 +1378,9 @@
     "size_cap_pct": 20
    }
   ],
-  "new_events": [],
+  "new_events": [
+   "ENTRY KAT @0.00467167 stop=0.00423524 notional=134U risk=12.48U (MF_ROTATION_LEADER_HALF)"
+  ],
   "entry_threshold_new_meme": 60,
   "entry_threshold_early_watch": 70,
   "early_watch": {
@@ -1425,16 +1427,16 @@
    "note": "cached 2026-10-29T00:03:58Z"
   },
   "timing": {
-   "early_s": 12.0,
-   "fetch_s": 4.4,
-   "total_s": 24.5,
+   "early_s": 11.7,
+   "fetch_s": 4.8,
+   "total_s": 25.0,
    "universe_s": 0.0
   }
  },
  "hm": {
   "status": "OK",
   "as_of_utc": "2026-10-24T00:17:25Z",
-  "age_minutes": 7710.4,
+  "age_minutes": 7723.4,
   "rule_version": "CQS-HM-0.1",
   "bar_close_sast": "10-24 02:00",
   "tier": "ROTATION_SELECTIVE",
@@ -1677,13 +1679,13 @@
  },
  "vetoes": {
   "status": "OK",
-  "as_of_utc": "2026-10-29T08:39:58Z",
+  "as_of_utc": "2026-10-29T08:53:01Z",
   "age_minutes": 7.8,
   "items": [
    {
-    "symbol": "onchain:bsc:0x8bafe0bdd3eb9ae0539f5b32e771c1a72a189b7f:0xc07e1300dc138601fa6b0b59f8d0fa477e690589",
-    "inst": "bsc:0xc07e1300dc138601fa6b0b59f8d0fa477e690589",
-    "name": "Q / USDT 0.01%",
+    "symbol": "onchain:base:0x01784ef301d79e4b2df3a21ad9a536d4cf09a5ce:0xacfe6019ed1a7dc6f7b508c02d1b04ec88cc21bf",
+    "inst": "base:0xacfe6019ed1a7dc6f7b508c02d1b04ec88cc21bf",
+    "name": "VVV / WETH",
     "kind": "SECURITY_VETO",
     "reason": "MINTABLE",
     "source": "snapshot.onchain_vetoes",
@@ -1695,9 +1697,9 @@
     "size_cap_pct": null
    },
    {
-    "symbol": "onchain:base:0x01784ef301d79e4b2df3a21ad9a536d4cf09a5ce:0xacfe6019ed1a7dc6f7b508c02d1b04ec88cc21bf",
-    "inst": "base:0xacfe6019ed1a7dc6f7b508c02d1b04ec88cc21bf",
-    "name": "VVV / WETH",
+    "symbol": "onchain:bsc:0x8bafe0bdd3eb9ae0539f5b32e771c1a72a189b7f:0xc07e1300dc138601fa6b0b59f8d0fa477e690589",
+    "inst": "bsc:0xc07e1300dc138601fa6b0b59f8d0fa477e690589",
+    "name": "Q / USDT 0.01%",
     "kind": "SECURITY_VETO",
     "reason": "MINTABLE",
     "source": "snapshot.onchain_vetoes",
@@ -1714,34 +1716,6 @@
     "name": "GANG / WBNB",
     "kind": "SECURITY_VETO",
     "reason": "PAUSABLE",
-    "source": "snapshot.onchain_vetoes",
-    "universe_tier": null,
-    "security_status": null,
-    "listing_age_days": null,
-    "vol24h_usdt": null,
-    "early_reason": null,
-    "size_cap_pct": null
-   },
-   {
-    "symbol": "onchain:eth:0xd57467b3114eb68dd57ee541875d157ec71ecd0fdb3fc5d3e87a91f0b7f9991a:0x4a220e6096b25eadb88358cb44068a3248254675",
-    "inst": "eth:0x4a220e6096b25eadb88358cb44068a3248254675",
-    "name": "QNT / USDC 0.3%",
-    "kind": "SECURITY_VETO",
-    "reason": "MINTABLE",
-    "source": "snapshot.onchain_vetoes",
-    "universe_tier": null,
-    "security_status": null,
-    "listing_age_days": null,
-    "vol24h_usdt": null,
-    "early_reason": null,
-    "size_cap_pct": null
-   },
-   {
-    "symbol": "onchain:base:0x6cdcb1c4a4d1c3c6d054b27ac5b77e89eafb971d:0x940181a94a35a4569e4529a3cdfb74e38fd98631",
-    "inst": "base:0x940181a94a35a4569e4529a3cdfb74e38fd98631",
-    "name": "AERO / USDC",
-    "kind": "SECURITY_VETO",
-    "reason": "MINTABLE",
     "source": "snapshot.onchain_vetoes",
     "universe_tier": null,
     "security_status": null,
@@ -1808,7 +1782,7 @@
  "universe": {
   "status": "OK",
   "as_of_utc": "2026-10-29T00:03:58Z",
-  "age_minutes": 523.8,
+  "age_minutes": 536.9,
   "schema": "cqs-universe-v1",
   "rule_version": "CQS-UNI-1.1",
   "config_hash": "dd9b36285f3c",
@@ -2210,7 +2184,7 @@
    }
   },
   {
-   "source": "MF_PENDING",
+   "source": "MF_TRIGGERED",
    "symbol": "KAT-USDT",
    "base": "KAT",
    "universe_tier": "ESTABLISHED",
@@ -2219,18 +2193,18 @@
    "vol24h_usdt": 6939371.0,
    "early_reason": null,
    "size_cap_pct": 20,
-   "signal_time_utc": "2026-10-29T05:21:04Z",
-   "candle_close_utc": "2026-10-29T04:00:00Z",
-   "candle_tf": "4H",
-   "entry_ref_price": 0.004657,
+   "signal_time_utc": "2026-10-29T08:00:00Z",
+   "candle_close_utc": "2026-10-29T08:00:00Z",
+   "candle_tf": "1H",
+   "entry_ref_price": 0.004671667,
    "trigger": 0.004657,
-   "stop_initial": 0.004129,
+   "stop_initial": 0.004235238428571429,
    "risk_pct": 0.125,
    "score": 62.8,
    "threshold": 45,
-   "expires_utc": "2026-10-29T17:21:04Z",
-   "status": "PENDING",
-   "note": "paper fill when a closed 1H candle closes above trigger before expiry; cancelled if price closes below stop_initial",
+   "expires_utc": "2026-10-29T12:00:00Z",
+   "status": "TRIGGERED",
+   "note": "MF paper entry filled (trigger hit); listed for 4h after the fill",
    "min_order_usdt": 15,
    "micro": {
     "basis_pct": 1.2458,
@@ -2275,7 +2249,7 @@
  "smw": {
   "status": "OK",
   "as_of_utc": "2026-10-29T08:40:30Z",
-  "age_minutes": 7.3,
+  "age_minutes": 20.3,
   "n": 0,
   "weight_state": "SHADOW",
   "rule_version": "SMW-0.2"
