@@ -1,6 +1,6 @@
 {
  "schema": "cqs-signals-v2",
- "generated_at_utc": "2026-10-30T14:35:33Z",
+ "generated_at_utc": "2026-10-30T14:44:27Z",
  "source_run": "sentinel_jobs.py fast",
  "stale_after_minutes": 90,
  "rule_versions": {
@@ -31,7 +31,7 @@
  "size_cap_rule": "size_cap_pct = max(base cap, min_order_usdt / ref_equity_usdt x 100), 1 decimal (base: ESTABLISHED 20 / NEW_MEME 10 / EARLY_WATCH 5); ref_equity_usdt = HM paper equity (out/hm/latest_hm.json, deposit-aware)",
  "market": {
   "status": "OK",
-  "as_of_utc": "2026-10-30T14:34:56Z",
+  "as_of_utc": "2026-10-30T14:43:49Z",
   "age_minutes": 0.6,
   "btc_tier": "CRASH_DEFENSIVE",
   "btc_tier_source": "mf_ledger.mf_runs (latest hourly MF run; vcpd-2.0 mtf.tier on closed BTC 1D+4H)",
@@ -51,7 +51,7 @@
    ],
    "btc_4h_quadrant": "NEUTRAL",
    "btc_1d_quadrant": "NEUTRAL",
-   "as_of_utc": "2026-10-30T14:28:10Z",
+   "as_of_utc": "2026-10-30T14:37:17Z",
    "source": "out/snapshot.json (core run)",
    "error": null
   },
@@ -59,7 +59,7 @@
    "status": "OK",
    "rule_version": "CQS-MACRO-0.1",
    "as_of_utc": "2026-10-30T13:54:11Z",
-   "age_min": 41.4,
+   "age_min": 50.2,
    "source": "DefiLlama public API",
    "display_only": true,
    "gates": "none (display only)",
@@ -102,7 +102,7 @@
  "top7": {
   "status": "OK",
   "as_of_utc": "2026-10-30T12:14:47Z",
-  "age_minutes": 140.8,
+  "age_minutes": 149.7,
   "bar_close_sast": "2026-10-30 14:00",
   "scope": "FULL_UNIVERSE",
   "source": "out/shadow/latest_shadow.json top7_universe (rank/score/conviction) + ledger.sqlite (core state) + out/snapshot.json (RS)",
@@ -887,7 +887,7 @@
  "top7_legacy": {
   "status": "OK",
   "as_of_utc": "2026-10-30T12:14:16Z",
-  "age_minutes": 141.3,
+  "age_minutes": 150.2,
   "bar_close_sast": "2026-10-30 14:00",
   "source": "out/vcpd/latest2.json (rank/order) + out/shadow/latest_shadow.json (conviction/families/N_eff) + ledger.sqlite (core state) + out/snapshot.json (RS)",
   "items": [
@@ -1259,7 +1259,7 @@
  },
  "mf": {
   "status": "OK",
-  "as_of_utc": "2026-10-30T14:34:56Z",
+  "as_of_utc": "2026-10-30T14:43:49Z",
   "age_minutes": 0.6,
   "rule_version": "CQS-MF-0.2",
   "tier": "CRASH_DEFENSIVE",
@@ -1375,7 +1375,7 @@
  "hm": {
   "status": "OK",
   "as_of_utc": "2026-10-30T12:16:25Z",
-  "age_minutes": 139.1,
+  "age_minutes": 148.0,
   "rule_version": "CQS-HM-0.1",
   "bar_close_sast": "10-30 14:00",
   "tier": "CRASH_DEFENSIVE",
@@ -1614,9 +1614,23 @@
  },
  "vetoes": {
   "status": "OK",
-  "as_of_utc": "2026-10-30T14:28:10Z",
-  "age_minutes": 7.4,
+  "as_of_utc": "2026-10-30T14:37:17Z",
+  "age_minutes": 7.2,
   "items": [
+   {
+    "symbol": "onchain:eth:0xa43fe16908251ee70ef74718545e4fe6c5ccec9f:0x6982508145454ce325ddbe47a25d4ec3d2311933",
+    "inst": "eth:0x6982508145454ce325ddbe47a25d4ec3d2311933",
+    "name": "PEPE / WETH",
+    "kind": "SECURITY_VETO",
+    "reason": "PAUSABLE,BLACKLIST",
+    "source": "snapshot.onchain_vetoes",
+    "universe_tier": null,
+    "security_status": null,
+    "listing_age_days": null,
+    "vol24h_usdt": null,
+    "early_reason": null,
+    "size_cap_pct": null
+   },
    {
     "symbol": "onchain:eth:0x180efc1349a69390ade25667487a826164c9c6e4:0x62d0a8458ed7719fdaf978fe5929c6d342b0bfce",
     "inst": "eth:0x62d0a8458ed7719fdaf978fe5929c6d342b0bfce",
@@ -1632,9 +1646,9 @@
     "size_cap_pct": null
    },
    {
-    "symbol": "onchain:eth:0x841820459769cd629b10a36fd12e603938cc2679:0x163f8c2467924be0ae7b5347228cabf260318753",
-    "inst": "eth:0x163f8c2467924be0ae7b5347228cabf260318753",
-    "name": "WLD / WETH 1%",
+    "symbol": "onchain:base:0x01784ef301d79e4b2df3a21ad9a536d4cf09a5ce:0xacfe6019ed1a7dc6f7b508c02d1b04ec88cc21bf",
+    "inst": "base:0xacfe6019ed1a7dc6f7b508c02d1b04ec88cc21bf",
+    "name": "VVV / WETH",
     "kind": "SECURITY_VETO",
     "reason": "MINTABLE",
     "source": "snapshot.onchain_vetoes",
@@ -1646,11 +1660,11 @@
     "size_cap_pct": null
    },
    {
-    "symbol": "onchain:base:0x01784ef301d79e4b2df3a21ad9a536d4cf09a5ce:0xacfe6019ed1a7dc6f7b508c02d1b04ec88cc21bf",
-    "inst": "base:0xacfe6019ed1a7dc6f7b508c02d1b04ec88cc21bf",
-    "name": "VVV / WETH",
+    "symbol": "onchain:base:0x7c84276e317f128b55bd270dbfba3ef94c84b984c124a1de7c4f72da90bfba45:0xed664536023d8e4b1640c394777d34abaff1df8f",
+    "inst": "base:0xed664536023d8e4b1640c394777d34abaff1df8f",
+    "name": "POD / ETH 1%",
     "kind": "SECURITY_VETO",
-    "reason": "MINTABLE",
+    "reason": "MINTABLE,OWNER_CHANGE_BALANCE,HIDDEN_OWNER",
     "source": "snapshot.onchain_vetoes",
     "universe_tier": null,
     "security_status": null,
@@ -1704,7 +1718,7 @@
  "universe": {
   "status": "OK",
   "as_of_utc": "2026-10-30T01:04:39Z",
-  "age_minutes": 810.9,
+  "age_minutes": 819.8,
   "schema": "cqs-universe-v1",
   "rule_version": "CQS-UNI-1.1",
   "config_hash": "dd9b36285f3c",
@@ -1987,7 +2001,7 @@
  "smw": {
   "status": "STALE",
   "as_of_utc": "2026-10-29T08:40:30Z",
-  "age_minutes": 1795.1,
+  "age_minutes": 1803.9,
   "n": 0,
   "weight_state": "SHADOW",
   "note": "smw_signals.json older than 90 min -> rows suppressed"
