@@ -1,6 +1,6 @@
 {
  "schema": "cqs-signals-v2",
- "generated_at_utc": "2026-10-30T15:21:34Z",
+ "generated_at_utc": "2026-10-30T15:30:02Z",
  "source_run": "sentinel_jobs.py fast",
  "stale_after_minutes": 90,
  "rule_versions": {
@@ -31,7 +31,7 @@
  "size_cap_rule": "size_cap_pct = max(base cap, min_order_usdt / ref_equity_usdt x 100), 1 decimal (base: ESTABLISHED 20 / NEW_MEME 10 / EARLY_WATCH 5); ref_equity_usdt = HM paper equity (out/hm/latest_hm.json, deposit-aware)",
  "market": {
   "status": "OK",
-  "as_of_utc": "2026-10-30T15:20:57Z",
+  "as_of_utc": "2026-10-30T15:29:24Z",
   "age_minutes": 0.6,
   "btc_tier": "CRASH_DEFENSIVE",
   "btc_tier_source": "mf_ledger.mf_runs (latest hourly MF run; vcpd-2.0 mtf.tier on closed BTC 1D+4H)",
@@ -43,15 +43,13 @@
   "btc_ema50_1d": 80714.62,
   "tier_cap": 0.0,
   "core_gate": {
-   "status": "ON(HARD)",
-   "hard": true,
+   "status": "OFF",
+   "hard": false,
    "soft": false,
-   "conditions": [
-    "HYSTERESIS_PENDING_OFF_1/2"
-   ],
+   "conditions": [],
    "btc_4h_quadrant": "NEUTRAL",
    "btc_1d_quadrant": "NEUTRAL",
-   "as_of_utc": "2026-10-30T15:14:07Z",
+   "as_of_utc": "2026-10-30T15:22:50Z",
    "source": "out/snapshot.json (core run)",
    "error": null
   },
@@ -59,7 +57,7 @@
    "status": "OK",
    "rule_version": "CQS-MACRO-0.1",
    "as_of_utc": "2026-10-30T14:57:17Z",
-   "age_min": 24.3,
+   "age_min": 32.7,
    "source": "DefiLlama public API",
    "display_only": true,
    "gates": "none (display only)",
@@ -102,7 +100,7 @@
  "top7": {
   "status": "OK",
   "as_of_utc": "2026-10-30T12:14:47Z",
-  "age_minutes": 186.8,
+  "age_minutes": 195.3,
   "bar_close_sast": "2026-10-30 14:00",
   "scope": "FULL_UNIVERSE",
   "source": "out/shadow/latest_shadow.json top7_universe (rank/score/conviction) + ledger.sqlite (core state) + out/snapshot.json (RS)",
@@ -887,7 +885,7 @@
  "top7_legacy": {
   "status": "OK",
   "as_of_utc": "2026-10-30T12:14:16Z",
-  "age_minutes": 187.3,
+  "age_minutes": 195.8,
   "bar_close_sast": "2026-10-30 14:00",
   "source": "out/vcpd/latest2.json (rank/order) + out/shadow/latest_shadow.json (conviction/families/N_eff) + ledger.sqlite (core state) + out/snapshot.json (RS)",
   "items": [
@@ -1259,11 +1257,11 @@
  },
  "mf": {
   "status": "OK",
-  "as_of_utc": "2026-10-30T15:20:57Z",
+  "as_of_utc": "2026-10-30T15:29:24Z",
   "age_minutes": 0.6,
   "rule_version": "CQS-MF-0.2",
   "tier": "CRASH_DEFENSIVE",
-  "old_gate_shadow": "ON(HARD)",
+  "old_gate_shadow": "OFF",
   "entry_threshold": 45,
   "paper_equity_usdt": 9974.4,
   "start_equity_usdt": 10000,
@@ -1361,21 +1359,21 @@
     "scanned": 90
    },
    "evaluated": 131,
-   "fetched_extra": 37,
+   "fetched_extra": 38,
    "n": 126,
    "note": "cached 2026-10-30T01:04:39Z"
   },
   "timing": {
-   "early_s": 15.3,
-   "fetch_s": 15.3,
-   "total_s": 35.2,
+   "early_s": 14.5,
+   "fetch_s": 16.5,
+   "total_s": 35.9,
    "universe_s": 0.0
   }
  },
  "hm": {
   "status": "OK",
   "as_of_utc": "2026-10-30T12:16:25Z",
-  "age_minutes": 185.1,
+  "age_minutes": 193.6,
   "rule_version": "CQS-HM-0.1",
   "bar_close_sast": "10-30 14:00",
   "tier": "CRASH_DEFENSIVE",
@@ -1614,8 +1612,8 @@
  },
  "vetoes": {
   "status": "OK",
-  "as_of_utc": "2026-10-30T15:14:07Z",
-  "age_minutes": 7.5,
+  "as_of_utc": "2026-10-30T15:22:50Z",
+  "age_minutes": 7.2,
   "items": [
    {
     "symbol": "onchain:eth:0xa43fe16908251ee70ef74718545e4fe6c5ccec9f:0x6982508145454ce325ddbe47a25d4ec3d2311933",
@@ -1674,6 +1672,20 @@
     "size_cap_pct": null
    },
    {
+    "symbol": "onchain:eth:0x180efc1349a69390ade25667487a826164c9c6e4:0x62d0a8458ed7719fdaf978fe5929c6d342b0bfce",
+    "inst": "eth:0x62d0a8458ed7719fdaf978fe5929c6d342b0bfce",
+    "name": "BEAM / WETH",
+    "kind": "SECURITY_VETO",
+    "reason": "MINTABLE,OWNER_CHANGE_BALANCE",
+    "source": "snapshot.onchain_vetoes",
+    "universe_tier": null,
+    "security_status": null,
+    "listing_age_days": null,
+    "vol24h_usdt": null,
+    "early_reason": null,
+    "size_cap_pct": null
+   },
+   {
     "symbol": "FLOKI",
     "inst": "FLOKI-USDT",
     "kind": "UNIVERSE_SECURITY_VETO",
@@ -1718,7 +1730,7 @@
  "universe": {
   "status": "OK",
   "as_of_utc": "2026-10-30T01:04:39Z",
-  "age_minutes": 856.9,
+  "age_minutes": 865.4,
   "schema": "cqs-universe-v1",
   "rule_version": "CQS-UNI-1.1",
   "config_hash": "dd9b36285f3c",
@@ -2001,7 +2013,7 @@
  "smw": {
   "status": "STALE",
   "as_of_utc": "2026-10-29T08:40:30Z",
-  "age_minutes": 1841.1,
+  "age_minutes": 1849.5,
   "n": 0,
   "weight_state": "SHADOW",
   "note": "smw_signals.json older than 90 min -> rows suppressed"
