@@ -1,7 +1,7 @@
 {
  "schema": "cqs-signals-v2",
- "generated_at_utc": "2026-11-01T05:07:02Z",
- "source_run": "sentinel_jobs.py track",
+ "generated_at_utc": "2026-11-01T05:14:16Z",
+ "source_run": "sentinel_jobs.py fast",
  "stale_after_minutes": 90,
  "rule_versions": {
   "repo_tag": "cqs-v3.7.1-4-gffc8754",
@@ -31,8 +31,8 @@
  "size_cap_rule": "size_cap_pct = max(base cap, min_order_usdt / ref_equity_usdt x 100), 1 decimal (base: ESTABLISHED 20 / NEW_MEME 10 / EARLY_WATCH 5); ref_equity_usdt = HM paper equity (out/hm/latest_hm.json, deposit-aware)",
  "market": {
   "status": "OK",
-  "as_of_utc": "2026-11-01T04:45:46Z",
-  "age_minutes": 21.3,
+  "as_of_utc": "2026-11-01T05:13:55Z",
+  "age_minutes": 0.4,
   "btc_tier": "CRASH_DEFENSIVE",
   "btc_tier_source": "mf_ledger.mf_runs (latest hourly MF run; vcpd-2.0 mtf.tier on closed BTC 1D+4H)",
   "btc_tier_vcpd": "CRASH_DEFENSIVE",
@@ -51,7 +51,7 @@
    ],
    "btc_4h_quadrant": "NEUTRAL",
    "btc_1d_quadrant": "STRUCTURAL_BLEED",
-   "as_of_utc": "2026-11-01T04:39:27Z",
+   "as_of_utc": "2026-11-01T05:07:35Z",
    "source": "out/snapshot.json (core run)",
    "error": null
   },
@@ -59,7 +59,7 @@
    "status": "OK",
    "rule_version": "CQS-MACRO-0.1",
    "as_of_utc": "2026-11-01T05:07:01Z",
-   "age_min": 0.0,
+   "age_min": 7.3,
    "source": "DefiLlama public API",
    "display_only": true,
    "gates": "none (display only)",
@@ -102,7 +102,7 @@
  "top7": {
   "status": "OK",
   "as_of_utc": "2026-11-01T04:03:30Z",
-  "age_minutes": 63.5,
+  "age_minutes": 70.8,
   "bar_close_sast": "2026-11-01 06:00",
   "scope": "FULL_UNIVERSE",
   "source": "out/shadow/latest_shadow.json top7_universe (rank/score/conviction) + ledger.sqlite (core state) + out/snapshot.json (RS)",
@@ -881,7 +881,7 @@
  "top7_legacy": {
   "status": "OK",
   "as_of_utc": "2026-11-01T04:03:04Z",
-  "age_minutes": 64.0,
+  "age_minutes": 71.2,
   "bar_close_sast": "2026-11-01 06:00",
   "source": "out/vcpd/latest2.json (rank/order) + out/shadow/latest_shadow.json (conviction/families/N_eff) + ledger.sqlite (core state) + out/snapshot.json (RS)",
   "items": [
@@ -1285,8 +1285,8 @@
  },
  "mf": {
   "status": "OK",
-  "as_of_utc": "2026-11-01T04:45:46Z",
-  "age_minutes": 21.3,
+  "as_of_utc": "2026-11-01T05:13:55Z",
+  "age_minutes": 0.4,
   "rule_version": "CQS-MF-0.2",
   "tier": "CRASH_DEFENSIVE",
   "old_gate_shadow": "ON(HARD)",
@@ -1298,7 +1298,7 @@
   "candidates_above_threshold": [
    {
     "symbol": "ZRO-USDT",
-    "score": 66.8,
+    "score": 65.5,
     "accepted": false,
     "risk_mult": 0.0,
     "reasons": [
@@ -1318,21 +1318,7 @@
    }
   ],
   "accepted_this_run": [],
-  "near_threshold": [
-   {
-    "symbol": "XPL-USDT",
-    "score": 44.5,
-    "reasons": [
-     "TIER_CRASH_DEFENSIVE"
-    ],
-    "universe_tier": "ESTABLISHED",
-    "security_status": "OK",
-    "listing_age_days": 401.5,
-    "vol24h_usdt": 21567738.0,
-    "early_reason": null,
-    "size_cap_pct": 20
-   }
-  ],
+  "near_threshold": [],
   "new_events": [],
   "entry_threshold_new_meme": 60,
   "entry_threshold_early_watch": 70,
@@ -1382,14 +1368,14 @@
   "timing": {
    "early_s": 11.7,
    "fetch_s": 4.7,
-   "total_s": 20.7,
+   "total_s": 20.2,
    "universe_s": 0.0
   }
  },
  "hm": {
   "status": "OK",
   "as_of_utc": "2026-11-01T04:05:07Z",
-  "age_minutes": 61.9,
+  "age_minutes": 69.2,
   "rule_version": "CQS-HM-0.1",
   "bar_close_sast": "11-01 06:00",
   "tier": "CRASH_DEFENSIVE",
@@ -1630,27 +1616,13 @@
  },
  "vetoes": {
   "status": "OK",
-  "as_of_utc": "2026-11-01T04:39:27Z",
-  "age_minutes": 27.6,
+  "as_of_utc": "2026-11-01T05:07:35Z",
+  "age_minutes": 6.7,
   "items": [
    {
     "symbol": "onchain:base:0x01784ef301d79e4b2df3a21ad9a536d4cf09a5ce:0xacfe6019ed1a7dc6f7b508c02d1b04ec88cc21bf",
     "inst": "base:0xacfe6019ed1a7dc6f7b508c02d1b04ec88cc21bf",
     "name": "VVV / WETH",
-    "kind": "SECURITY_VETO",
-    "reason": "MINTABLE",
-    "source": "snapshot.onchain_vetoes",
-    "universe_tier": null,
-    "security_status": null,
-    "listing_age_days": null,
-    "vol24h_usdt": null,
-    "early_reason": null,
-    "size_cap_pct": null
-   },
-   {
-    "symbol": "onchain:base:0x1fae246b1b2d0ce47126bbb109850da355352d77:0x21cfcfc3d8f98fc728f48341d10ad8283f6eb7ab",
-    "inst": "base:0x21cfcfc3d8f98fc728f48341d10ad8283f6eb7ab",
-    "name": "TRUE / WETH",
     "kind": "SECURITY_VETO",
     "reason": "MINTABLE",
     "source": "snapshot.onchain_vetoes",
@@ -1676,11 +1648,25 @@
     "size_cap_pct": null
    },
    {
-    "symbol": "onchain:eth:0x180efc1349a69390ade25667487a826164c9c6e4:0x62d0a8458ed7719fdaf978fe5929c6d342b0bfce",
-    "inst": "eth:0x62d0a8458ed7719fdaf978fe5929c6d342b0bfce",
-    "name": "BEAM / WETH",
+    "symbol": "onchain:base:0x1fae246b1b2d0ce47126bbb109850da355352d77:0x21cfcfc3d8f98fc728f48341d10ad8283f6eb7ab",
+    "inst": "base:0x21cfcfc3d8f98fc728f48341d10ad8283f6eb7ab",
+    "name": "TRUE / WETH",
     "kind": "SECURITY_VETO",
-    "reason": "MINTABLE,OWNER_CHANGE_BALANCE",
+    "reason": "MINTABLE",
+    "source": "snapshot.onchain_vetoes",
+    "universe_tier": null,
+    "security_status": null,
+    "listing_age_days": null,
+    "vol24h_usdt": null,
+    "early_reason": null,
+    "size_cap_pct": null
+   },
+   {
+    "symbol": "onchain:bsc:0x25042161f871a34e77a7af1aff74aa1a0dc9b4c661fd53c7504948ad97f8d13f:0x277add739c6e0477616948357af9e79fe1ec9b80",
+    "inst": "bsc:0x277add739c6e0477616948357af9e79fe1ec9b80",
+    "name": "AEON / USDT 0.007%",
+    "kind": "SECURITY_VETO",
+    "reason": "MINTABLE,HIDDEN_OWNER,PAUSABLE",
     "source": "snapshot.onchain_vetoes",
     "universe_tier": null,
     "security_status": null,
@@ -1747,7 +1733,7 @@
  "universe": {
   "status": "OK",
   "as_of_utc": "2026-11-01T00:08:56Z",
-  "age_minutes": 298.1,
+  "age_minutes": 305.3,
   "schema": "cqs-universe-v1",
   "rule_version": "CQS-UNI-1.1",
   "config_hash": "dd9b36285f3c",
@@ -2026,8 +2012,8 @@
  "buy_signals": [],
  "smw": {
   "status": "OK",
-  "as_of_utc": "2026-11-01T04:55:47Z",
-  "age_minutes": 11.2,
+  "as_of_utc": "2026-11-01T05:08:38Z",
+  "age_minutes": 5.6,
   "n": 0,
   "weight_state": "SHADOW",
   "rule_version": "SMW-0.2"
