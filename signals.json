@@ -1,7 +1,7 @@
 {
  "schema": "cqs-signals-v2",
- "generated_at_utc": "2026-11-09T10:48:50Z",
- "source_run": "sentinel_jobs.py fast",
+ "generated_at_utc": "2026-11-09T11:00:49Z",
+ "source_run": "sentinel_jobs.py track",
  "stale_after_minutes": 90,
  "rule_versions": {
   "repo_tag": "cqs-v3.7.1-4-gffc8754",
@@ -32,7 +32,7 @@
  "market": {
   "status": "OK",
   "as_of_utc": "2026-11-09T10:48:23Z",
-  "age_minutes": 0.4,
+  "age_minutes": 12.4,
   "btc_tier": "ROTATION_SELECTIVE",
   "btc_tier_source": "mf_ledger.mf_runs (latest hourly MF run; vcpd-2.0 mtf.tier on closed BTC 1D+4H)",
   "btc_tier_vcpd": "ROTATION_SELECTIVE",
@@ -59,7 +59,7 @@
    "status": "OK",
    "rule_version": "CQS-MACRO-0.1",
    "as_of_utc": "2026-11-09T10:12:45Z",
-   "age_min": 36.1,
+   "age_min": 48.1,
    "source": "DefiLlama public API",
    "display_only": true,
    "gates": "none (display only)",
@@ -102,7 +102,7 @@
  "top7": {
   "status": "OK",
   "as_of_utc": "2026-11-09T08:07:14Z",
-  "age_minutes": 161.6,
+  "age_minutes": 173.6,
   "bar_close_sast": "2026-11-09 10:00",
   "scope": "FULL_UNIVERSE",
   "source": "out/shadow/latest_shadow.json top7_universe (rank/score/conviction) + ledger.sqlite (core state) + out/snapshot.json (RS)",
@@ -904,7 +904,7 @@
  "top7_legacy": {
   "status": "OK",
   "as_of_utc": "2026-11-09T08:06:48Z",
-  "age_minutes": 162.0,
+  "age_minutes": 174.0,
   "bar_close_sast": "2026-11-09 10:00",
   "source": "out/vcpd/latest2.json (rank/order) + out/shadow/latest_shadow.json (conviction/families/N_eff) + ledger.sqlite (core state) + out/snapshot.json (RS)",
   "items": [
@@ -1301,7 +1301,7 @@
  "mf": {
   "status": "OK",
   "as_of_utc": "2026-11-09T10:48:23Z",
-  "age_minutes": 0.4,
+  "age_minutes": 12.4,
   "rule_version": "CQS-MF-0.2",
   "tier": "ROTATION_SELECTIVE",
   "old_gate_shadow": "ON(SOFT, MF +5)",
@@ -1475,7 +1475,7 @@
  "hm": {
   "status": "OK",
   "as_of_utc": "2026-11-09T08:08:56Z",
-  "age_minutes": 159.9,
+  "age_minutes": 171.9,
   "rule_version": "CQS-HM-0.1",
   "bar_close_sast": "11-09 10:00",
   "tier": "ROTATION_SELECTIVE",
@@ -1712,7 +1712,7 @@
  "vetoes": {
   "status": "OK",
   "as_of_utc": "2026-11-09T10:41:31Z",
-  "age_minutes": 7.3,
+  "age_minutes": 19.3,
   "items": [
    {
     "symbol": "onchain:arbitrum:0x9b6ff025aee245d314c09f57b72f0de6e231c3a6:0x18c11fd286c5ec11c3b683caa813b77f5163a122",
@@ -1787,7 +1787,7 @@
  "universe": {
   "status": "OK",
   "as_of_utc": "2026-11-09T00:10:15Z",
-  "age_minutes": 638.6,
+  "age_minutes": 650.6,
   "schema": "cqs-universe-v1",
   "rule_version": "CQS-UNI-1.1",
   "config_hash": "dd9b36285f3c",
@@ -2126,68 +2126,6 @@
   },
   {
    "source": "MF_TRIGGERED",
-   "symbol": "MERL-USDT",
-   "base": "MERL",
-   "universe_tier": "ESTABLISHED",
-   "security_status": "OK",
-   "listing_age_days": 933.6,
-   "vol24h_usdt": 9634180.0,
-   "early_reason": null,
-   "size_cap_pct": 20,
-   "signal_time_utc": "2026-11-09T07:00:00Z",
-   "candle_close_utc": "2026-11-09T07:00:00Z",
-   "candle_tf": "1H",
-   "entry_ref_price": 0.031791759999999995,
-   "trigger": 0.03174,
-   "stop_initial": 0.02993747428571428,
-   "risk_pct": 0.125,
-   "score": 59.7,
-   "threshold": 50,
-   "expires_utc": "2026-11-09T11:00:00Z",
-   "status": "TRIGGERED",
-   "note": "MF paper entry filled (trigger hit); listed for 4h after the fill",
-   "min_order_usdt": 15,
-   "micro": {
-    "basis_pct": 0.0962,
-    "funding_rate_pct": 0.005,
-    "oi_change_pct": -8.678,
-    "close_ratio": 0.215,
-    "vol_ratio": 1.316,
-    "label": "NEUTRAL",
-    "label_zh": "📊微观中性",
-    "bonus": 0.0,
-    "micro_trim": false,
-    "status": "OK",
-    "as_of": "2026-11-09T10:48:21Z",
-    "why": [],
-    "src": [
-     "TOP7",
-     "MF_TRIGGERED"
-    ]
-   },
-   "dex": {
-    "buy_ratio_h6": null,
-    "buy_ratio_h24": null,
-    "liquidity_usd": null,
-    "chain": "ethereum",
-    "pair_url": null,
-    "match_quality": "NO_POOL",
-    "status": "NO_POOL",
-    "trigger": false,
-    "wash_suspect": false,
-    "txns_h6": null,
-    "txns_h24": null,
-    "volume_h24_usd": null,
-    "avg_trade_usd_h24": null,
-    "dex": null,
-    "base_address": null,
-    "as_of": "2026-11-09T10:48:23Z",
-    "factor_id": "S_DEX_BUY_PRESSURE",
-    "factor_state": "SHADOW"
-   }
-  },
-  {
-   "source": "MF_TRIGGERED",
    "symbol": "PEPE-USDT",
    "base": "PEPE",
    "universe_tier": "ESTABLISHED",
@@ -2252,8 +2190,8 @@
  ],
  "smw": {
   "status": "OK",
-  "as_of_utc": "2026-11-09T10:33:38Z",
-  "age_minutes": 15.2,
+  "as_of_utc": "2026-11-09T10:53:14Z",
+  "age_minutes": 7.6,
   "n": 0,
   "weight_state": "SHADOW",
   "rule_version": "SMW-0.2"
