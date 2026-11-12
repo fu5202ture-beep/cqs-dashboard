@@ -1,6 +1,6 @@
 {
  "schema": "cqs-signals-v2",
- "generated_at_utc": "2026-11-12T11:42:49Z",
+ "generated_at_utc": "2026-11-12T12:12:14Z",
  "source_run": "sentinel_jobs.py fast",
  "stale_after_minutes": 90,
  "rule_versions": {
@@ -17,7 +17,7 @@
  "exchange_access": "NONE",
  "mode": "PAPER",
  "min_order_usdt": 15,
- "ref_equity_usdt": 120.35,
+ "ref_equity_usdt": 121.3,
  "size_cap_pct_base": {
   "ESTABLISHED": 20,
   "NEW_MEME": 10,
@@ -25,20 +25,20 @@
  },
  "size_cap_pct_effective": {
   "ESTABLISHED": 20,
-  "NEW_MEME": 12.5,
-  "EARLY_WATCH": 12.5
+  "NEW_MEME": 12.4,
+  "EARLY_WATCH": 12.4
  },
  "size_cap_rule": "size_cap_pct = max(base cap, min_order_usdt / ref_equity_usdt x 100), 1 decimal (base: ESTABLISHED 20 / NEW_MEME 10 / EARLY_WATCH 5); ref_equity_usdt = HM paper equity (out/hm/latest_hm.json, deposit-aware)",
  "market": {
   "status": "OK",
-  "as_of_utc": "2026-11-12T11:42:29Z",
-  "age_minutes": 0.3,
+  "as_of_utc": "2026-11-12T12:11:53Z",
+  "age_minutes": 0.4,
   "btc_tier": "ROTATION_SELECTIVE",
   "btc_tier_source": "mf_ledger.mf_runs (latest hourly MF run; vcpd-2.0 mtf.tier on closed BTC 1D+4H)",
   "btc_tier_vcpd": "ROTATION_SELECTIVE",
-  "btc_tier_vcpd_bar_close_sast": "2026-11-12 10:00",
-  "last_closed_4h_candle_close_utc": "2026-11-12T08:00:00Z",
-  "btc_close_4h": 73655.5,
+  "btc_tier_vcpd_bar_close_sast": "2026-11-12 14:00",
+  "last_closed_4h_candle_close_utc": "2026-11-12T12:00:00Z",
+  "btc_close_4h": 72952.2,
   "btc_ema20_1d": 77431.6,
   "btc_ema50_1d": 78901.29,
   "tier_cap": 0.5,
@@ -57,7 +57,7 @@
    "status": "OK",
    "rule_version": "CQS-MACRO-0.1",
    "as_of_utc": "2026-11-12T11:42:28Z",
-   "age_min": 0.4,
+   "age_min": 29.8,
    "source": "DefiLlama public API",
    "display_only": true,
    "gates": "none (display only)",
@@ -99,9 +99,9 @@
  },
  "top7": {
   "status": "OK",
-  "as_of_utc": "2026-11-12T08:04:18Z",
-  "age_minutes": 218.5,
-  "bar_close_sast": "2026-11-12 10:00",
+  "as_of_utc": "2026-11-12T12:04:49Z",
+  "age_minutes": 7.4,
+  "bar_close_sast": "2026-11-12 14:00",
   "scope": "FULL_UNIVERSE",
   "source": "out/shadow/latest_shadow.json top7_universe (rank/score/conviction) + ledger.sqlite (core state) + out/snapshot.json (RS)",
   "items": [
@@ -141,6 +141,8 @@
      "A_V1_ABOVE_EMA50",
      "A_V2_D2P_POS",
      "A_V2_D2RS_LEADER",
+     "A_V2_D2V_POS",
+     "A_V2_COMPLETION80",
      "A_V2_SIGNAL_24H",
      "A_CORE_Q1D_IGNITION",
      "A_CORE_OI_UP_4H",
@@ -153,6 +155,8 @@
      "A_V1_ABOVE_EMA50": 204,
      "A_V2_D2P_POS": 204,
      "A_V2_D2RS_LEADER": 202,
+     "A_V2_D2V_POS": 208,
+     "A_V2_COMPLETION80": 178,
      "A_V2_SIGNAL_24H": 154,
      "A_CORE_Q1D_IGNITION": 183,
      "A_CORE_OI_UP_4H": 5,
@@ -177,24 +181,24 @@
     "size_cap_pct": 20,
     "universe_score": 100.0,
     "in_legacy_top7": false,
-    "close_4h": 0.046601,
-    "bar_close_utc": "2026-11-12T08:00:00Z",
+    "close_4h": 0.047353,
+    "bar_close_utc": "2026-11-12T12:00:00Z",
     "fresh_trigger": [],
     "meme_confirm": null,
     "n_obs_live": 24,
     "cold_start_coin": true,
     "micro": {
-     "basis_pct": 0.1811,
-     "funding_rate_pct": -0.00517,
-     "oi_change_pct": 1.046,
-     "close_ratio": 0.678,
-     "vol_ratio": 0.442,
+     "basis_pct": 0.1635,
+     "funding_rate_pct": -0.00722,
+     "oi_change_pct": -0.104,
+     "close_ratio": 0.869,
+     "vol_ratio": 0.701,
      "label": "NEUTRAL",
      "label_zh": "📊微观中性",
      "bonus": 0.0,
      "micro_trim": false,
      "status": "OK",
-     "as_of": "2026-11-12T11:42:26Z",
+     "as_of": "2026-11-12T12:06:33Z",
      "why": [],
      "src": [
       "HM_POSITION",
@@ -202,22 +206,22 @@
      ]
     },
     "dex": {
-     "buy_ratio_h6": 0.815,
-     "buy_ratio_h24": 0.459,
-     "liquidity_usd": 37904.0,
+     "buy_ratio_h6": 0.875,
+     "buy_ratio_h24": 0.467,
+     "liquidity_usd": 37950.0,
      "chain": "bsc",
      "pair_url": "https://dexscreener.com/bsc/0x85533288f67ec74878444c273c00254eea74c2c3",
      "match_quality": "ADDRESS",
      "status": "OK",
      "trigger": false,
      "wash_suspect": false,
-     "txns_h6": 27,
+     "txns_h6": 32,
      "txns_h24": 377,
-     "volume_h24_usd": 55246.0,
-     "avg_trade_usd_h24": 146.54,
+     "volume_h24_usd": 54879.0,
+     "avg_trade_usd_h24": 145.57,
      "dex": "uniswap",
      "base_address": "0xFe930c2d63AeD9b82fC4DBC801920dD2c1a3224F",
-     "as_of": "2026-11-12T11:42:28Z",
+     "as_of": "2026-11-12T12:06:12Z",
      "factor_id": "S_DEX_BUY_PRESSURE",
      "factor_state": "SHADOW"
     }
@@ -247,20 +251,20 @@
      "FAMILY_VOLUME_ORDERFLOW"
     ],
     "n_fam": 2,
-    "warn_families": [
-     "FAMILY_TREND_MOMENTUM"
-    ],
+    "warn_families": [],
     "super_resonance": false,
     "active_hits": [
      "A_V1_RATCHET_INTACT",
      "A_V1_ABOVE_EMA50",
      "A_V2_D2V_POS",
+     "A_V2_COMPLETION80",
      "A_CORE_RS_BTC_POS"
     ],
     "n_eff": {
      "A_V1_RATCHET_INTACT": 208,
      "A_V1_ABOVE_EMA50": 204,
      "A_V2_D2V_POS": 208,
+     "A_V2_COMPLETION80": 178,
      "A_CORE_RS_BTC_POS": 209
     },
     "cold_start": false,
@@ -278,24 +282,24 @@
     "size_cap_pct": 20,
     "universe_score": 100.0,
     "in_legacy_top7": false,
-    "close_4h": 0.02892,
-    "bar_close_utc": "2026-11-12T08:00:00Z",
+    "close_4h": 0.02956,
+    "bar_close_utc": "2026-11-12T12:00:00Z",
     "fresh_trigger": [],
     "meme_confirm": null,
     "n_obs_live": 23,
     "cold_start_coin": true,
     "micro": {
-     "basis_pct": 0.1362,
+     "basis_pct": 0.101,
      "funding_rate_pct": 0.005,
-     "oi_change_pct": -0.689,
-     "close_ratio": 0.56,
-     "vol_ratio": 0.142,
+     "oi_change_pct": -0.252,
+     "close_ratio": 0.972,
+     "vol_ratio": 0.188,
      "label": "NEUTRAL",
      "label_zh": "📊微观中性",
      "bonus": 0.0,
      "micro_trim": false,
      "status": "OK",
-     "as_of": "2026-11-12T11:42:26Z",
+     "as_of": "2026-11-12T12:06:33Z",
      "why": [],
      "src": [
       "TOP7"
@@ -317,7 +321,7 @@
      "avg_trade_usd_h24": null,
      "dex": null,
      "base_address": null,
-     "as_of": "2026-11-12T11:42:28Z",
+     "as_of": "2026-11-12T12:06:12Z",
      "factor_id": "S_DEX_BUY_PRESSURE",
      "factor_state": "SHADOW"
     }
@@ -343,23 +347,18 @@
     "vcpd_d2RS_z": null,
     "rs_leader": null,
     "families_resonating": [
-     "FAMILY_TREND_MOMENTUM",
-     "FAMILY_VOLUME_ORDERFLOW"
-    ],
-    "n_fam": 2,
-    "warn_families": [
      "FAMILY_TREND_MOMENTUM"
     ],
+    "n_fam": 1,
+    "warn_families": [],
     "super_resonance": false,
     "active_hits": [
      "A_V1_RATCHET_INTACT",
-     "A_V1_ABOVE_EMA50",
-     "A_V2_D2V_POS"
+     "A_V1_ABOVE_EMA50"
     ],
     "n_eff": {
      "A_V1_RATCHET_INTACT": 208,
-     "A_V1_ABOVE_EMA50": 204,
-     "A_V2_D2V_POS": 208
+     "A_V1_ABOVE_EMA50": 204
     },
     "cold_start": false,
     "cold_start_factors": null,
@@ -367,7 +366,7 @@
     "security_veto": false,
     "veto_reason": null,
     "mf_state": null,
-    "hm_held": true,
+    "hm_held": false,
     "universe_tier": "ESTABLISHED",
     "security_status": "OK",
     "listing_age_days": 1290.6,
@@ -376,47 +375,46 @@
     "size_cap_pct": 20,
     "universe_score": 100.0,
     "in_legacy_top7": false,
-    "close_4h": 4.4582e-06,
-    "bar_close_utc": "2026-11-12T08:00:00Z",
+    "close_4h": 4.4523e-06,
+    "bar_close_utc": "2026-11-12T12:00:00Z",
     "fresh_trigger": [],
     "meme_confirm": null,
     "n_obs_live": 24,
     "cold_start_coin": true,
     "micro": {
-     "basis_pct": 0.0901,
-     "funding_rate_pct": 0.00211,
-     "oi_change_pct": -0.08,
-     "close_ratio": 0.199,
-     "vol_ratio": 0.779,
+     "basis_pct": 0.0383,
+     "funding_rate_pct": 0.00416,
+     "oi_change_pct": -0.016,
+     "close_ratio": 0.586,
+     "vol_ratio": 0.755,
      "label": "NEUTRAL",
      "label_zh": "📊微观中性",
      "bonus": 0.0,
      "micro_trim": false,
      "status": "OK",
-     "as_of": "2026-11-12T11:42:26Z",
+     "as_of": "2026-11-12T12:06:33Z",
      "why": [],
      "src": [
-      "HM_POSITION",
       "TOP7"
      ]
     },
     "dex": {
-     "buy_ratio_h6": 0.562,
-     "buy_ratio_h24": 0.504,
-     "liquidity_usd": 28425571.0,
+     "buy_ratio_h6": 0.599,
+     "buy_ratio_h24": 0.502,
+     "liquidity_usd": 28440404.0,
      "chain": "ethereum",
      "pair_url": "https://dexscreener.com/ethereum/0xa43fe16908251ee70ef74718545e4fe6c5ccec9f",
      "match_quality": "ADDRESS",
      "status": "OK",
      "trigger": true,
      "wash_suspect": false,
-     "txns_h6": 272,
-     "txns_h24": 1126,
-     "volume_h24_usd": 2694324.0,
-     "avg_trade_usd_h24": 2392.83,
+     "txns_h6": 287,
+     "txns_h24": 1132,
+     "volume_h24_usd": 2738382.0,
+     "avg_trade_usd_h24": 2419.07,
      "dex": "uniswap",
      "base_address": "0x6982508145454Ce325dDbE47a25d4ec3d2311933",
-     "as_of": "2026-11-12T11:42:28Z",
+     "as_of": "2026-11-12T12:06:12Z",
      "factor_id": "S_DEX_BUY_PRESSURE",
      "factor_state": "SHADOW"
     }
@@ -430,7 +428,7 @@
     "observation_score": 1.0,
     "shadow_active_score": 100.0,
     "in_observation_book": true,
-    "best_playbook": "B",
+    "best_playbook": "A",
     "core_score": 67.7,
     "core_score_as_of_utc": "2026-11-06T14:05:30Z",
     "signal_state": "WATCH",
@@ -457,17 +455,17 @@
      "A_V1_SQUEEZE",
      "A_V1_ABOVE_EMA50",
      "A_V2_SQUEEZE70",
-     "A_V2_D2V_POS",
      "A_CORE_VV_4H_POS",
-     "A_CORE_OI_UP_4H"
+     "A_CORE_OI_UP_4H",
+     "A_CORE_RS_BTC_POS"
     ],
     "n_eff": {
      "A_V1_SQUEEZE": 159,
      "A_V1_ABOVE_EMA50": 204,
      "A_V2_SQUEEZE70": 150,
-     "A_V2_D2V_POS": 208,
      "A_CORE_VV_4H_POS": 207,
-     "A_CORE_OI_UP_4H": 5
+     "A_CORE_OI_UP_4H": 5,
+     "A_CORE_RS_BTC_POS": 209
     },
     "cold_start": true,
     "cold_start_factors": [
@@ -486,24 +484,24 @@
     "size_cap_pct": 20,
     "universe_score": 100.0,
     "in_legacy_top7": false,
-    "close_4h": 0.08006,
-    "bar_close_utc": "2026-11-12T08:00:00Z",
+    "close_4h": 0.08141,
+    "bar_close_utc": "2026-11-12T12:00:00Z",
     "fresh_trigger": [],
     "meme_confirm": null,
     "n_obs_live": 24,
     "cold_start_coin": true,
     "micro": {
-     "basis_pct": 0.098,
-     "funding_rate_pct": 0.005,
-     "oi_change_pct": -7.594,
-     "close_ratio": 0.431,
-     "vol_ratio": 2.95,
+     "basis_pct": 0.0123,
+     "funding_rate_pct": -0.00923,
+     "oi_change_pct": 0.099,
+     "close_ratio": 0.526,
+     "vol_ratio": 1.396,
      "label": "NEUTRAL",
      "label_zh": "📊微观中性",
      "bonus": 0.0,
      "micro_trim": false,
      "status": "OK",
-     "as_of": "2026-11-12T11:42:26Z",
+     "as_of": "2026-11-12T12:06:33Z",
      "why": [],
      "src": [
       "TOP7"
@@ -525,116 +523,17 @@
      "avg_trade_usd_h24": null,
      "dex": null,
      "base_address": null,
-     "as_of": "2026-11-12T11:42:28Z",
+     "as_of": "2026-11-12T12:06:12Z",
      "factor_id": "S_DEX_BUY_PRESSURE",
      "factor_state": "SHADOW"
     }
    },
    {
     "rank": 5,
-    "symbol": "ONE-USDT",
-    "base": "ONE",
-    "conviction": 66.1,
-    "conviction_rank": 5,
-    "observation_score": 0.7778,
-    "shadow_active_score": 77.78,
-    "in_observation_book": false,
-    "best_playbook": "B",
-    "core_score": 65.8,
-    "core_score_as_of_utc": "2026-11-10T23:38:54Z",
-    "signal_state": "PAPER_CANDIDATE",
-    "signal_state_label": "条件具备可建仓",
-    "signal_state_as_of_utc": "2026-11-10T23:38:54Z",
-    "signal_state_note": null,
-    "rs_btc_7d": 0.21773,
-    "vcpd_d1RS_5d": null,
-    "vcpd_d2RS_z": null,
-    "rs_leader": null,
-    "families_resonating": [
-     "FAMILY_TREND_MOMENTUM",
-     "FAMILY_VOLUME_ORDERFLOW"
-    ],
-    "n_fam": 2,
-    "warn_families": [
-     "FAMILY_TREND_MOMENTUM",
-     "FAMILY_VOLUME_ORDERFLOW"
-    ],
-    "super_resonance": false,
-    "active_hits": [
-     "A_V1_RATCHET_INTACT",
-     "A_V2_D2V_POS",
-     "A_CORE_RS_BTC_POS"
-    ],
-    "n_eff": {
-     "A_V1_RATCHET_INTACT": 208,
-     "A_V2_D2V_POS": 208,
-     "A_CORE_RS_BTC_POS": 209
-    },
-    "cold_start": false,
-    "cold_start_factors": null,
-    "hist_top7_n_eff": 0,
-    "security_veto": false,
-    "veto_reason": null,
-    "mf_state": null,
-    "hm_held": false,
-    "universe_tier": "ESTABLISHED",
-    "security_status": "UNVERIFIED",
-    "listing_age_days": 1770.9,
-    "vol24h_usdt": 27359693.0,
-    "early_reason": null,
-    "size_cap_pct": 20,
-    "universe_score": 77.78,
-    "in_legacy_top7": false,
-    "close_4h": 0.001623,
-    "bar_close_utc": "2026-11-12T08:00:00Z",
-    "fresh_trigger": [],
-    "meme_confirm": null,
-    "n_obs_live": 15,
-    "cold_start_coin": true,
-    "micro": {
-     "basis_pct": 1.4605,
-     "funding_rate_pct": -0.15702,
-     "oi_change_pct": 17.765,
-     "close_ratio": 0.917,
-     "vol_ratio": 1.347,
-     "label": "NEUTRAL",
-     "label_zh": "📊微观中性",
-     "bonus": 0.0,
-     "micro_trim": false,
-     "status": "OK",
-     "as_of": "2026-11-12T11:42:26Z",
-     "why": [],
-     "src": [
-      "TOP7"
-     ]
-    },
-    "dex": {
-     "buy_ratio_h6": null,
-     "buy_ratio_h24": null,
-     "liquidity_usd": null,
-     "chain": null,
-     "pair_url": null,
-     "match_quality": "NO_POOL",
-     "status": "NO_POOL",
-     "trigger": false,
-     "wash_suspect": false,
-     "txns_h6": null,
-     "txns_h24": null,
-     "volume_h24_usd": null,
-     "avg_trade_usd_h24": null,
-     "dex": null,
-     "base_address": null,
-     "as_of": "2026-11-12T11:42:28Z",
-     "factor_id": "S_DEX_BUY_PRESSURE",
-     "factor_state": "SHADOW"
-    }
-   },
-   {
-    "rank": 6,
     "symbol": "KITE-USDT",
     "base": "KITE",
     "conviction": 65.5,
-    "conviction_rank": 6,
+    "conviction_rank": 5,
     "observation_score": 0.75,
     "shadow_active_score": 75.0,
     "in_observation_book": true,
@@ -645,7 +544,7 @@
     "signal_state_label": null,
     "signal_state_as_of_utc": null,
     "signal_state_note": "NO_CORE_SIGNAL_ON_RECORD (core ledger writes on verdict change only)",
-    "rs_btc_7d": 0.07336,
+    "rs_btc_7d": 0.08609,
     "vcpd_d1RS_5d": null,
     "vcpd_d2RS_z": null,
     "rs_leader": null,
@@ -663,8 +562,6 @@
      "A_V1_ABOVE_EMA50",
      "A_V2_D2P_POS",
      "A_V2_D2RS_LEADER",
-     "A_V2_D2V_POS",
-     "A_V2_COMPLETION80",
      "A_CORE_Q1D_IGNITION",
      "A_CORE_VV_4H_POS",
      "A_CORE_RS_BTC_POS"
@@ -674,8 +571,6 @@
      "A_V1_ABOVE_EMA50": 204,
      "A_V2_D2P_POS": 204,
      "A_V2_D2RS_LEADER": 202,
-     "A_V2_D2V_POS": 208,
-     "A_V2_COMPLETION80": 178,
      "A_CORE_Q1D_IGNITION": 183,
      "A_CORE_VV_4H_POS": 207,
      "A_CORE_RS_BTC_POS": 209
@@ -692,17 +587,17 @@
     "listing_age_days": 373.5,
     "vol24h_usdt": 1644100.0,
     "early_reason": "LOW_VOLUME",
-    "size_cap_pct": 12.5,
+    "size_cap_pct": 12.4,
     "universe_score": 75.0,
     "in_legacy_top7": false,
-    "close_4h": 0.12456,
-    "bar_close_utc": "2026-11-12T08:00:00Z",
+    "close_4h": 0.12645,
+    "bar_close_utc": "2026-11-12T12:00:00Z",
     "fresh_trigger": [],
     "meme_confirm": {
-     "vol_ratio": 7.510293712227333,
-     "close": 0.12456,
-     "prev_high": 0.12948,
-     "rs_btc": 0.07336,
+     "vol_ratio": 1.7847682590439113,
+     "close": 0.12645,
+     "prev_high": 0.13025,
+     "rs_btc": 0.08609,
      "security_status": "OK",
      "ok": false,
      "fails": [
@@ -712,60 +607,60 @@
     "n_obs_live": 6,
     "cold_start_coin": true,
     "micro": {
-     "basis_pct": 0.0159,
+     "basis_pct": -0.1586,
      "funding_rate_pct": 0.005,
-     "oi_change_pct": 1.645,
-     "close_ratio": 0.148,
-     "vol_ratio": 6.953,
+     "oi_change_pct": 0.248,
+     "close_ratio": 0.577,
+     "vol_ratio": 1.707,
      "label": "NEUTRAL",
      "label_zh": "📊微观中性",
      "bonus": 0.0,
      "micro_trim": false,
      "status": "OK",
-     "as_of": "2026-11-12T11:42:26Z",
+     "as_of": "2026-11-12T12:06:33Z",
      "why": [],
      "src": [
       "TOP7"
      ]
     },
     "dex": {
-     "buy_ratio_h6": 0.51,
-     "buy_ratio_h24": 0.547,
-     "liquidity_usd": 781477.0,
+     "buy_ratio_h6": 0.503,
+     "buy_ratio_h24": 0.526,
+     "liquidity_usd": 780518.0,
      "chain": "ethereum",
      "pair_url": "https://dexscreener.com/ethereum/0x912b338a297e5b4e74d7b90a60795a98e865a58beb28c9e00dd6800113679375",
      "match_quality": "ADDRESS",
      "status": "OK",
      "trigger": false,
      "wash_suspect": false,
-     "txns_h6": 196,
-     "txns_h24": 488,
-     "volume_h24_usd": 140273.0,
-     "avg_trade_usd_h24": 287.44,
+     "txns_h6": 177,
+     "txns_h24": 475,
+     "volume_h24_usd": 138292.0,
+     "avg_trade_usd_h24": 291.14,
      "dex": "uniswap",
      "base_address": "0x118B70dF4F06Fa5678E7d543e6066e028C8ea0c0",
-     "as_of": "2026-11-12T11:42:28Z",
+     "as_of": "2026-11-12T12:06:12Z",
      "factor_id": "S_DEX_BUY_PRESSURE",
      "factor_state": "SHADOW"
     }
    },
    {
-    "rank": 7,
-    "symbol": "AVAX-USDT",
-    "base": "AVAX",
+    "rank": 6,
+    "symbol": "JUP-USDT",
+    "base": "JUP",
     "conviction": 63.8,
     "conviction_rank": 7,
     "observation_score": 0.75,
     "shadow_active_score": 75.0,
     "in_observation_book": false,
     "best_playbook": "C",
-    "core_score": 59.7,
-    "core_score_as_of_utc": "2026-11-04T17:02:52Z",
-    "signal_state": "WATCH",
-    "signal_state_label": "优先研究",
-    "signal_state_as_of_utc": "2026-11-04T17:02:52Z",
+    "core_score": 55.4,
+    "core_score_as_of_utc": "2026-11-11T16:41:21Z",
+    "signal_state": "PAPER_CANDIDATE",
+    "signal_state_label": "条件具备可建仓",
+    "signal_state_as_of_utc": "2026-11-11T16:41:21Z",
     "signal_state_note": null,
-    "rs_btc_7d": 0.0427,
+    "rs_btc_7d": 0.03055,
     "vcpd_d1RS_5d": null,
     "vcpd_d2RS_z": null,
     "rs_leader": null,
@@ -775,10 +670,11 @@
      "FAMILY_VOLUME_ORDERFLOW"
     ],
     "n_fam": 3,
-    "warn_families": [],
+    "warn_families": [
+     "FAMILY_VOLUME_ORDERFLOW"
+    ],
     "super_resonance": false,
     "active_hits": [
-     "A_V1_RATCHET_INTACT",
      "A_V2_D2P_POS",
      "A_V2_D2RS_LEADER",
      "A_V2_D2V_POS",
@@ -786,7 +682,6 @@
      "A_CORE_RS_BTC_POS"
     ],
     "n_eff": {
-     "A_V1_RATCHET_INTACT": 208,
      "A_V2_D2P_POS": 204,
      "A_V2_D2RS_LEADER": 202,
      "A_V2_D2V_POS": 208,
@@ -804,34 +699,31 @@
     "hm_held": false,
     "universe_tier": "ESTABLISHED",
     "security_status": "OK",
-    "listing_age_days": 2112.7,
-    "vol24h_usdt": 37748297.0,
+    "listing_age_days": 1015.4,
+    "vol24h_usdt": 6502567.0,
     "early_reason": null,
     "size_cap_pct": 20,
     "universe_score": 75.0,
     "in_legacy_top7": false,
-    "close_4h": 8.629,
-    "bar_close_utc": "2026-11-12T08:00:00Z",
+    "close_4h": 0.2592,
+    "bar_close_utc": "2026-11-12T12:00:00Z",
     "fresh_trigger": [],
     "meme_confirm": null,
     "n_obs_live": 24,
     "cold_start_coin": true,
     "micro": {
-     "basis_pct": 0.0711,
-     "funding_rate_pct": 0.00156,
-     "oi_change_pct": 1.516,
-     "close_ratio": 0.679,
-     "vol_ratio": 0.386,
+     "basis_pct": null,
+     "funding_rate_pct": null,
+     "oi_change_pct": null,
+     "close_ratio": null,
+     "vol_ratio": null,
      "label": "NEUTRAL",
      "label_zh": "📊微观中性",
      "bonus": 0.0,
      "micro_trim": false,
-     "status": "OK",
-     "as_of": "2026-11-12T11:42:26Z",
-     "why": [],
-     "src": [
-      "TOP7"
-     ]
+     "status": "NO_READING",
+     "as_of": null,
+     "why": []
     },
     "dex": {
      "buy_ratio_h6": null,
@@ -839,8 +731,8 @@
      "liquidity_usd": null,
      "chain": null,
      "pair_url": null,
-     "match_quality": "NATIVE_NO_CONTRACT",
-     "status": "NATIVE_NO_CONTRACT",
+     "match_quality": "NO_READING",
+     "status": "NO_READING",
      "trigger": false,
      "wash_suspect": false,
      "txns_h6": null,
@@ -849,7 +741,116 @@
      "avg_trade_usd_h24": null,
      "dex": null,
      "base_address": null,
-     "as_of": "2026-11-12T11:42:28Z",
+     "as_of": null,
+     "factor_id": "S_DEX_BUY_PRESSURE",
+     "factor_state": "SHADOW"
+    }
+   },
+   {
+    "rank": 7,
+    "symbol": "NES-USDT",
+    "base": "NES",
+    "conviction": 65.5,
+    "conviction_rank": 6,
+    "observation_score": 0.75,
+    "shadow_active_score": 75.0,
+    "in_observation_book": true,
+    "best_playbook": "B",
+    "core_score": null,
+    "core_score_as_of_utc": null,
+    "signal_state": null,
+    "signal_state_label": null,
+    "signal_state_as_of_utc": null,
+    "signal_state_note": "NO_CORE_SIGNAL_ON_RECORD (core ledger writes on verdict change only)",
+    "rs_btc_7d": 0.17051,
+    "vcpd_d1RS_5d": null,
+    "vcpd_d2RS_z": null,
+    "rs_leader": null,
+    "families_resonating": [
+     "FAMILY_TREND_MOMENTUM",
+     "FAMILY_VOLUME_ORDERFLOW"
+    ],
+    "n_fam": 2,
+    "warn_families": [
+     "FAMILY_OSCILLATOR_REVERSION"
+    ],
+    "super_resonance": false,
+    "active_hits": [
+     "A_V1_RATCHET_INTACT",
+     "A_V1_ABOVE_EMA50",
+     "A_V2_D2P_POS",
+     "A_CORE_VV_4H_POS",
+     "A_CORE_RS_BTC_POS"
+    ],
+    "n_eff": {
+     "A_V1_RATCHET_INTACT": 208,
+     "A_V1_ABOVE_EMA50": 204,
+     "A_V2_D2P_POS": 204,
+     "A_CORE_VV_4H_POS": 207,
+     "A_CORE_RS_BTC_POS": 209
+    },
+    "cold_start": false,
+    "cold_start_factors": null,
+    "hist_top7_n_eff": 0,
+    "security_veto": null,
+    "veto_reason": null,
+    "mf_state": null,
+    "hm_held": false,
+    "universe_tier": "EARLY_WATCH",
+    "security_status": "OK",
+    "listing_age_days": 140.5,
+    "vol24h_usdt": 1949997.0,
+    "early_reason": "LOW_VOLUME",
+    "size_cap_pct": 12.4,
+    "universe_score": 75.0,
+    "in_legacy_top7": false,
+    "close_4h": 0.1518,
+    "bar_close_utc": "2026-11-12T12:00:00Z",
+    "fresh_trigger": [],
+    "meme_confirm": {
+     "vol_ratio": 1.6792140836676592,
+     "close": 0.1518,
+     "prev_high": 0.1947,
+     "rs_btc": 0.17051,
+     "security_status": "OK",
+     "ok": false,
+     "fails": [
+      "EARLY_NO_CLOSED_BREAKOUT"
+     ]
+    },
+    "n_obs_live": 10,
+    "cold_start_coin": true,
+    "micro": {
+     "basis_pct": null,
+     "funding_rate_pct": null,
+     "oi_change_pct": null,
+     "close_ratio": null,
+     "vol_ratio": null,
+     "label": "NEUTRAL",
+     "label_zh": "📊微观中性",
+     "bonus": 0.0,
+     "micro_trim": false,
+     "status": "NO_READING",
+     "as_of": null,
+     "why": []
+    },
+    "dex": {
+     "buy_ratio_h6": null,
+     "buy_ratio_h24": null,
+     "liquidity_usd": null,
+     "chain": null,
+     "pair_url": null,
+     "match_quality": "NO_READING",
+     "status": "NO_READING",
+     "trigger": false,
+     "wash_suspect": false,
+     "txns_h6": null,
+     "txns_h24": null,
+     "volume_h24_usd": null,
+     "avg_trade_usd_h24": null,
+     "dex": null,
+     "base_address": null,
+     "as_of": null,
      "factor_id": "S_DEX_BUY_PRESSURE",
      "factor_state": "SHADOW"
     }
@@ -872,19 +873,73 @@
  },
  "top7_legacy": {
   "status": "OK",
-  "as_of_utc": "2026-11-12T08:03:51Z",
-  "age_minutes": 219.0,
-  "bar_close_sast": "2026-11-12 10:00",
+  "as_of_utc": "2026-11-12T12:04:23Z",
+  "age_minutes": 7.9,
+  "bar_close_sast": "2026-11-12 14:00",
   "source": "out/vcpd/latest2.json (rank/order) + out/shadow/latest_shadow.json (conviction/families/N_eff) + ledger.sqlite (core state) + out/snapshot.json (RS)",
   "items": [
    {
     "rank": 1,
-    "symbol": "FET-USDT",
-    "base": "FET",
+    "symbol": "RENDER-USDT",
+    "base": "RENDER",
     "conviction": 42.5,
     "conviction_rank": 1,
     "observation_score": 0.5,
     "shadow_active_score": 50.0,
+    "in_observation_book": false,
+    "best_playbook": "C",
+    "core_score": 55.4,
+    "core_score_as_of_utc": "2026-11-11T06:09:23Z",
+    "signal_state": "PAPER_CANDIDATE",
+    "signal_state_label": "条件具备可建仓",
+    "signal_state_as_of_utc": "2026-11-11T06:09:23Z",
+    "signal_state_note": null,
+    "rs_btc_7d": 0.01228,
+    "vcpd_d1RS_5d": 0.008487,
+    "vcpd_d2RS_z": -0.206008,
+    "rs_leader": false,
+    "families_resonating": [
+     "FAMILY_TREND_MOMENTUM",
+     "FAMILY_VOLUME_ORDERFLOW"
+    ],
+    "n_fam": 2,
+    "warn_families": [
+     "FAMILY_TREND_MOMENTUM",
+     "FAMILY_VOLUME_ORDERFLOW"
+    ],
+    "super_resonance": false,
+    "active_hits": [
+     "A_V1_RATCHET_INTACT",
+     "A_V2_D2V_POS",
+     "A_CORE_RS_BTC_POS"
+    ],
+    "n_eff": {
+     "A_V1_RATCHET_INTACT": 208,
+     "A_V2_D2V_POS": 208,
+     "A_CORE_RS_BTC_POS": 209
+    },
+    "cold_start": false,
+    "cold_start_factors": null,
+    "hist_top7_n_eff": 126,
+    "security_veto": false,
+    "veto_reason": null,
+    "mf_state": null,
+    "hm_held": false,
+    "universe_tier": "ESTABLISHED",
+    "security_status": "OK",
+    "listing_age_days": 849.7,
+    "vol24h_usdt": 3413765.0,
+    "early_reason": null,
+    "size_cap_pct": 20
+   },
+   {
+    "rank": 2,
+    "symbol": "FET-USDT",
+    "base": "FET",
+    "conviction": 31.9,
+    "conviction_rank": 2,
+    "observation_score": 0.375,
+    "shadow_active_score": 37.5,
     "in_observation_book": false,
     "best_playbook": "C",
     "core_score": null,
@@ -927,60 +982,6 @@
     "security_status": "VETO",
     "listing_age_days": 1083.6,
     "vol24h_usdt": 3709996.0,
-    "early_reason": null,
-    "size_cap_pct": 20
-   },
-   {
-    "rank": 2,
-    "symbol": "RENDER-USDT",
-    "base": "RENDER",
-    "conviction": 37.8,
-    "conviction_rank": 2,
-    "observation_score": 0.4444444444444444,
-    "shadow_active_score": 44.44444444444444,
-    "in_observation_book": false,
-    "best_playbook": "B",
-    "core_score": 55.4,
-    "core_score_as_of_utc": "2026-11-11T06:09:23Z",
-    "signal_state": "PAPER_CANDIDATE",
-    "signal_state_label": "条件具备可建仓",
-    "signal_state_as_of_utc": "2026-11-11T06:09:23Z",
-    "signal_state_note": null,
-    "rs_btc_7d": 0.01228,
-    "vcpd_d1RS_5d": 0.008487,
-    "vcpd_d2RS_z": -0.206008,
-    "rs_leader": false,
-    "families_resonating": [
-     "FAMILY_TREND_MOMENTUM",
-     "FAMILY_VOLUME_ORDERFLOW"
-    ],
-    "n_fam": 2,
-    "warn_families": [
-     "FAMILY_TREND_MOMENTUM",
-     "FAMILY_VOLUME_ORDERFLOW"
-    ],
-    "super_resonance": false,
-    "active_hits": [
-     "A_V1_RATCHET_INTACT",
-     "A_V2_D2V_POS",
-     "A_CORE_RS_BTC_POS"
-    ],
-    "n_eff": {
-     "A_V1_RATCHET_INTACT": 208,
-     "A_V2_D2V_POS": 208,
-     "A_CORE_RS_BTC_POS": 209
-    },
-    "cold_start": false,
-    "cold_start_factors": null,
-    "hist_top7_n_eff": 126,
-    "security_veto": false,
-    "veto_reason": null,
-    "mf_state": null,
-    "hm_held": false,
-    "universe_tier": "ESTABLISHED",
-    "security_status": "OK",
-    "listing_age_days": 849.7,
-    "vol24h_usdt": 3413765.0,
     "early_reason": null,
     "size_cap_pct": 20
    },
@@ -1149,10 +1150,62 @@
    },
    {
     "rank": 6,
+    "symbol": "BTC-USDT",
+    "base": "BTC",
+    "conviction": 31.9,
+    "conviction_rank": 6,
+    "observation_score": 0.375,
+    "shadow_active_score": 37.5,
+    "in_observation_book": false,
+    "best_playbook": "C",
+    "core_score": 55.7,
+    "core_score_as_of_utc": "2026-11-04T18:35:03Z",
+    "signal_state": "WATCH",
+    "signal_state_label": "优先研究",
+    "signal_state_as_of_utc": "2026-11-04T18:35:03Z",
+    "signal_state_note": null,
+    "rs_btc_7d": 0.0,
+    "vcpd_d1RS_5d": 0.0,
+    "vcpd_d2RS_z": 0.0,
+    "rs_leader": false,
+    "families_resonating": [
+     "FAMILY_TREND_MOMENTUM",
+     "FAMILY_VOLUME_ORDERFLOW"
+    ],
+    "n_fam": 2,
+    "warn_families": [
+     "FAMILY_TREND_MOMENTUM",
+     "FAMILY_VOLUME_ORDERFLOW"
+    ],
+    "super_resonance": false,
+    "active_hits": [
+     "A_V2_D2P_POS",
+     "A_V2_D2V_POS"
+    ],
+    "n_eff": {
+     "A_V2_D2P_POS": 204,
+     "A_V2_D2V_POS": 208
+    },
+    "cold_start": false,
+    "cold_start_factors": null,
+    "hist_top7_n_eff": 168,
+    "security_veto": false,
+    "veto_reason": null,
+    "mf_state": null,
+    "hm_held": false,
+    "universe_tier": "ESTABLISHED",
+    "security_status": "OK",
+    "listing_age_days": 2112.7,
+    "vol24h_usdt": 5902364417.0,
+    "early_reason": null,
+    "size_cap_pct": 20
+   },
+   {
+    "rank": 7,
     "symbol": "BNB-USDT",
     "base": "BNB",
     "conviction": 31.9,
-    "conviction_rank": 6,
+    "conviction_rank": 7,
     "observation_score": 0.375,
     "shadow_active_score": 37.5,
     "in_observation_book": false,
@@ -1199,55 +1252,6 @@
     "vol24h_usdt": 48802641.0,
     "early_reason": null,
     "size_cap_pct": 20
-   },
-   {
-    "rank": 7,
-    "symbol": "LINK-USDT",
-    "base": "LINK",
-    "conviction": 31.9,
-    "conviction_rank": 7,
-    "observation_score": 0.375,
-    "shadow_active_score": 37.5,
-    "in_observation_book": false,
-    "best_playbook": "C",
-    "core_score": 56.4,
-    "core_score_as_of_utc": "2026-10-21T17:01:56Z",
-    "signal_state": "WATCH",
-    "signal_state_label": "优先研究",
-    "signal_state_as_of_utc": "2026-10-21T17:01:56Z",
-    "signal_state_note": null,
-    "rs_btc_7d": -0.02769,
-    "vcpd_d1RS_5d": -0.038428,
-    "vcpd_d2RS_z": -0.29926,
-    "rs_leader": false,
-    "families_resonating": [
-     "FAMILY_VOLUME_ORDERFLOW"
-    ],
-    "n_fam": 1,
-    "warn_families": [
-     "FAMILY_TREND_MOMENTUM",
-     "FAMILY_VOLUME_ORDERFLOW"
-    ],
-    "super_resonance": false,
-    "active_hits": [
-     "A_V2_D2V_POS"
-    ],
-    "n_eff": {
-     "A_V2_D2V_POS": 208
-    },
-    "cold_start": false,
-    "cold_start_factors": null,
-    "hist_top7_n_eff": 187,
-    "security_veto": false,
-    "veto_reason": null,
-    "mf_state": null,
-    "hm_held": false,
-    "universe_tier": "ESTABLISHED",
-    "security_status": "OK",
-    "listing_age_days": 2112.7,
-    "vol24h_usdt": 33831584.0,
-    "early_reason": null,
-    "size_cap_pct": 20
    }
   ],
   "errors": null,
@@ -1255,13 +1259,13 @@
  },
  "mf": {
   "status": "OK",
-  "as_of_utc": "2026-11-12T11:42:29Z",
-  "age_minutes": 0.3,
+  "as_of_utc": "2026-11-12T12:11:53Z",
+  "age_minutes": 0.4,
   "rule_version": "CQS-MF-0.2",
   "tier": "ROTATION_SELECTIVE",
   "old_gate_shadow": "OFF",
   "entry_threshold": 45,
-  "paper_equity_usdt": 9928.11,
+  "paper_equity_usdt": 9929.5,
   "start_equity_usdt": 10000,
   "pending_orders": [],
   "open_positions": [
@@ -1285,7 +1289,34 @@
     "size_cap_pct": 20
    }
   ],
-  "candidates_above_threshold": [],
+  "candidates_above_threshold": [
+   {
+    "symbol": "XDP-USDT",
+    "score": 46.2,
+    "accepted": false,
+    "risk_mult": 0.0,
+    "reasons": [
+     "EARLY_SCORE<70"
+    ],
+    "trigger": 0.016952,
+    "invalidation": 0.01601,
+    "rs_btc": 0.00928,
+    "universe_tier": "EARLY_WATCH",
+    "security_status": "UNVERIFIED",
+    "listing_age_days": 44.5,
+    "vol24h_usdt": 1645570.0,
+    "early_reason": "LOW_VOLUME",
+    "size_cap_pct": 12.4,
+    "threshold": 70,
+    "meme_confirm": {
+     "vol_ratio": 1.7663104415476312,
+     "close": 0.016852,
+     "prev_high": 0.016784,
+     "rs_btc": 0.009280978113677053,
+     "security_status": "UNVERIFIED"
+    }
+   }
+  ],
   "accepted_this_run": [],
   "near_threshold": [
    {
@@ -1333,15 +1364,16 @@
   "entry_threshold_early_watch": 70,
   "early_watch": {
    "by_mode": {
-    "FULL": 7,
-    "PRECHECK_4H": 66
+    "FULL": 8,
+    "PRECHECK_4H": 65
    },
    "by_status": {
     "FULL_FROM_SNAPSHOT": 7,
-    "NO_CONFIRM": 66
+    "NO_CONFIRM": 65,
+    "PASS": 1
    },
    "candidates": [],
-   "evaluated": 7,
+   "evaluated": 8,
    "insufficient_bars": [],
    "members": 73,
    "scanned": 73
@@ -1356,98 +1388,63 @@
    },
    "early_watch": {
     "by_mode": {
-     "FULL": 7,
-     "PRECHECK_4H": 66
+     "FULL": 8,
+     "PRECHECK_4H": 65
     },
     "by_status": {
      "FULL_FROM_SNAPSHOT": 7,
-     "NO_CONFIRM": 66
+     "NO_CONFIRM": 65,
+     "PASS": 1
     },
     "candidates": [],
-    "evaluated": 7,
+    "evaluated": 8,
     "insufficient_bars": [],
     "members": 73,
     "scanned": 73
    },
-   "evaluated": 102,
-   "fetched_extra": 11,
+   "evaluated": 103,
+   "fetched_extra": 12,
    "n": 95,
    "note": "cached 2026-11-12T00:11:35Z"
   },
   "timing": {
-   "early_s": 11.8,
+   "early_s": 12.1,
    "fetch_s": 2.8,
-   "total_s": 18.8,
+   "total_s": 19.6,
    "universe_s": 0.0
   }
  },
  "hm": {
   "status": "OK",
-  "as_of_utc": "2026-11-12T08:05:56Z",
-  "age_minutes": 216.9,
+  "as_of_utc": "2026-11-12T12:06:25Z",
+  "age_minutes": 5.8,
   "rule_version": "CQS-HM-0.1",
-  "bar_close_sast": "11-12 10:00",
+  "bar_close_sast": "11-12 14:00",
   "tier": "ROTATION_SELECTIVE",
   "tier_rule": {
    "cap": 0.75,
    "max_pos": 2
   },
   "start_equity_usdt": 150.0,
-  "paper_equity_usdt": 120.35,
-  "cash_usdt": 30.95,
-  "exposure_frac": 0.7429,
-  "n_positions": 2,
+  "paper_equity_usdt": 121.3,
+  "cash_usdt": 57.82,
+  "exposure_frac": 0.5233,
+  "n_positions": 1,
   "runner_count": 0,
   "positions": [
-   {
-    "symbol": "PEPE-USDT",
-    "src": "VCPD2_C",
-    "entry_price": 5.165159999999999e-06,
-    "close": 4.4582e-06,
-    "stop": 4.493482381016547e-06,
-    "stage": "NORMAL",
-    "runner": false,
-    "stage1_done": false,
-    "unrealized_pct": -13.687,
-    "peak_pct": 4.198,
-    "value_usdt": 26.93,
-    "weight": 0.2238,
-    "since_sast": "11-04 22:00",
-    "universe_tier": "ESTABLISHED",
-    "security_status": "OK",
-    "listing_age_days": 1290.6,
-    "vol24h_usdt": 373434096.0,
-    "early_reason": null,
-    "size_cap_pct": 20,
-    "micro": {
-     "basis_pct": 0.0719,
-     "funding_rate_pct": -0.00988,
-     "oi_change_pct": 0.059,
-     "close_ratio": 0.199,
-     "vol_ratio": 0.779,
-     "label": "NEUTRAL",
-     "label_zh": "📊微观中性",
-     "bonus": 0.0,
-     "micro_trim": false,
-     "status": "OK",
-     "as_of": "2026-11-12T08:06:03Z",
-     "why": []
-    },
-    "micro_trim": false
-   },
    {
     "symbol": "NIGHT-USDT",
     "src": "VCPD2_C",
     "entry_price": 0.046864817999999996,
-    "close": 0.046601,
+    "close": 0.047353,
     "stop": 0.039048304283087296,
     "stage": "NORMAL",
     "runner": false,
     "stage1_done": false,
-    "unrealized_pct": -0.563,
+    "unrealized_pct": 1.042,
     "peak_pct": 1.27,
-    "value_usdt": 62.47,
-    "weight": 0.5191,
+    "value_usdt": 63.48,
+    "weight": 0.5233,
     "since_sast": "11-11 22:00",
     "universe_tier": "ESTABLISHED",
     "security_status": "VETO",
@@ -1456,33 +1453,23 @@
     "early_reason": null,
     "size_cap_pct": 20,
     "micro": {
-     "basis_pct": 0.1458,
-     "funding_rate_pct": 0.00047,
-     "oi_change_pct": 0.019,
-     "close_ratio": 0.678,
-     "vol_ratio": 0.442,
+     "basis_pct": 0.1635,
+     "funding_rate_pct": -0.00722,
+     "oi_change_pct": -0.104,
+     "close_ratio": 0.869,
+     "vol_ratio": 0.701,
      "label": "NEUTRAL",
      "label_zh": "📊微观中性",
      "bonus": 0.0,
      "micro_trim": false,
      "status": "OK",
-     "as_of": "2026-11-12T08:06:03Z",
+     "as_of": "2026-11-12T12:06:32Z",
      "why": []
     },
     "micro_trim": false
    }
   ],
-  "pending": [
-   {
-    "side": "SELL",
-    "sym": "PEPE",
-    "notional": null,
-    "pct": null,
-    "src": null,
-    "frac": 1.0,
-    "why": "STOP"
-   }
-  ],
+  "pending": [],
   "candidates": [],
   "watch_top": [
    {
@@ -1554,8 +1541,24 @@
     "size_cap_pct": 20
    },
    {
+    "symbol": "GRAM-USDT",
+    "conviction": 74.4,
+    "top7": false,
+    "bca_ok": false,
+    "bca_fails": [
+     "TOP7_STREAK",
+     "READY<88%"
+    ],
+    "universe_tier": "NEW_MEME",
+    "security_status": "OK",
+    "listing_age_days": 147.6,
+    "vol24h_usdt": 45468436.0,
+    "early_reason": null,
+    "size_cap_pct": 12.4
+   },
+   {
     "symbol": "NES-USDT",
-    "conviction": 85.0,
+    "conviction": 65.5,
     "top7": true,
     "bca_ok": false,
     "bca_fails": [
@@ -1569,24 +1572,7 @@
     "listing_age_days": 140.5,
     "vol24h_usdt": 1949997.0,
     "early_reason": "LOW_VOLUME",
-    "size_cap_pct": 12.5
-   },
-   {
-    "symbol": "ONE-USDT",
-    "conviction": 66.1,
-    "top7": false,
-    "bca_ok": false,
-    "bca_fails": [
-     "TOP7_STREAK",
-     "READY<88%",
-     "NOT_WITHIN_3%_BELOW_TRIGGER"
-    ],
-    "universe_tier": "ESTABLISHED",
-    "security_status": "UNVERIFIED",
-    "listing_age_days": 1770.9,
-    "vol24h_usdt": 27359693.0,
-    "early_reason": null,
-    "size_cap_pct": 20
+    "size_cap_pct": 12.4
    },
    {
     "symbol": "KITE-USDT",
@@ -1595,18 +1581,19 @@
     "bca_ok": false,
     "bca_fails": [
      "TOP7_STREAK",
-     "READY<88%"
+     "READY<88%",
+     "NOT_WITHIN_3%_BELOW_TRIGGER"
     ],
     "universe_tier": "EARLY_WATCH",
     "security_status": "OK",
     "listing_age_days": 373.5,
     "vol24h_usdt": 1644100.0,
     "early_reason": "LOW_VOLUME",
-    "size_cap_pct": 12.5
+    "size_cap_pct": 12.4
    }
   ],
-  "n_closed": 16,
-  "realized_usdt": -74.93,
+  "n_closed": 17,
+  "realized_usdt": -79.29,
   "chain_ok": true,
   "meme_rules": null,
   "meme_skips": null,
@@ -1624,61 +1611,40 @@
    }
   ],
   "capital_base_usdt": 200.0,
-  "pnl_ex_deposits_usdt": -79.65,
-  "twr_pct": -39.824,
+  "pnl_ex_deposits_usdt": -78.7,
+  "twr_pct": -39.348,
   "early_rules": null,
   "min_order_usdt": 15.0,
   "variant_micro": {
    "variant": "HM-MICRO",
-   "equity": 120.35247414895677,
-   "cash": 30.94528429672888,
+   "equity": 121.3043690162348,
+   "cash": 57.8220311154858,
    "start_equity": 200.0,
-   "n_closed": 16,
-   "realized": -74.9289088834212,
-   "twr": -0.3982376292552168,
+   "n_closed": 17,
+   "realized": -79.28726924256893,
+   "twr": -0.39347815491882665,
    "started_sast": "10-17 18:00",
-   "bar_sast": "11-12 10:00",
-   "exposure": 0.7428778717217829,
-   "micro_runtime_s": 1.02,
+   "bar_sast": "11-12 14:00",
+   "exposure": 0.523331009555417,
+   "micro_runtime_s": 1.09,
    "positions": [
-    {
-     "symbol": "PEPE",
-     "stage": "NORMAL",
-     "unreal": -0.13687088105692746,
-     "value": 26.932997541016274,
-     "micro": {
-      "basis_pct": 0.0719,
-      "funding_rate_pct": -0.00988,
-      "oi_change_pct": 0.059,
-      "close_ratio": 0.199,
-      "vol_ratio": 0.779,
-      "label": "NEUTRAL",
-      "label_zh": "📊微观中性",
-      "bonus": 0.0,
-      "micro_trim": false,
-      "status": "OK",
-      "as_of": "2026-11-12T08:06:03Z",
-      "why": []
-     },
-     "micro_trim": false
-    },
     {
      "symbol": "NIGHT",
      "stage": "NORMAL",
-     "unreal": -0.005629340116075965,
-     "value": 62.474192311211624,
+     "unreal": 0.01041681203157574,
+     "value": 63.482337900749,
      "micro": {
-      "basis_pct": 0.1458,
-      "funding_rate_pct": 0.00047,
-      "oi_change_pct": 0.019,
-      "close_ratio": 0.678,
-      "vol_ratio": 0.442,
+      "basis_pct": 0.1635,
+      "funding_rate_pct": -0.00722,
+      "oi_change_pct": -0.104,
+      "close_ratio": 0.869,
+      "vol_ratio": 0.701,
       "label": "NEUTRAL",
       "label_zh": "📊微观中性",
       "bonus": 0.0,
       "micro_trim": false,
       "status": "OK",
-      "as_of": "2026-11-12T08:06:03Z",
+      "as_of": "2026-11-12T12:06:32Z",
       "why": []
      },
      "micro_trim": false
@@ -1690,7 +1656,7 @@
  "vetoes": {
   "status": "OK",
   "as_of_utc": "2026-11-12T11:35:20Z",
-  "age_minutes": 7.5,
+  "age_minutes": 36.9,
   "items": [
    {
     "symbol": "onchain:eth:0xa43fe16908251ee70ef74718545e4fe6c5ccec9f:0x6982508145454ce325ddbe47a25d4ec3d2311933",
@@ -1731,7 +1697,7 @@
     "listing_age_days": 2079.7,
     "vol24h_usdt": 1000628.0,
     "early_reason": "LOW_VOLUME",
-    "size_cap_pct": 12.5
+    "size_cap_pct": 12.4
    }
   ],
   "scope": "latest core run (CEX structure/whale vetoes + on-chain security vetoes) + latest MF run"
@@ -1739,7 +1705,7 @@
  "universe": {
   "status": "OK",
   "as_of_utc": "2026-11-12T00:11:35Z",
-  "age_minutes": 691.2,
+  "age_minutes": 720.7,
   "schema": "cqs-universe-v1",
   "rule_version": "CQS-UNI-1.1",
   "config_hash": "dd9b36285f3c",
@@ -1815,8 +1781,8 @@
   },
   "size_cap_pct": {
    "ESTABLISHED": 20,
-   "NEW_MEME": 12.5,
-   "EARLY_WATCH": 12.5
+   "NEW_MEME": 12.4,
+   "EARLY_WATCH": 12.4
   },
   "early_rule_text": "EARLY_WATCH (cqs-v3.5.0) = not in a main tier AND (LOW_VOLUME: 24h vol in [0.5M, tier floor) - 2M (3M entry gap included) for coins ESTABLISHED by age, 5M for new/meme; NEW_LISTING: age 3-14d with vol >= 0.5M; VOLUME_SURGE: spot 24h vol >= 5x the 7-day average daily spot volume and vol >= 100k). Same exclusions; spread <= 50 bps; capped at top 120 by volume + all surge coins, hard cap 200. Promoted to ESTABLISHED / NEW_MEME at the next daily rebuild once a main floor is cleared.",
   "security_veto_established_not_enforced": [
@@ -2026,16 +1992,16 @@
  "buy_signals": [],
  "smw": {
   "status": "OK",
-  "as_of_utc": "2026-11-12T11:29:01Z",
-  "age_minutes": 13.8,
+  "as_of_utc": "2026-11-12T11:56:31Z",
+  "age_minutes": 15.7,
   "n": 0,
   "weight_state": "SHADOW",
   "rule_version": "SMW-0.2"
  },
  "micro_meta": {
   "rule_version": "CQS-MICRO-0.1",
-  "generated_utc": "2026-11-12T11:42:28Z",
-  "runtime_s": 1.7,
+  "generated_utc": "2026-11-12T12:06:35Z",
+  "runtime_s": 2.03,
   "n": 7,
   "status": "OK",
   "units": "percent (funding 0.005 == raw 0.00005)"
@@ -2167,7 +2133,7 @@
   "factor_id": "S_DEX_BUY_PRESSURE",
   "factor_state": "SHADOW",
   "weight": 0,
-  "generated_utc": "2026-11-12T11:42:28Z",
+  "generated_utc": "2026-11-12T12:06:12Z",
   "runtime_s": 0.13,
   "n": 7,
   "status": "OK",
