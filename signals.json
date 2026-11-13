@@ -1,7 +1,7 @@
 {
  "schema": "cqs-signals-v2",
- "generated_at_utc": "2026-11-13T16:42:49Z",
- "source_run": "sentinel_jobs.py fast",
+ "generated_at_utc": "2026-11-13T16:57:44Z",
+ "source_run": "sentinel_jobs.py track",
  "stale_after_minutes": 90,
  "rule_versions": {
   "repo_tag": "cqs-v3.7.1-4-gffc8754",
@@ -32,7 +32,7 @@
  "market": {
   "status": "OK",
   "as_of_utc": "2026-11-13T16:42:18Z",
-  "age_minutes": 0.5,
+  "age_minutes": 15.4,
   "btc_tier": "ROTATION_SELECTIVE",
   "btc_tier_source": "mf_ledger.mf_runs (latest hourly MF run; vcpd-2.0 mtf.tier on closed BTC 1D+4H)",
   "btc_tier_vcpd": "ROTATION_SELECTIVE",
@@ -58,51 +58,51 @@
   "macro_liquidity": {
    "status": "OK",
    "rule_version": "CQS-MACRO-0.1",
-   "as_of_utc": "2026-11-13T15:48:55Z",
-   "age_min": 53.9,
+   "as_of_utc": "2026-11-13T16:57:43Z",
+   "age_min": 0.0,
    "source": "DefiLlama public API",
    "display_only": true,
    "gates": "none (display only)",
    "stablecoins": {
-    "mcap_usd": 289146237262,
-    "chg_7d_pct": -1.739,
-    "chg_30d_pct": -5.367,
+    "mcap_usd": 289225101651,
+    "chg_7d_pct": -1.716,
+    "chg_30d_pct": -5.345,
     "n_assets": 411,
     "method": "Σ circulating[pegType] × price (peggedUSD w/o price = 1.0); 7d/30d from circulatingPrevWeek/PrevMonth at today's prices (missing = 0, i.e. new supply)"
    },
    "chains": {
     "Ethereum": {
-     "tvl_usd": 39652564701,
-     "chg_7d_pct": -8.358
+     "tvl_usd": 39466282607,
+     "chg_7d_pct": -8.789
     },
     "Solana": {
-     "tvl_usd": 4991743828,
-     "chg_7d_pct": -5.105
+     "tvl_usd": 4979962042,
+     "chg_7d_pct": -5.329
     },
     "BSC": {
-     "tvl_usd": 4826703539,
-     "chg_7d_pct": -6.277
+     "tvl_usd": 4800329370,
+     "chg_7d_pct": -6.789
     },
     "Base": {
-     "tvl_usd": 5510786572,
-     "chg_7d_pct": -5.817
+     "tvl_usd": 5465414868,
+     "chg_7d_pct": -6.592
     },
     "Arbitrum": {
-     "tvl_usd": 1355373139,
-     "chg_7d_pct": -5.787
+     "tvl_usd": 1353185943,
+     "chg_7d_pct": -5.939
     },
     "Sui": {
-     "tvl_usd": 405334855,
-     "chg_7d_pct": -7.46
+     "tvl_usd": 401462917,
+     "chg_7d_pct": -8.344
     }
    },
-   "runtime_s": 0.28
+   "runtime_s": 0.71
   }
  },
  "top7": {
   "status": "OK",
   "as_of_utc": "2026-11-13T16:05:30Z",
-  "age_minutes": 37.3,
+  "age_minutes": 52.2,
   "bar_close_sast": "2026-11-13 18:00",
   "scope": "FULL_UNIVERSE",
   "source": "out/shadow/latest_shadow.json top7_universe (rank/score/conviction) + ledger.sqlite (core state) + out/snapshot.json (RS)",
@@ -898,7 +898,7 @@
  "top7_legacy": {
   "status": "OK",
   "as_of_utc": "2026-11-13T16:05:02Z",
-  "age_minutes": 37.8,
+  "age_minutes": 52.7,
   "bar_close_sast": "2026-11-13 18:00",
   "source": "out/vcpd/latest2.json (rank/order) + out/shadow/latest_shadow.json (conviction/families/N_eff) + ledger.sqlite (core state) + out/snapshot.json (RS)",
   "items": [
@@ -1321,7 +1321,7 @@
  "mf": {
   "status": "OK",
   "as_of_utc": "2026-11-13T16:42:18Z",
-  "age_minutes": 0.5,
+  "age_minutes": 15.4,
   "rule_version": "CQS-MF-0.2",
   "tier": "ROTATION_SELECTIVE",
   "old_gate_shadow": "ON(HARD)",
@@ -1606,7 +1606,7 @@
  "hm": {
   "status": "OK",
   "as_of_utc": "2026-11-13T16:07:09Z",
-  "age_minutes": 35.7,
+  "age_minutes": 50.6,
   "rule_version": "CQS-HM-0.1",
   "bar_close_sast": "11-13 18:00",
   "tier": "ROTATION_SELECTIVE",
@@ -1905,7 +1905,7 @@
  "vetoes": {
   "status": "OK",
   "as_of_utc": "2026-11-13T15:40:59Z",
-  "age_minutes": 61.8,
+  "age_minutes": 76.8,
   "items": [
    {
     "symbol": "HYPE",
@@ -2045,7 +2045,7 @@
  "universe": {
   "status": "OK",
   "as_of_utc": "2026-11-13T00:09:53Z",
-  "age_minutes": 992.9,
+  "age_minutes": 1007.9,
   "schema": "cqs-universe-v1",
   "rule_version": "CQS-UNI-1.1",
   "config_hash": "dd9b36285f3c",
@@ -2522,8 +2522,8 @@
  ],
  "smw": {
   "status": "OK",
-  "as_of_utc": "2026-11-13T16:24:59Z",
-  "age_minutes": 17.8,
+  "as_of_utc": "2026-11-13T16:44:38Z",
+  "age_minutes": 13.1,
   "n": 0,
   "weight_state": "SHADOW",
   "rule_version": "SMW-0.2"
