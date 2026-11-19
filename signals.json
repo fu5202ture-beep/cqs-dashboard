@@ -1,7 +1,7 @@
 {
  "schema": "cqs-signals-v2",
- "generated_at_utc": "2026-11-19T04:49:33Z",
- "source_run": "sentinel_jobs.py fast",
+ "generated_at_utc": "2026-11-19T04:56:48Z",
+ "source_run": "sentinel_jobs.py track",
  "stale_after_minutes": 90,
  "rule_versions": {
   "repo_tag": "cqs-v3.7.1-4-gffc8754",
@@ -32,7 +32,7 @@
  "market": {
   "status": "OK",
   "as_of_utc": "2026-11-18T07:10:29Z",
-  "age_minutes": 1299.1,
+  "age_minutes": 1306.3,
   "btc_tier": "ROTATION_SELECTIVE",
   "btc_tier_source": "mf_ledger.mf_runs (latest hourly MF run; vcpd-2.0 mtf.tier on closed BTC 1D+4H)",
   "btc_tier_vcpd": "ROTATION_SELECTIVE",
@@ -59,7 +59,7 @@
    "status": "OK",
    "rule_version": "CQS-MACRO-0.1",
    "as_of_utc": "2026-11-19T04:49:30Z",
-   "age_min": 0.1,
+   "age_min": 7.3,
    "source": "DefiLlama public API",
    "display_only": true,
    "gates": "none (display only)",
@@ -102,7 +102,7 @@
  "top7": {
   "status": "OK",
   "as_of_utc": "2026-11-19T04:09:11Z",
-  "age_minutes": 40.4,
+  "age_minutes": 47.6,
   "bar_close_sast": "2026-11-19 06:00",
   "scope": "FULL_UNIVERSE",
   "source": "out/shadow/latest_shadow.json top7_universe (rank/score/conviction) + ledger.sqlite (core state) + out/snapshot.json (RS)",
@@ -878,7 +878,7 @@
  "top7_legacy": {
   "status": "OK",
   "as_of_utc": "2026-11-19T04:08:46Z",
-  "age_minutes": 40.8,
+  "age_minutes": 48.0,
   "bar_close_sast": "2026-11-19 06:00",
   "source": "out/vcpd/latest2.json (rank/order) + out/shadow/latest_shadow.json (conviction/families/N_eff) + ledger.sqlite (core state) + out/snapshot.json (RS)",
   "items": [
@@ -1267,7 +1267,7 @@
  "mf": {
   "status": "OK",
   "as_of_utc": "2026-11-18T07:10:29Z",
-  "age_minutes": 1299.1,
+  "age_minutes": 1306.3,
   "rule_version": "CQS-MF-0.2",
   "tier": "ROTATION_SELECTIVE",
   "old_gate_shadow": "ON(SOFT, MF +5)",
@@ -1418,7 +1418,7 @@
  "hm": {
   "status": "OK",
   "as_of_utc": "2026-11-19T04:10:48Z",
-  "age_minutes": 38.8,
+  "age_minutes": 46.0,
   "rule_version": "CQS-HM-0.1",
   "bar_close_sast": "11-19 06:00",
   "tier": "ROTATION_SELECTIVE",
@@ -1673,7 +1673,7 @@
  "vetoes": {
   "status": "OK",
   "as_of_utc": "2026-11-18T06:12:27Z",
-  "age_minutes": 1357.1,
+  "age_minutes": 1364.4,
   "items": [
    {
     "symbol": "onchain:base:0x01784ef301d79e4b2df3a21ad9a536d4cf09a5ce:0xacfe6019ed1a7dc6f7b508c02d1b04ec88cc21bf",
@@ -1760,7 +1760,7 @@
  "universe": {
   "status": "OK",
   "as_of_utc": "2026-11-19T00:11:47Z",
-  "age_minutes": 277.8,
+  "age_minutes": 285.0,
   "schema": "cqs-universe-v1",
   "rule_version": "CQS-UNI-1.1",
   "config_hash": "dd9b36285f3c",
@@ -2124,86 +2124,13 @@
     "factor_id": "S_DEX_BUY_PRESSURE",
     "factor_state": "SHADOW"
    }
-  },
-  {
-   "source": "SMW_COPY",
-   "symbol": null,
-   "base": "solana:8k4sBtEeK4pf26noKqApv8NBTnuSJcbdwpKYknk5PbAA",
-   "universe_tier": null,
-   "security_status": "OK",
-   "listing_age_days": null,
-   "vol24h_usdt": null,
-   "early_reason": null,
-   "size_cap_pct": 11.0,
-   "chain": "solana",
-   "token_address": "8k4sBtEeK4pf26noKqApv8NBTnuSJcbdwpKYknk5PbAA",
-   "token_symbol": "CALI",
-   "okx_instId": null,
-   "okx_tradable": false,
-   "okx_match": "NOT_ADDRESS_VERIFIED",
-   "wallet_count": 1,
-   "wallet_quality": 1.688,
-   "smw_weight_state": "SHADOW",
-   "signal_time_utc": "2026-11-19T00:54:59Z",
-   "candle_close_utc": null,
-   "candle_tf": null,
-   "entry_ref_price": 0.000124415246,
-   "trigger": null,
-   "stop_initial": 6.2207623e-05,
-   "risk_pct": 0.25,
-   "score": 1.688,
-   "threshold": null,
-   "expires_utc": "2026-11-19T04:54:59Z",
-   "status": "SHADOW",
-   "smw_cap_tier": "EARLY_WATCH",
-   "note": "SMW-0.1 paper copy of 1 qualified wallet(s); entry_ref = worst 1m price 30-120s after the wallet buy (+costs in ledger); weight SHADOW (logged only, no score influence); on-chain only (no address-verified OKX spot USDT instrument)",
-   "min_order_usdt": 15,
-   "micro": {
-    "basis_pct": null,
-    "funding_rate_pct": null,
-    "oi_change_pct": null,
-    "close_ratio": null,
-    "vol_ratio": null,
-    "label": "NEUTRAL",
-    "label_zh": "📊微观中性",
-    "bonus": 0.0,
-    "micro_trim": false,
-    "status": "NEUTRAL_NO_SWAP",
-    "as_of": "2026-11-19T04:49:29Z",
-    "why": [
-     "STATUS_NEUTRAL_NO_SWAP"
-    ],
-    "src": [
-     "SMW_COPY"
-    ]
-   },
-   "dex": {
-    "buy_ratio_h6": 0.5,
-    "buy_ratio_h24": 0.449,
-    "liquidity_usd": 37322.0,
-    "chain": "solana",
-    "pair_url": "https://dexscreener.com/solana/2i2iulr7uwk1sdrb17t5futimnfql7fyy7rh69brzihc",
-    "match_quality": "ADDRESS",
-    "status": "OK",
-    "trigger": false,
-    "wash_suspect": false,
-    "txns_h6": 96,
-    "txns_h24": 267,
-    "volume_h24_usd": 14277.0,
-    "avg_trade_usd_h24": 53.47,
-    "dex": "pumpswap",
-    "base_address": "8k4sBtEeK4pf26noKqApv8NBTnuSJcbdwpKYknk5PbAA",
-    "as_of": "2026-11-19T04:49:31Z",
-    "factor_id": "S_DEX_BUY_PRESSURE",
-    "factor_state": "SHADOW"
-   }
   }
  ],
  "smw": {
   "status": "OK",
   "as_of_utc": "2026-11-19T04:42:41Z",
-  "age_minutes": 6.9,
-  "n": 1,
+  "age_minutes": 14.1,
+  "n": 0,
   "weight_state": "SHADOW",
   "rule_version": "SMW-0.2"
  },
